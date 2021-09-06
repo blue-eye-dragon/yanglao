@@ -1,139 +1,139 @@
 .contrast-eling header .navbar {
-  background-color: #f34541; }
+  background-color: #4679fc; }
   .contrast-eling header .navbar .toggle-nav {
-    background-color: #f34541; }
+    background-color: #4679fc; }
     .contrast-eling header .navbar .toggle-nav:active, .contrast-eling header .navbar .toggle-nav.active, .contrast-eling header .navbar .toggle-nav:hover {
-      background-color: #f01611; }
+      background-color: #164fde; }
   .contrast-eling header .navbar .navbar-form button {
-    color: #f34541; }
+    color: #4679fc; }
     .contrast-eling header .navbar .navbar-form button:hover {
-      color: #aa0e0b; }
+      color: #0b35aa; }
   .contrast-eling header .navbar .navbar-form input {
-    border-color: #f01611;
-    color: #aa0e0b; }
+    border-color: #164fde;
+    color: #0b35aa; }
     .contrast-eling header .navbar .navbar-form input:-moz-placeholder {
-      color: #f67471; }
+      color: #2f4df8; }
     .contrast-eling header .navbar .navbar-form input:-ms-input-placeholder {
-      color: #f67471; }
+      color: #2f4df8; }
     .contrast-eling header .navbar .navbar-form input::-webkit-input-placeholder {
-      color: #f67471; }
+      color: #2f4df8; }
     .contrast-eling header .navbar .navbar-form input:hover:-moz-placeholder {
-      color: #f9a3a1; }
+      color: #2f4df8; }
     .contrast-eling header .navbar .navbar-form input:hover:-ms-input-placeholder {
-      color: #f9a3a1; }
+      color: #2f4df8; }
     .contrast-eling header .navbar .navbar-form input:hover::-webkit-input-placeholder {
-      color: #f9a3a1; }
+      color: #2f4df8; }
     .contrast-eling header .navbar .navbar-form input:focus {
-      border-color: #c2100c; }
+      border-color: #0b1fcc; }
       .contrast-eling header .navbar .navbar-form input:focus:-moz-placeholder {
-        color: #f88b89; }
+        color: #1b4cd3; }
       .contrast-eling header .navbar .navbar-form input:focus:-ms-input-placeholder {
-        color: #f88b89; }
+        color: #1b4cd3; }
       .contrast-eling header .navbar .navbar-form input:focus::-webkit-input-placeholder {
-        color: #f88b89; }
+        color: #1b4cd3; }
   .contrast-eling header .navbar > .nav > li.light > a {
-    background: #f01b16; }
+    background: #1649f0; }
     .contrast-eling header .navbar > .nav > li.light > a .label {
-      color: #f01b16; }
+      color: #1649f0; }
     .contrast-eling header .navbar > .nav > li.light > a:hover, .contrast-eling header .navbar > .nav > li.light > a:active, .contrast-eling header .navbar > .nav > li.light > a:focus {
-      background-color: #d8120e; }
+      background-color: #161fa5; }
   .contrast-eling header .navbar > .nav > li.medium > a {
-    background: #d8120e; }
+    background: #161fa5; }
     .contrast-eling header .navbar > .nav > li.medium > a .label {
-      color: #d8120e; }
+      color: #161fa5; }
     .contrast-eling header .navbar > .nav > li.medium > a:hover > a, .contrast-eling header .navbar > .nav > li.medium > a:active > a, .contrast-eling header .navbar > .nav > li.medium > a:focus > a {
-      background-color: #cb110d; }
+      background-color: #1a0dcb; }
   .contrast-eling header .navbar > .nav > li.dark > a {
-    background: #c3100c; }
+    background: #0c28c3; }
     .contrast-eling header .navbar > .nav > li.dark > a .label {
-      color: #c3100c; }
+      color: #0c28c3; }
     .contrast-eling header .navbar > .nav > li.dark > a:hover > a, .contrast-eling header .navbar > .nav > li.dark > a:active > a, .contrast-eling header .navbar > .nav > li.dark > a:focus > a {
-      background-color: #b60f0b; }
+      background-color: #0b33b6; }
   .contrast-eling header .navbar .widget .dropdown-menu > li.widget-footer a:hover {
-    background-color: #f34541; }
+    background-color: #4679fc; }
 .contrast-eling header .navbar .nav li .label {
-  color: #f34541; }
+  color: #4679fc; }
 .contrast-eling .nav .caret, .contrast-eling .nav a:hover .caret {
-  border-top-color: #f34541;
-  border-bottom-color: #f34541; }
+  border-top-color: #4679fc;
+  border-bottom-color: #4679fc; }
 .contrast-eling code {
   background-color: #f3e5e6;
-  color: #f35551; }
+  color: #515cf3; }
 .contrast-eling #main-nav .navigation > .nav > li > a.in [class^="icon-"], .contrast-eling #main-nav .navigation > .nav > li > a.in [class*=" icon-"] {
-  color: #f34541; }
+  color: #4679fc; }
 .contrast-eling #main-nav .navigation > .nav > li:hover > a [class^="icon-"], .contrast-eling #main-nav .navigation > .nav > li:hover > a [class*=" icon-"], .contrast-eling #main-nav .navigation > .nav > li:focus > a [class^="icon-"], .contrast-eling #main-nav .navigation > .nav > li:focus > a [class*=" icon-"], .contrast-eling #main-nav .navigation > .nav > li.active > a [class^="icon-"], .contrast-eling #main-nav .navigation > .nav > li.active > a [class*=" icon-"] {
-  color: #f34541 !important; }
+  color: #4679fc !important; }
 .contrast-eling #main-nav .navigation > .nav > li .nav > li.active > a [class^="icon-"], .contrast-eling #main-nav .navigation > .nav > li .nav > li.active > a [class*=" icon-"] {
-  color: #f34541; }
+  color: #4679fc; }
 .contrast-eling #main-nav .navigation > .nav > li .nav > li > a:hover [class^="icon-"], .contrast-eling #main-nav .navigation > .nav > li .nav > li > a:hover [class*=" icon-"], .contrast-eling #main-nav .navigation > .nav > li .nav > li > a:focus [class^="icon-"], .contrast-eling #main-nav .navigation > .nav > li .nav > li > a:focus [class*=" icon-"] {
-  color: #f34541; }
+  color: #4679fc; }
 .contrast-eling .box .box-header.contrast-background .actions .btn-link:hover {
-  color: #f34541 !important; }
+  color: #4679fc !important; }
 .contrast-eling.contrast-background, .contrast-eling .contrast-background {
-  background: #f34541 !important; }
+  background: #4679fc !important; }
 .contrast-eling .text-contrast, .contrast-eling .contrast {
-  color: #f34541 !important; }
+  color: #4679fc !important; }
 .contrast-eling .contrast-border {
-  border-color: #f34541 !important; }
+  border-color: #4679fc !important; }
 .contrast-eling .accordion.accordion-contrast .accordion-group {
-  border-color: #f34541;
-  border-bottom-color: #f9a3a1; }
+  border-color: #4679fc;
+  border-bottom-color: #2f4df8; }
 .contrast-eling .accordion.accordion-contrast .accordion-heading .accordion-toggle {
   color: white;
-  background-color: #f34541; }
+  background-color: #4679fc; }
 .contrast-eling .box-quick-link.contrast-background a:active .header {
-  background: #f01611; }
+  background: #164fde; }
 .contrast-eling .box-quick-link.contrast-background:hover .header {
-  background: #f12e29; }
+  background: #2c29f1; }
 .contrast-eling .box-statistic.contrast-background .title, .contrast-eling .box-statistic.contrast-background small, .contrast-eling .box-statistic.contrast-background [class*="icon-"] {
-  color: #f34541 !important; }
+  color: #4679fc !important; }
 .contrast-eling .breadcrumb li:first-child > a:hover {
-  color: #f34541 !important; }
+  color: #4679fc !important; }
 .contrast-eling h1 [class^="icon-"] {
-  color: #f34541; }
+  color: #4679fc; }
 .contrast-eling .dropdown-menu > .active > a, .contrast-eling .dropdown-menu > .active > a:hover, .contrast-eling .dropdown-menu > .active > a:focus, .contrast-eling .dropdown-menu > li > a:hover, .contrast-eling .dropdown-menu > li > a:focus, .contrast-eling .dropdown-submenu:hover > a, .contrast-eling .dropdown-submenu:focus > a {
-  background-color: #f34541 !important; }
+  background-color: #4679fc !important; }
 .contrast-eling .box .box-header .actions .btn-link:hover {
-  color: #f34541; }
+  color: #4679fc; }
 .contrast-eling .fc-event .fc-event-inner {
-  border-color: #f34541;
-  background-color: #f34541; }
+  border-color: #4679fc;
+  background-color: #4679fc; }
 .contrast-eling .contrast-caret {
-  border-top-color: #f34541 !important;
-  border-bottom-color: #f34541 !important; }
+  border-top-color: #4679fc !important;
+  border-bottom-color: #4679fc !important; }
 .contrast-eling .select2-results .select2-highlighted {
-  background: #f34541; }
+  background: #4679fc; }
 .contrast-eling .daterangepicker .ranges li.active, .contrast-eling .daterangepicker .ranges li:hover {
-  background: #f34541; }
+  background: #4679fc; }
 .contrast-eling .daterangepicker td.active, .contrast-eling .daterangepicker td.active:hover {
-  background: #f34541; }
+  background: #4679fc; }
 .contrast-eling .datepicker td span.active:hover, .contrast-eling .datepicker td span.active:hover:hover, .contrast-eling .datepicker td span.active.disabled:hover, .contrast-eling .datepicker td span.active.disabled:hover:hover, .contrast-eling .datepicker td span.active:active, .contrast-eling .datepicker td span.active:hover:active, .contrast-eling .datepicker td span.active.disabled:active, .contrast-eling .datepicker td span.active.disabled:hover:active, .contrast-eling .datepicker td span.active.active, .contrast-eling .datepicker td span.active:hover.active, .contrast-eling .datepicker td span.active.disabled.active, .contrast-eling .datepicker td span.active.disabled:hover.active, .contrast-eling .datepicker td span.active.disabled, .contrast-eling .datepicker td span.active:hover.disabled, .contrast-eling .datepicker td span.active.disabled.disabled, .contrast-eling .datepicker td span.active.disabled:hover.disabled, .contrast-eling .datepicker td span.active[disabled], .contrast-eling .datepicker td span.active:hover[disabled], .contrast-eling .datepicker td span.active.disabled[disabled], .contrast-eling .datepicker td span.active.disabled:hover[disabled], .contrast-eling .datepicker td.active:hover, .contrast-eling .datepicker td.active:hover:hover, .contrast-eling .datepicker td.active.disabled:hover, .contrast-eling .datepicker td.active.disabled:hover:hover, .contrast-eling .datepicker td.active:active, .contrast-eling .datepicker td.active:hover:active, .contrast-eling .datepicker td.active.disabled:active, .contrast-eling .datepicker td.active.disabled:hover:active, .contrast-eling .datepicker td.active.active, .contrast-eling .datepicker td.active:hover.active, .contrast-eling .datepicker td.active.disabled.active, .contrast-eling .datepicker td.active.disabled:hover.active, .contrast-eling .datepicker td.active.disabled, .contrast-eling .datepicker td.active:hover.disabled, .contrast-eling .datepicker td.active.disabled.disabled, .contrast-eling .datepicker td.active.disabled:hover.disabled, .contrast-eling .datepicker td.active[disabled], .contrast-eling .datepicker td.active:hover[disabled], .contrast-eling .datepicker td.active.disabled[disabled], .contrast-eling .datepicker td.active.disabled:hover[disabled] {
-  background: #f34541; }
+  background: #4679fc; }
 .contrast-eling .dropdown-menu > .active > a, .contrast-eling .dropdown-menu > .active > a:hover, .contrast-eling .dropdown-menu > .active > a:focus {
-  background: #f34541; }
+  background: #4679fc; }
 .contrast-eling .dd-handle:hover {
-  color: #f34541; }
+  color: #4679fc; }
 .contrast-eling .dd-placeholder {
-  border-color: #f34541; }
+  border-color: #4679fc; }
   
 /*****为了主题的扩展*****/
 .contrast-eling .btn-theme{
 	color: white;
-	background-color: #f34541;
+	background-color: #4679fc;
 }
 
 .contrast-eling .btn-group.open .btn-theme.dropdown-toggle,
 .contrast-eling .btn-theme{
-    background-color: #f34541;
+    background-color: #4679fc;
 }
 
 .contrast-eling .btn-group.open .btn-theme.dropdown-toggle:hover,
 .contrast-eling .btn-theme:hover{
-    background-color: #f34541;
+    background-color: #4679fc;
 }
 
 .contrast-eling .text-theme{
-    color: #f34541;
+    color: #4679fc;
 }
 
 .contrast-eling .el-mainframe .logo{
