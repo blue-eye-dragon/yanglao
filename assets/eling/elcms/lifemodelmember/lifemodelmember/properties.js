@@ -1,0 +1,129 @@
+define(function(require,exports,module){
+	var i18ns = require("i18n");
+	var BaseDoc=require("basedoc");
+	var aw = require("ajaxwrapper");
+	var Propertie={
+		mem_baseinfo: "*,"+
+		"personalInfo.pkPersonalInfo,"+
+		"personalInfo.name,"+
+		"personalInfo.sex,"+
+		"personalInfo.birthday,"+
+		"personalInfo.birthdayString,"+
+		"personalInfo.phone,"+
+		"personalInfo.mobilePhone,"+
+		"personalInfo.nameEn,"+
+		"personalInfo.maritalStatus,"+
+		"personalInfo.idType,"+
+		"personalInfo.idNumber,"+
+		"memberSigning.room.number,"+
+		"educations.specialty",
+
+
+		lifemodemember:"pkLifeModelMember,"+
+		"member.pkMember,"+
+		"member.personalInfo.pkPersonalInfo,"+
+		"member.personalInfo.name,"+
+		"member.personalInfo.sex,"+
+		"member.personalInfo.birthday,"+
+		"member.personalInfo.birthdayString,"+
+		"member.personalInfo.phone,"+
+		"member.personalInfo.mobilePhone,"+
+		"member.personalInfo.nameEn,"+
+		"member.personalInfo.maritalStatus,"+
+		"member.personalInfo.idType,"+
+		"member.personalInfo.idNumber,"+
+		"member.personalInfo.email,"+
+		"member.memberSigning.room.number,"+
+		"member.educations.specialty,"+
+		"basicFeatureMember.*,"+
+		"happyMember.*,"+
+		"healthyMember.*,"+
+		"lifeMember.*",
+
+		member_baseinfo_items:[{
+			img:{
+				idAttribute:"pkPersonalInfo",
+				label:i18ns.get("sale_ship_owner","会员"),
+				// url:"api/attachment/personalphoto/",
+                url:"https://szeling-master.oss-cn-shenzhen.aliyuncs.com/qinheyuan/",
+			},
+			title:"基本信息",
+			children:[{
+				name:"pkPersonalInfo",
+				type:"hidden"
+			},{
+				name:"name",
+				label:"姓名(中)",
+				validate:["required"],
+				readonly:"readonly"
+			},{
+				name:"sex",
+				label:"性别",
+				type:"radiolist",
+				list:[{
+					key:"MALE",
+					value:"男"
+				},{
+					key:"FEMALE",
+					value:"女"
+				}],
+				validate:["required"]
+			},{
+				name:"birthday",
+				label:"出生年月",
+				type:"date",
+				mode:"Y-m-d",
+				validate:["required"]
+			},{
+				name:"nameEn",
+				label:"姓名(英语)"
+			},{
+				name:"maritalStatus",
+				label:"婚姻状况",
+				type:"radiolist",
+				list:BaseDoc.maritalStatus
+			},{
+				name:"belief",
+				label:"信仰",
+				type:"select",
+				url:"api/enum/com.eling.elcms.lifemodelmember.model.BasicFeatureMember.Belief"
+			},{
+				name:"securityCard",
+				label:"保障卡",
+				type:"select",
+				url:"api/enum/com.eling.elcms.lifemodelmember.model.BasicFeatureMember.SecurityCard"
+			},{
+                name:"medicalInsuranceType",
+                label:"医保类型",
+                type:"select",
+                url:"api/enum/com.eling.elcms.lifemodelmember.model.LifeMember.MedicalInsuranceType"
+            },{
+				name:"idType",
+				label:"证件号类型",
+				type:"select",
+				url:"api/enum/com.eling.elcms.basedoc.model.PersonalInfo.IdType",
+				defaultValue:"IdentityCard",
+				validate:["required"],
+                type:"hidden"
+			},{
+				name:"idNumber",
+				label:"证件号",
+				validate:["required"],
+				readonly:"readonly",
+				type:"hidden"
+			},{
+				name:"phone",
+				label:"联系电话",
+                type:"hidden"
+			},{
+				name:"mobilePhone",
+				label:"移动电话",
+                type:"hidden"
+			}]
+		}],
+		member_try_baseinfo_items:[]
+
+	};
+	
+	module.exports=Propertie;
+});

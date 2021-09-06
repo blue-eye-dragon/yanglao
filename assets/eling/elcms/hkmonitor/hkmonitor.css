@@ -1,0 +1,26 @@
+.el-hkmonitor .J-cameralist{
+	font-size: 17px;
+    color: #ffffff;
+    border-radius:10px;
+    background-color: rgba(0,0,0,0.65);
+    padding: 10px;
+}
+.el-hkmonitor .J-video{
+    border-radius:10px;
+    background-color: rgba(0,0,0,0.65);
+    padding: 10px;
+}
+.el-hkmonitor .J-cameralist ul{
+	height:675px;
+    overflow-y:scroll;
+}
+.el-hkmonitor .J-cameralist ul li{
+	list-style:none;
+}
+.el-hkmonitor .J-cameralist{
+	position:relative;
+}
+.el-hkmonitor .J-count{
+	position:absolute;
+	bottom:0;
+}

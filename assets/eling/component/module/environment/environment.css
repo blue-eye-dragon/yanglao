@@ -1,0 +1,67 @@
+.el-environment{
+	text-align: center;
+	font-weight: bold !important;
+	color: #2FABE9;
+}
+
+.el-environment .latestvalue{
+	font-size: 50px;
+	text-align: center;
+	color: #2FABE9;
+}
+
+.el-environment .success-font{
+	color: #5AAD34 !important;
+}
+.el-environment .warning-font{
+	color: #F4A506 !important;
+}
+.el-environment .danger-font{
+	color:#FA5833 !important;
+}
+
+.el-environment .font_pm{
+	font-size: 30px;
+	color: #2FABE9;
+	line-height: 70px;
+}
+
+.el-environment .font20{
+	font-size: 20px;
+	color: #2FABE9;
+}
+
+.el-environment .font40{
+	font-size: 40px;
+}
+
+
+.el-environment .success_status{
+	background:-webkit-gradient(radial,50% 50%,0,50% 50%,100,from(green),to(white));
+	width: 128px;
+	height: 128px;
+	border-radius:64px;
+}
+
+.el-environment .danger_status{
+	background:-webkit-gradient(radial,50% 50%,0,50% 50%,100,from(red),to(white));
+	width: 128px;
+	height: 128px;
+	border-radius:64px;
+}
+
+.el-environment .warning_status{
+	background:-webkit-gradient(radial,50% 50%,0,50% 50%,100,from(yellow),to(white));
+	width: 128px;
+	height: 128px;
+	border-radius:64px;
+}
+
+.el-environment .lgpic{
+	 width: 156px;
+	 height: 135px;
+}
+.el-environment .ltpic{
+	 width: 64px;
+	 height: 64px;
+}

@@ -1,0 +1,12 @@
+.J-printGrid{
+	display: none;
+}
+@media print {
+	.J-subnav,
+	.J-printGrid{
+		display: block;
+	}
+	.J-grid{
+		display: none;
+	}
+}

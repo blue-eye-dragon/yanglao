@@ -1,0 +1,23 @@
+.J-printGrid
+{
+	display: none;
+}
+.J-grid-title{
+	display: none;
+}
+@media print {
+	.J-subnav,
+	.J-grid,
+	.J-form{
+		display: none;
+	}
+	.J-printGrid{
+		display: block;
+	}
+	.J-grid-title{
+		display: block;
+		text-align:center;
+		width:100%;
+		font-size: 30px;
+	}
+}

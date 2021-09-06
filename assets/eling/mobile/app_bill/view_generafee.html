@@ -1,0 +1,73 @@
+<div class="tabs">
+	<div id="tab1" class="tab active">
+		{{#each this.generafee}}
+			<div class="content-block-title">{{this.date}}</div>
+			<div class="list-block media-list">
+				{{#if this.generalFeesDetails}}
+				<ul>
+					{{#each this.generalFeesDetails}}
+					<li id="{{../this.pkGeneralFees}}_{{this.pkGeneralFeesDetail}}" class="J-bill-item">
+   						<div class="item-content">
+     						<div class="item-media">
+     							<div class="icon {{this.color}}-background text-center">
+     								<i class="{{this.icon}}"></i>
+     							</div>
+     						</div>
+     						<div class="item-inner">
+       							<div class="item-title-row">
+         							<div class="item-title">{{this.feeType.name}}</div>
+         							<div>
+         								{{#if this.status}}
+											<span class="text-left">已缴清</span>
+										{{else}}
+											{{#if this.notStatus}}
+											<span class="text-left">未缴清</span>
+											{{/if}}
+										{{/if}}
+         							</div>
+       							</div>
+       							<div class="item-subtitle">￥{{this.fees}}</div>
+     						</div>
+   						</div>
+					</li>
+					{{/each}}
+				</ul>
+				{{/if}}
+			</div>
+		{{/each}}
+	</div>
+	
+	<div id="tab2" class="tab list-block media-list">
+		{{#each this.generafee}}
+			{{#if this.waitingNum}}
+			<div class="content-block-title">{{this.date}}</div>
+			<div class="list-block media-list">
+				{{#if this.generalFeesDetails}}
+				<ul>
+					{{#each this.generalFeesDetails}}
+					<li id="{{../this.pkGeneralFees}}_{{this.pkGeneralFeesDetail}}" class="J-bill-item">
+   						<div class="item-content">
+     						<div class="item-media">
+     							<div class="icon {{this.color}}-background text-center">
+     								<i class="{{this.icon}}"></i>
+     							</div>
+     						</div>
+     						<div class="item-inner">
+       							<div class="item-title-row">
+         							<div class="item-title">{{this.feeType.name}}</div>
+         							<div>
+										<span class="text-left">未缴清</span>
+         							</div>
+       							</div>
+       							<div class="item-subtitle">￥{{this.fees}}</div>
+     						</div>
+   						</div>
+					</li>
+					{{/each}}
+				</ul>
+				{{/if}}
+			</div>
+			{{/if}}
+		{{/each}}
+	</div>
+</div>

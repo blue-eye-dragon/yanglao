@@ -1,0 +1,66 @@
+<div class="pages">
+	<div data-page="list" class="page navbar-fixed toolbar-fixed">
+		<!-- 导航条  -->
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="center">{{this.title}}</div>
+				<div class="right">
+					<a href="#" class="link icon-only open-picker">
+						<i class="icon icon-calendar"></i>
+					</a>
+					<a href="#" class="link icon-bars open-panel">
+						<i class="icon icon-bars"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- Search bar -->
+		<form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+		  <div class="searchbar-input">
+		    <input type="search" placeholder="搜索"><a href="#" class="searchbar-clear"></a>
+		  </div><a href="#" class="searchbar-cancel">取消</a>
+		</form>
+		
+		<!-- Search bar overlay -->
+		<div class="searchbar-overlay"></div>
+		
+		 <!-- Right Panel with Cover effect -->
+		 <div class="panel panel-right panel-cover">
+		   <div class="content-block">
+		   	 <p><a href="#" class="close-panel icon-back"><i class="icon icon-reply"></i></a></p>
+		   	 <p><a href="#" class="close-panel depart-item" id="">全部</a></p>
+			 <div class="J-department-container"></div>
+		   </div>
+		 </div>
+ 
+		<!-- 主页面 -->
+		<div class="page-content  infinite-scroll pull-to-refresh-content">
+			<!-- 下拉刷新 -->
+			<div class="pull-to-refresh-layer">
+			  <div class="preloader"></div>
+			  <div class="pull-to-refresh-arrow"></div>
+			</div>
+			
+			<div class="content-block-title title">{{this.title2}}</div>
+			
+			<!-- This block will be displayed if nothing found -->
+		    <div class="content-block searchbar-not-found">
+		      <!-- <div class="content-block-inner"></div> -->
+		    </div>
+    
+			<div class="list-block contacts-block  searchbar-found">
+    			<div class="list-group">
+					<ul>
+						<div class="J-detail-container list-block-search"></div>
+					</ul>
+				</div>
+			</div>
+				
+			<!-- 加载提示符-->
+			<div class="infinite-scroll-preloader">
+			    <div class="preloader"></div>
+			</div> 
+		</div>
+		
+	</div>
+</div>

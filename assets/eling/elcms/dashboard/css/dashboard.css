@@ -1,0 +1,10 @@
+.el-dashboard .loading{
+	background: url("../img/ajaxloader.gif");
+  	background-repeat: no-repeat;
+  	height: 32px;
+}
+
+.el-dashboard .el-dashboard-bottom-item{
+	height: 70px;
+	cursor: pointer;
+}

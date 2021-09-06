@@ -1,0 +1,360 @@
+define(function(require,exports,module){
+	//多语
+	var i18ns = require("i18n");
+	var BaseDoc=require("basedoc");
+	var aw = require("ajaxwrapper");
+	var enmu = require("enums");
+	var Propertie={
+		mem_baseinfo:"*,"+
+			"personalInfo.nativePlace.id,"+
+			"personalInfo.nativePlace.name,"+
+			"personalInfo.nativePlace.code,"+
+			"personalInfo.citizenship.pkCountry,"+
+			"personalInfo.citizenship.name,"+
+			"personalInfo.overseasExperience.name,"+
+			"personalInfo.overseasExperience.code,"+
+			"personalInfo.overseasExperience.pkCountry,"+
+			"personalInfo.*,"+
+			"",
+			
+		relative:"*,personalInfo.*," +
+		"personalInfo.citizenship.pkCountry,"+
+		"personalInfo.citizenship.name,",
+			
+		otherrelation:"*,"+
+			"personalInfo.nativePlace.id,"+
+			"personalInfo.nativePlace.name,"+
+			"personalInfo.nativePlace.code,"+
+			"personalInfo.citizenship.pkCountry,"+
+			"personalInfo.citizenship.name,"+
+			"personalInfo.*",
+		guarantor:"*,"+
+			"personalInfo.nativePlace.id,"+
+			"personalInfo.nativePlace.name,"+
+			"personalInfo.nativePlace.code,"+
+			"personalInfo.citizenship.pkCountry,"+
+			"personalInfo.citizenship.name,"+
+			"personalInfo.*",	
+			
+		contract:"personalInfo.*,"+
+			"pkEmergencyContactPerson,"+
+			"personalInfo.nativePlace.id,"+
+			"personalInfo.nativePlace.name,"+
+			"personalInfo.nativePlace.code,"+
+			"personalInfo.citizenship.pkCountry,"+
+			"personalInfo.citizenship.name,",
+			
+		
+		accompany:"*,"+
+			"personalInfo.*,"+
+			"personalInfo.nativePlace.id,"+
+			"personalInfo.nativePlace.name,"+
+			"personalInfo.nativePlace.code,"+
+			"personalInfo.citizenship.pkCountry,"+
+			"personalInfo.citizenship.name",
+			
+		list:"*,members.iorder,"+
+			"members.pkMember,"+
+			"members.personalInfo.pkPersonalInfo,"+
+			"members.personalInfo.name,"+
+			"relatives.personalInfo.pkPersonalInfo,"+
+			"relatives.personalInfo.name," +
+			"accompanyPeople.status,"+
+			"ecPersons.personalInfo.pkPersonalInfo,"+
+			"ecPersons.personalInfo.name,"+
+			"guarantors.personalInfo.pkPersonalInfo,"+
+			"guarantors.personalInfo.name,"+
+			"otherRelations.personalInfo.pkPersonalInfo,"+
+			"otherRelations.personalInfo.name,"+
+			"accompanyPeople.personalInfo.pkPersonalInfo,"+
+			"accompanyPeople.personalInfo.name,"+
+			"card.name,"+
+			"room.number," +
+			"room.building," +
+			"room.building.pkBuilding,"+
+			"room.telnumber",
+			
+		search_properties:"memberSigning.pkMemberSigning,card.name," +
+			"room.number," +
+			"members.personalInfo.name," +
+			"relatives.personalInfo.name," +
+			"accompanyPeople.personalInfo.name," +
+			"guarantors.personalInfo.name," +
+			"ecPersons.personalInfo.name",
+		
+		search_fetchProperties:"*,members.iorder,"+
+		"members.pkMember,"+
+		"members.personalInfo.pkPersonalInfo,"+
+		"members.personalInfo.name,"+
+		"relatives.personalInfo.pkPersonalInfo,"+
+		"relatives.personalInfo.name," +
+		"accompanyPeople.status,"+
+		"ecPersons.personalInfo.pkPersonalInfo,"+
+		"ecPersons.personalInfo.name,"+
+		"guarantors.personalInfo.pkPersonalInfo,"+
+		"guarantors.personalInfo.name,"+
+		"otherRelations.personalInfo.pkPersonalInfo,"+
+		"otherRelations.personalInfo.name,"+
+		"accompanyPeople.personalInfo.pkPersonalInfo,"+
+		"accompanyPeople.personalInfo.name,"+
+		"card.name,"+
+		"room.number,"+
+		"room.telnumber",
+			
+		member_baseinfo_items:[{
+			img:{
+				idAttribute:"pkPersonalInfo",
+				label:i18ns.get("sale_ship_owner","会员"),
+				url:"api/attachment/personalphoto/",
+			},
+			title:"基本信息",
+			children:[{
+				name:"selectPkPersonalInfo",	
+				key:"pkPersonalInfo",
+				value:"name",	
+				label:"选择相关人",
+				type:"select"
+			},{
+				name:"pkMemberSigning",
+				type:"hidden"
+			},{
+				name:"pkMember",
+				type:"hidden"
+			},{
+				name:"iorder",
+				type:"hidden"
+			},{
+				name:"pkPersonalInfo",
+				type:"hidden"
+			},{
+				name:"version",
+				type:"hidden",
+				defaultValue:"0"
+			},{
+				name:"died",
+				type:"hidden",
+				defaultValue:"false"
+			},{
+				name:"memCardNo",
+				type:"hidden",
+				defaultValue:""
+			},{
+				name:"name",
+				label:"姓名(中)",
+				validate:["required"]
+			},{
+				name:"sex",
+				label:"性别",
+				type:"radiolist",
+				list:[{
+					key:"MALE",
+					value:"男"
+				},{
+					key:"FEMALE",
+					value:"女"
+				}],
+				validate:["required"]
+			},{
+				name:"birthday",
+				label:"出生年月",
+				type:"date",
+				mode:"Y-m-d",
+				validate:["required"]
+			},{
+				name:"nameEn",
+				label:"姓名(英语)"
+			},{
+				name:"formerName",
+				label:"曾用名"
+			},{
+				name:"birthplace",
+				label:"出生地"
+			},{
+				name:"relationship",
+				type:"hidden"
+			},{
+				name:"nativePlace",
+				label:"籍贯",
+				type:"place"
+			},{
+				name:"citizenship",
+				label:"国籍",
+				defaultValue:"48",
+				url:"api/country/query",
+				key:"pkCountry",
+				value:"name",
+				type:"select",
+				validate:["required"]
+			},{
+				name:"singleResidence",
+				label:"户口类型",
+				type:"radiolist",
+				list:[{
+					key:"true",
+					value:"独立户口"
+				},{
+					key:"false",
+					value:"集体户口"
+				}]
+			},{
+				name:"residenceAddress",
+				label:"户籍地址 "
+			},{
+				name:"otherParty",
+				label:"政治面貌",
+				type:"select",
+				options:enmu["com.eling.elcms.basedoc.model.OtherParty"],
+				defaultValue:"QZ",
+			},{
+				name:"nationality",
+				label:"民族",
+				type:"select",
+				options:BaseDoc.nationality,
+				defaultValue:"Han"
+			},{
+				name:"maritalStatus",
+				label:"婚姻状况",
+				type:"radiolist",
+				list:BaseDoc.maritalStatus
+			},{
+				name:"weddingDate",
+				label:"婚姻登记日期",
+				type:"date",
+				mode:"Y-m-d"
+			},{
+				name:"idType",
+				label:"证件号类型",
+				type:"select",
+				url:"api/enum/com.eling.elcms.basedoc.model.PersonalInfo.IdType",
+				defaultValue:"IdentityCard",
+				validate:["required"]
+			},{
+				name:"idNumber",
+				label:"证件号",
+				validate:["required"]
+			},{
+				name:"phone",
+				label:"联系电话"
+			},{
+				name:"mobilePhone",
+				label:"移动电话"
+			},{
+				name:"email",
+				label:"电子邮件",
+				validate:["email"]
+			},{
+				name:"address",
+				label:"通信地址"
+			},{
+				name:"annualIncome",
+				label:"年收入情况",
+				type:"radiolist",
+				list:BaseDoc.annualIncome
+			},{
+				name:"qualifications",
+				label:"学历",
+				type:"select",
+				options:BaseDoc.qualifications
+			}]
+		}],
+		member_try_baseinfo_items:[],
+		queryPersonalCardownerBycardBesidesExistMember:function(pkCard, form){
+			aw.ajax({
+				url:"api/personalinfo/queryPersonalCardownerBycardBesidesExistMember",
+				data:{
+					pkCard:pkCard,
+					fetchProperties:"pkPersonalInfo,name"
+				},
+				success:function(data){
+					if(data){
+						form.load("selectPkPersonalInfo",{
+							options:data,
+						})
+					}
+				}
+			});
+		},
+		queryByCardBesidesExistRelative:function(pkCard, form){
+			aw.ajax({
+				url:"api/personalinfo/queryByCardBesidesExistRelative",
+				data:{
+					pkCard:pkCard,
+					fetchProperties:"pkPersonalInfo,name"
+				},
+				success:function(data){
+					if(data){
+						form.load("selectPkPersonalInfo",{
+							options:data,
+						})
+					}
+				}
+			});
+		},
+		queryByCardBesidesExistGuarantor:function(pkCard, form){
+			aw.ajax({
+				url:"api/personalinfo/queryByCardBesidesExistGuarantor",
+				data:{
+					pkCard:pkCard,
+					fetchProperties:"pkPersonalInfo,name"
+				},
+				success:function(data){
+					if(data){
+						form.load("selectPkPersonalInfo",{
+							options:data,
+						})
+					}
+				}
+			});
+		},
+		queryByCardBesidesExistEmergencyContactPerson:function(pkCard, form){
+			aw.ajax({
+				url:"api/personalinfo/queryByCardBesidesExistEmergencyContactPerson",
+				data:{
+					pkCard:pkCard,
+					fetchProperties:"pkPersonalInfo,name"
+				},
+				success:function(data){
+					if(data){
+						form.load("selectPkPersonalInfo",{
+							options:data,
+						})
+					}
+				}
+			});
+		},
+		queryByCardBesidesExistOtherRelation:function(pkCard, form){
+			aw.ajax({
+				url:"api/personalinfo/queryByCardBesidesExistOtherRelation",
+				data:{
+					pkCard:pkCard,
+					fetchProperties:"pkPersonalInfo,name"
+				},
+				success:function(data){
+					if(data){
+						form.load("selectPkPersonalInfo",{
+							options:data,
+						})
+					}
+				}
+			});
+		},
+		queryByCardBesidesAccompanyPeople:function(pkCard, form){
+			aw.ajax({
+				url:"api/personalinfo/queryByCardBesidesAccompanyPeople",
+				data:{
+					pkCard:pkCard,
+					fetchProperties:"pkPersonalInfo,name"
+				},
+				success:function(data){
+					if(data){
+						form.load("selectPkPersonalInfo",{
+							options:data,
+						})
+					}
+				}
+			});
+		}
+	};
+	
+	module.exports=Propertie;
+});

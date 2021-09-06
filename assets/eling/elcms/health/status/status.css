@@ -1,0 +1,82 @@
+.el-health-status .mix {
+	display: none;
+	font-size: 3px !important;
+	padding: 1px;
+	float: left;
+}
+.el-health-status .hr-normal{
+	margin: 10px;
+}
+
+.el-health-status .box{
+	margin-bottom:10px;
+}
+
+.el-health-status .box-header{
+	padding:5px;
+}
+
+.el-health-status .title a{
+	text-decoration: none;
+	cursor:pointer;
+}
+
+.el-health-status .title strong{
+	color: white;
+	font-size:0.6em;
+}
+
+.el-health-status #mycontainer .box-content{
+	margin: 0; 
+	padding: 0;
+	border-top: none;
+	border-bottom: none;
+	border-left: 1px solid;
+	border-right: 1px solid;
+}
+
+.el-health-status .green-border{
+	border-left-color: #43c559;
+	border-right-color: #43c559;
+}
+
+.el-health-status .red-border{
+	border-left-color: #f34642;
+	border-right-color: #f34642;
+}
+
+.el-health-status .orange-border{
+	border-left-color: #f8a326;
+	border-right-color: #f8a326;
+}
+
+.el-health-status .icon-search,.el-health-status .icon-tags,.el-health-status .icon-star-half-empty{
+	font-size:15px;
+	padding:5px;
+	color:rgb(228, 199, 199);
+	cursor:pointer;
+}
+
+.el-health-status #mycontainer .pull-right{
+	width: 100%;
+}
+
+.el-health-status #mycontainer .icon{
+	padding: 10px 1% ;
+	text-decoration: none;
+	display: inline-block;
+	width: 30%;
+	text-align: center;
+}
+.el-health-status .background-1{
+  	background-color: #f34541!important;
+}
+.el-health-status .background-2{
+  	background-color: #f8a326!important;
+}
+.el-health-status .background-3{
+  	background-color: #49bf67!important;
+}
+.el-health-status .clear{
+	clear: both;
+}

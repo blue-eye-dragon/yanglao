@@ -1,0 +1,100 @@
+开始时间:<input class="j_date" value="2015-02-25 12:00:00">
+结束时间:<input class="j_dateEnd" value="2015-02-26 12:00:00">
+显示宽度:<input  class="j_flotwidth" value=1000>
+<button class="j_query">查询</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.time.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+<script type="text/javascript">
+var drawThing = function(name, deviceId, date, dateEnd){
+	drowArea(name, deviceId);
+	$.get("api/device/thingevent/query", {
+		deviceId:deviceId,
+		date:date,
+		dateEnd:dateEnd
+	}, function(data){
+		var pdata = [];
+		for(i=0;i<data.length;i++) {
+			pdata[i] = [new Date(data[i].date), data[i].value == 'active' ? 1 : 0];
+		}
+		drowPlot(deviceId, pdata, 1, date, dateEnd);
+	});
+};
+
+var drawSleeping = function(name, deviceId, date, dateEnd){
+	drowArea(name, deviceId);
+	$.get("api/test/sleepinganalyse", {
+		member:1,
+		deviceId:"4b4352bc-6f17-40dc-a2c7-c78599704d8c",
+		date:date,
+		dateEnd:dateEnd,
+		orderString:"date"
+	}, function(data){
+		var pdata = [];
+		for(i=0;i<data.length;i++) {
+			var value = 0
+			if (data[i].status.key == "No") {
+				value = 0;
+			} else if (data[i].status.key == "Light") {
+				value = 1;
+			} else {
+				value = 2;
+			}
+			pdata[i] = [new Date(data[i].date), value];
+		}
+		drowPlot(deviceId, pdata, 2, date, dateEnd);
+	});
+};
+
+var drowArea = function(name, deviceId) {
+	if ($(".j_" + deviceId).length == 0) {
+		$("<hr>").appendTo("body");
+		$('<p>' + name + '</p>').addClass("j_" + deviceId + name).appendTo("body");
+	}
+	$(".j_" + deviceId).remove();
+	$(".j_" + deviceId + name).after($("<div></div>").addClass("j_" + deviceId).css({width:$(".j_flotwidth").val() + "px",height:"100px"}));
+};
+
+var drowPlot = function(deviceId, pdata, ymax, date, dateEnd) {
+	$.plot($(".j_" + deviceId), [ pdata ], {
+		xaxes:[{mode:"time",timeformat:"%d日%H点",timezone:"browser",min:moment(date),max:moment(dateEnd)}],
+		yaxis: { max: ymax },
+		lines: { show: true, fill: true, steps: true },
+		grid: { hoverable: true }
+	});
+	$(".j_" + deviceId).bind("plothover", function (event, pos, item) {
+		if(item) {
+			var date = new moment(item.datapoint[0]).format("HH:mm:ss");
+			$("#tooltip").html(date).css({top: item.pageY+5, left: item.pageX+5}).fadeIn(200);
+		} else {
+			$("#tooltip").hide();
+		}
+	});
+};
+
+$(function(){
+	$(".j_query").click(function(){
+		var date = $(".j_date").val();
+		var dateEnd = $(".j_dateEnd").val();
+		drawSleeping("睡眠", "1212", date, dateEnd);
+		drawThing("床头", "4b4352bc-6f17-40dc-a2c7-c78599704d8c", date, dateEnd);
+		drawThing("卧室门内", "e5005a24-8b76-4f7d-a137-5d2cbfe090f3", date, dateEnd);
+		drawThing("卧室门外", "fa2e2112-5881-4463-8a7a-754308a1da0d", date, dateEnd);
+		drawThing("卫生间", "7ba09108-b933-444c-a15b-30612455223a", date, dateEnd);
+
+		$("#tooltip").remove();
+		$("<div id='tooltip'></div>").css({
+			position: "absolute",
+			display: "none",
+			border: "1px solid #fdd",
+			padding: "2px",
+			"background-color": "#fee",
+			opacity: 0.80
+		}).appendTo("body");
+	});
+
+
+});
+</script>

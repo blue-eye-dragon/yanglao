@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+		
+		<!-- 必须引入 -->
+		<link rel="stylesheet" href="../../../framework7/css/framework7.min.css">
+		
+		<!-- 如果需要使用图标，则需要引入下面的css -->
+		<link type="text/css" rel="stylesheet" href="../../../fontawesome/font-awesome.min.css">
+		
+		<!-- 如果有需要覆盖基本样式的css，则写在这个css中 -->
+		<link type="text/css" rel="stylesheet" href="./index_bill.css">
+		
+	</head>
+	
+	<body>
+	    <!-- 全屏蒙版-->
+	    <div class="statusbar-overlay"></div>
+	    
+	    <!-- 侧边栏蒙版 -->
+	    <div class="panel-overlay"></div>
+	    
+	    <!-- 左侧边栏-->
+	    <div class="panel panel-left panel-cover" style="background: #E1E1E1;">
+	        <div class="view view-left navbar-through">
+				<div class="list-block">
+					<div class="list-group J-relatives"></div>
+		        </div>
+	        </div>
+	    </div>
+    
+	    <!-- 视图  -->
+	    <div class="views">
+	    	<div class="view view-main">
+	    		<div class="pages" style="background: none;">
+	    			
+	    		</div>
+	    	</div>
+	    </div>
+	    
+	    <script type="text/javascript" src="../../../requirejs/require.js"></script>
+	    
+	    <script type="text/javascript">
+	  		//入口js文件必须先引入wx-config
+		    require(["../../../config/wx-config"],function(){
+		    	require(["eling/mobile/app_bill/index_bill"]);
+		    });
+	    </script>
+    </body>
+    
+</html>

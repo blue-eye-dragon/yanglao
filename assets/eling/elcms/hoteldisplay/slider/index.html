@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style>
+			body{
+	            font-family: "Microsoft YaHei";
+	            overflow: hidden;
+	            margin: 0;
+	            padding: 0;
+	        }
+			 [class*="html5gallery-box-"]{
+	            top: 0 !important;
+	        }
+	        [class*="html5gallery-elem-img-"]{
+	            margin: 0 0 0 7px !important;
+	        }
+	        [class*=html5gallery-tn-]{
+	            opacity: 1 !important;
+	        }
+	        [class*=html5gallery-car-]{
+	        	display:none !important;
+	        }
+	        [class*=html5gallery-elem-video-container-]{
+	            background: none  !important;
+	        }
+		</style>
+	</head>
+	
+	<body>
+		<div class="J-slider html5gallery" style="display: block; margin: 0px auto; position: relative; width:100%;height: 400px;"
+	         data-skin="gallery"
+	         data-autoplayvideo="true"
+	         data-responsive="true"
+	         data-resizemode="fill"
+	         data-html5player="true"
+	         data-width="800"
+	         data-height="450"
+	         data-autoslide="true"
+	         data-effect="fadeout"
+	         data-shownumbering="true"
+	         data-fv="false"
+	         data-numberingformat="%NUM of %TOTAL - ">
+	    </div>
+	</body>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		var m = window.parent.location.search.substr(1).match(new RegExp("token=([^&]*)"));
+	    $.ajax({
+	        url: "api/hoteldisplay/query",
+	        dataType:"json",
+	        data: {
+	        	token: m ? m[1] : ""
+	        },
+	        success: function(data){
+	        	for(var i=1;i<7;i++){
+	            	if(data[0]["carousel"+i]){
+	            		var a = $("<a></a>").attr("href",data[0]["carousel"+i])
+	            		a.html($("<img>").attr("src",data[0]["carousel"+i]));
+	                	$(".J-slider").append(a);
+	                }
+	            }
+	        	$(".J-slider").attr("data-slideshowinterval",data[0].speed*1000 || 6000);
+	        	var script = document.createElement("script");
+	        	script.type="text/javascript";
+	        	script.src="html5gallery.js";
+	        	document.getElementsByTagName("head")[0].appendChild(script);
+	        }
+	    });
+	</script>
+	
+</html>

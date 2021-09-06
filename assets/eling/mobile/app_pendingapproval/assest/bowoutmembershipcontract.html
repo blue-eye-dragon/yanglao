@@ -1,0 +1,61 @@
+<div class="content-block-title">退会籍信息</div>
+<div class="list-block">
+	<ul>
+		<li class="item-content" style="list-style-type:none;">
+	        <div class="item-inner">
+	            <div class="item-title">权益人</div>
+	            <div class="item-after">
+	            	{{this.name}}
+	            </div>
+	        </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">签约日期</div>
+	             <div class="item-after">
+	             	{{this.membershipContract.signDate}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">会籍费</div>
+	             <div class="item-after">
+	             	{{this.membershipContract.memberShipFees}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">申请人</div>
+	             <div class="item-after">
+	             	{{this.personalCardowner.personalInfo.name}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">申请日期</div>
+	             <div class="item-after">
+	             	{{this.applyDate}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">退会籍费金额</div>
+	             <div class="item-after">
+	             	{{this.bowOutFees}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">退会籍原因</div>
+	             <div class="item-after">
+	             	{{this.bowOutReason}}
+	             </div>
+	         </div>
+		</li>
+	</ul>
+</div>

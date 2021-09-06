@@ -1,0 +1,37 @@
+.el-activitycontrol{
+	text-align: center;
+	font-weight: bold !important;
+}
+
+.el-activitycontrol .activityroom{
+	position: absolute;
+	font-size: 50px;
+	top: 170px;
+	left: 40px;
+}
+
+.el-activitycontrol .activitypanel{
+	position: absolute;
+	top: 260px;
+	height: 600px;
+	width: 94%;
+}
+
+.el-activitycontrol .activitydetail{
+	height: 80px;
+}
+
+.el-activitycontrol .activitycontainer{
+	height: 1000px;
+	position: relative;
+	font-size: 30px;
+}
+
+.el-activitycontrol .activitycontainer img{
+	width: 100%;
+	height: 1030px;
+}
+
+.el-activitycontrol .text-left{
+	text-align: left;
+}

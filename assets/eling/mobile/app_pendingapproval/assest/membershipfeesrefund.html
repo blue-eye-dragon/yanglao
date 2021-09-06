@@ -1,0 +1,53 @@
+<div class="content-block-title">会籍卡费退款信息</div>
+<div class="list-block">
+	<ul>
+		<li class="item-content" style="list-style-type:none;">
+	        <div class="item-inner">
+	            <div class="item-title">权益人</div>
+	            <div class="item-after">
+	            	{{this.name}}
+	            </div>
+	        </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">会籍卡类型</div>
+	             <div class="item-after">
+	             	{{this.memberShipContractFees.memberShipContract.membershipCard.cardType.name}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">房间号</div>
+	             <div class="item-after">
+	             	{{this.room}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">申请日期</div>
+	             <div class="item-after">
+	             	{{this.refundTime}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">退款金额</div>
+	             <div class="item-after">
+	             	{{this.refundAmount}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">申请人</div>
+	             <div class="item-after">
+	             	{{this.refund.name}}
+	             </div>
+	         </div>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,30 @@
+.J-list-member,
+.J-personal-container{
+	display: none;
+}
+
+
+.el-memberliving.list .J-return {
+	display: none;
+}
+.el-memberliving.personal .J-return {
+	display: block;
+}
+
+
+.el-memberliving.list .J-list-member{
+	display: block;
+}
+
+.el-memberliving.personal .J-personal-container{
+	display: block;
+}
+
+
+.el-memberliving.personal.detail .J-personal-container .el-form{
+	display: none;
+}
+
+.el-memberliving.personal.edit .J-personal-container .el-grid{
+	display: none;
+}

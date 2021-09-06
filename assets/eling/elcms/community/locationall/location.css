@@ -1,0 +1,85 @@
+.el-locationall{
+	padding: 0;
+	position: absolute;
+}
+.el-locationall img.background{
+	position: absolute;
+}
+.el-locationall .J-panel table{
+	width:148px;
+	
+}
+.el-locationall .J-panel .J-panel-right-td{
+	color:#33ffff;
+	font-size: 20px;
+	font-weight: bold;
+}
+.el-locationall .J-panel{
+	position: absolute;
+	font-size: 17px;
+    display:none;
+    width: 170px;
+    color: #08bfbf;
+    border-radius:10px;
+    background-color: rgba(0,0,0,0.65);
+    padding: 10px;
+}
+
+.el-locationall .J-monitor{
+	position: absolute;
+	font-size: 17px;
+    display:none;
+    width: 230px;
+    height: 450px;
+    color: white;
+    border-radius:10px;
+    background-color: rgba(0,0,0,0.65);
+    padding: 10px;
+}
+
+.el-locationall .J-monitor-li{
+    height: 350px;
+    overflow-y: scroll;
+}
+
+.el-locationall .emergencyHelp-panel{
+   position: absolute;
+	font-size: 15px;
+    width: 506px;
+    height: 427px;
+    display:none;
+    border-radius:10px;
+    border: 2px solid #c0c0c0;
+    background-color: white;
+    margin-top: 10px;
+    margin-left: 10px;
+    z-index: 99999999999;
+}
+.el-locationall .emergencyHelp-info{
+    height: 20%;
+    width: 100%;
+}
+
+.el-locationall .emergencyHelp-info-phote{
+    width: 36%;
+    height: 120%;
+    padding-left: 13%;
+    padding-top: 1%;
+    vertical-align: top;
+}
+.el-locationall .emergencyHelp-info-detail{
+   display: inline-block;
+    padding-top: 17px;
+    padding-left: 1px;
+}
+.el-locationall .emergencyHelp-info-guanbi{
+   position:absolute;
+   cursor: pointer;
+   height: 30px;
+   right:0;
+}
+
+.el-locationall .emergencyHelp-monitor{
+    height: 80%;
+    width: 100%;
+}

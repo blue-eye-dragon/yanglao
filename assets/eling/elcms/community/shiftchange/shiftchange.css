@@ -1,0 +1,343 @@
+.el-shiftchange .J-member-log {
+	display: block;
+}
+.el-shiftchange .J-member-npanel {
+	display: block;
+}
+
+.el-shiftchange .J-member-nsatt {
+	display: block;
+}
+
+.el-shiftchange .J-member-interview {
+	display: block;
+}
+
+.el-shiftchange .J-member-service {
+	display: block;
+}
+
+.el-shiftchange .J-member-visit {
+	display: block;
+}
+
+.el-shiftchange .J-member-activity {
+	display: block;
+}
+
+.el-shiftchange .J-repair {
+	display: block;
+}
+
+.el-shiftchange .J-routing {
+	display: block;
+}
+
+.el-shiftchange .J-goout {
+	display: block;
+}
+.el-shiftchange .J-shiftchange-start .J-shiftchange-startWorkUserlabel {
+	display: inline-block;
+	text-align: right;
+	font-size: 20px;
+	padding-left: 0.5cm; 
+}
+.el-shiftchange .J-shiftchange-start .J-shiftchange-startWorkUser {
+	display: inline-block;
+	text-align: right;
+	font-size: 20px;
+	
+}
+.el-shiftchange .J-shiftchange-start .J-shiftchange-startWorkDatelabel {
+	display: inline-block;
+	text-align: left;
+	font-size: 20px;
+	padding-left: 0.5cm;
+
+}
+.el-shiftchange .J-shiftchange-start .J-shiftchange-startWorkDate {
+	display: inline-block;
+	text-align: left;
+	font-size: 20px;
+
+}
+.el-shiftchange .J-shiftchange-finish .J-shiftchange-finishWorkUserlabel {
+	display: inline-block;
+	text-align: right;
+	font-size: 20px;
+	padding-left: 0.5cm; 
+	
+}
+.el-shiftchange .J-shiftchange-finish .J-shiftchange-finishWorkUser {
+	display: inline-block;
+	text-align: right;
+	font-size: 20px;
+}
+.el-shiftchange .J-shiftchange-finish .J-shiftchange-finishWorkDatelabel {
+	display: inline-block;
+	text-align: left;
+	font-size: 20px;
+	padding-left: 0.5cm;
+	
+}
+.el-shiftchange .J-shiftchange-finish .J-shiftchange-finishWorkDate {
+	display: inline-block;
+	text-align: left;
+	font-size: 20px;
+	
+}
+
+
+
+.el-shiftchange .J-shiftchange-title {
+	display: none;
+}
+
+.el-shiftchange .J-member-log-print {
+	display: none;
+}
+.el-shiftchange .J-member-npanel-print{
+	display: none;
+}
+
+.el-shiftchange .J-member-nsatt-print {
+	display: none;
+}
+
+.el-shiftchange .J-member-interview-print {
+	display: none;
+}
+
+.el-shiftchange .J-member-service-print {
+	display: none;
+}
+
+.el-shiftchange .J-member-visit-print {
+	display: none;
+}
+
+.el-shiftchange .J-member-activity-print {
+	display: none;
+}
+
+.el-shiftchange .J-repair-print {
+	display: none;
+}
+
+.el-shiftchange .J-routing-print {
+	display: none;
+}
+
+.el-shiftchange .J-goout-print {
+	display: none;
+}
+
+.el-shiftchange .J-matters-print,.el-shiftchange .J-nightShiftAttention-print,
+.el-shiftchange .J-dayShiftAttention-print,.el-shiftchange .J-nightOthers-print,.el-shiftchange .J-exchangeGoods-print{
+	display: none;
+}
+
+/***********设置文本域样式*************/
+.el-shiftchange textarea{
+	padding: 0;
+	display: block;
+	width: 100%;
+	font-size: 14px;
+	line-height: 1.42857;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+}
+
+.el-shiftchange textarea[readonly]{
+	background-color:white;
+}
+
+.el-shiftchange textarea.large{
+	height:auto;
+	min-height: 200px;
+}
+
+.el-shiftchange textarea.small{
+	min-height: 100px;
+	overflow: visible;
+}
+
+@media print {
+	.el-shiftchange.nsc_panel.width_building{
+		width: 15%;
+	}
+	.col-md-2{
+	width: 16.66666%;
+	}
+	.col-md-6{
+	width: 50%
+	}
+	.el-shiftchange .J-subnav {
+		display: none;
+	}
+	.el-shiftchange .J-member-log {
+		display: none;
+		
+	}
+	.el-shiftchange .J-member-npanel {
+		display: none;
+	}
+	.el-shiftchange .J-member-nsatt {
+		display: none;
+	}
+	.el-shiftchange .J-member-interview {
+		display: none;
+	}
+	.el-shiftchange .J-member-service {
+		display: none;
+	}
+	.el-shiftchange .J-member-visit {
+		display: none;
+	}
+	.el-shiftchange .J-member-activity {
+		display: none;
+	}
+	.el-shiftchange .J-repair {
+		display: none;
+	}
+	.el-shiftchange .J-routing {
+		display: none;
+	}
+	.el-shiftchange .J-goout {
+		display: none;
+	}
+	.el-shiftchange .J-shiftchange-title {
+		font-size: 30px;
+		text-align: center;
+		display: block;
+	}
+	.el-shiftchange .J-member-log-print {
+		display: block;
+	}
+	.el-shiftchange .J-member-log-print.nodata {
+		display: none;
+	}
+	.el-shiftchange .J-member-npanel-print{
+		display: block;
+	}
+	.el-shiftchange .J-member-npanel-print.nodata{
+		display: none;
+	}
+	.el-shiftchange .J-member-nsatt-print {
+		display: block;
+	}.el-shiftchange .J-member-nsatt-print.nodata {
+		display: none;
+	}
+	.el-shiftchange .J-member-interview-print {
+		display: block;
+	}
+	.el-shiftchange .J-member-interview-print.nodata {
+		display: none;
+	}
+	.el-shiftchange .J-member-service-print {
+		display: block;
+	}
+	.el-shiftchange .J-member-service-print.nodata {
+		display: none;
+	}
+	.el-shiftchange .J-member-visit-print {
+		display: block;
+	}
+	.el-shiftchange .J-member-visit-print.nodata {
+		display: none;
+	}
+	.el-shiftchange .J-member-activitysignup-print {
+		display: block;
+	}
+	.el-shiftchange .J-member-activitysignup-print.nodata{
+		display: none;
+	}
+	.el-shiftchange .J-repair-print {
+		display: block;
+	}
+	.el-shiftchange .J-repair-print.nodata {
+		display: none;
+	}
+	.el-shiftchange .J-routing-print {
+		display: block;
+	}
+	.el-shiftchange .J-routing-print.nodata {
+		display: none;
+	}
+	.el-shiftchange .J-goout-print {
+		display: block;
+	}
+	.el-shiftchange .J-goout-print.nodata {
+		display: none;
+	}
+	.el-shiftchange .J-shiftchange-start .J-shiftchange-startWorkUserlabel {
+		display: inline-block;
+		text-align: right;
+		font-size: 20px;
+		padding-left: 0.5cm; 
+	}
+	.el-shiftchange .J-shiftchange-start .J-shiftchange-startWorkUser {
+		display: inline-block;
+		text-align: right;
+		font-size: 20px;
+	}
+	.el-shiftchange .J-shiftchange-start .J-shiftchange-startWorkDatelabel {
+		display: inline-block;
+		text-align: left;
+		font-size: 20px;
+		padding-left: 0.5cm; 
+	}
+	.el-shiftchange .J-shiftchange-start .J-shiftchange-startWorkDate {
+		display: inline-block;
+		text-align: left;
+		font-size: 20px;
+	}
+	.el-shiftchange .J-shiftchange-finish .J-shiftchange-finishWorkUserlabel {
+		display: inline-block;
+		text-align: right;
+		font-size: 20px;
+		padding-left: 0.5cm; 
+	}
+	.el-shiftchange .J-shiftchange-finish .J-shiftchange-finishWorkUser {
+		display: inline-block;
+		text-align: right;
+		font-size: 20px;
+	}
+	.el-shiftchange .J-shiftchange-finish .J-shiftchange-finishWorkDatelabel {
+		display: inline-block;
+		text-align: left;
+		font-size: 20px;
+		
+	}
+	.el-shiftchange .J-shiftchange-finish .J-shiftchange-finishWorkDate {
+		display: inline-block;
+		text-align: left;
+		font-size: 20px;
+	}
+	
+	.el-shiftchange textarea.J-matters,.el-shiftchange textarea.J-nightShiftAttention,
+	.el-shiftchange textarea.J-dayShiftAttention,.el-shiftchange textarea.J-nightOthers,.el-shiftchange textarea.J-exchangeGoods{
+		display: none;
+	}
+	.el-shiftchange .J-matters-print,.el-shiftchange .J-nightShiftAttention-print,
+	.el-shiftchange .J-dayShiftAttention-print,.el-shiftchange .J-nightOthers-print,.el-shiftchange .J-exchangeGoods-print{
+		display: block;
+	}
+	.el-shiftchange .J-matters-print pre,.el-shiftchange .J-nightShiftAttention-print pre,
+	.el-shiftchange .J-dayShiftAttention-print pre,.el-shiftchange .J-nightOthers-print pre,
+	.el-shiftchange .J-exchangeGoods-print pre{
+		border: 1px solid #ddd;
+	}
+	/*
+	.el-shiftchange .J-matters-print.nodata,.el-shiftchange .J-nightShiftAttention-print.nodata,
+	.el-shiftchange .J-dayShiftAttention-print.nodata,.el-shiftchange .J-nightOthers-print.nodata,
+	.el-shiftchange .J-exchangeGoods-print.nodata{
+		display: none;
+	}
+	*/
+	.el-shiftchange .J-remark-detail.nodata,.el-shiftchange .J-night.nodata,.el-shiftchange .J-day.nodata,
+	.el-shiftchange .J-others.nodata,.el-shiftchange .J-materialtransfer.nodata
+	{
+		display: none;
+	}
+}

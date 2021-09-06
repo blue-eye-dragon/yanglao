@@ -1,0 +1,36 @@
+.box .box-header {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 30px;
+    text-align: center;
+}
+.box .box-header .title {
+	float: none;
+    color: #3c3c3c;
+}
+@media print {
+	.J-grid-footer{
+		display: none;
+	}
+.el-grid .J-approvalDefineItem_sequenceNumber{
+		height: 8px;
+}
+.el-grid .J-approvalDefineItem_appsidetype.value{
+		height: 8px;
+}
+.el-grid .J-checkTime{
+		height: 8px;
+}
+.el-grid .J-checker_name{
+		height: 8px;
+}
+.el-grid .J-note{
+		height: 8px;
+}
+.el-grid .J-agentChecker_name{
+		height: 8px;
+}
+.el-grid .J-operate{
+		height: 8px;
+}
+}

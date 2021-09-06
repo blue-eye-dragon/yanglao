@@ -1,0 +1,226 @@
+define(function(require,exports,module){
+	var Nutrition={
+		getCalorie:function(){
+			return [{
+				type:"谷类（以米、面粉为例）",
+				intake1:"250",
+				intake2:"5两"
+			},{
+				type:"鱼肉禽蛋（以瘦肉为例）",
+				intake1:"150",
+				intake2:"3两（3份）"
+			},{
+				type:"鲜奶",
+				intake1:"220",
+				intake2:"1瓶250ml"
+			},{
+				type:"豆类或豆制品（以豆腐干为代表）",
+				intake1:"50",
+				intake2:"1两"
+			},{
+				type:"蔬菜",
+				intake1:"450",
+				intake2:"9两"
+			},{
+				type:"水果",
+				intake1:"200",
+				intake2:"4两"
+			},{
+				type:"盐",
+				intake1:"6克",
+				intake2:"4两/月"
+			},{
+				type:"烹调油",
+				intake1:"20克",
+				intake2:"2匙"
+			},{
+				type:"水",
+				intake1:"1500ml",
+				intake2:"6~8杯（约200ml/杯）"
+			}];
+		},
+		setCalorieText:function(data){
+			var text={
+				"1":{
+					"a":"2000千卡/日（男性50 — 60岁）",
+					"b":"1900千卡/日（男性61 — 80岁）",
+					"c":"1800千卡/日（男性80岁以上）"
+				},
+				"2":{
+					"a":"1900千卡/日（女性50 — 60岁）",
+					"b":"1800千卡/日（女性61 — 80岁）",
+					"c":"1700千卡/日（女性80岁以上）"
+				}
+			};
+			text=text[(data.personalInfo.sex.key == "MALE" ? 1 : 2)];
+			var birthday = data.personalInfo.birthday;
+			var age = moment().diff(birthday, 'years');
+			if(age >= 50 && age <= 60){
+				text=text.a;
+			}else if(age >= 61 && age <= 80){
+				text=text.b;
+			}else{
+				text=text.c;
+			}
+			return $(".J-calorie-text").text("我们根据您的年龄、身高、体重、劳动强度、身体状况，建议您每日所应摄取的能量——能量推荐：("+text+")");
+		},
+		getSuggest:function(){
+			return [{
+				mealtime:"早餐",
+				foodtype:"谷类、蛋类、奶类",
+				content:"咸面包75克，鸡蛋1个，牛奶：250ml（1瓶）"
+			},{
+				mealtime:"中餐",
+				foodtype:"谷类、肉鱼禽豆、蔬菜、油脂",
+				content:"大米100克，豆腐干50克，瘦猪肉25克，番茄100克，芹菜100克，豆油13克"
+			},{
+				mealtime:"晚餐",
+				foodtype:"谷类、肉鱼禽豆、蔬菜、油脂",
+				content:"挂面75克，青菜200克、牛肉50克，豆油7克"
+			},{
+				mealtime:"上午加餐",
+				foodtype:"水果",
+				content:"苹果100~200克（1个）"
+			},{
+				mealtime:"下午加餐",
+				foodtype:"杂粮",
+				content:"玉米棒200克（1个）"
+			}];
+		},
+		getValley:function(){
+			return [{
+				food1:"大米、小米、糯米、薏米",
+				weight1:"25",
+				food2:"绿豆、红豆、芸豆、干豌豆",
+				weight2:"25"
+			},{
+				food1:"高粱米、玉米渣",
+				weight1:"25",
+				food2:"干粉条、干莲子",
+				weight2:"25"
+			},{
+				food1:"面粉、米粉、玉米面",
+				weight1:"25",
+				food2:"油条、油饼、苏打饼干",
+				weight2:"25"
+			},{
+				food1:"混合面",
+				weight1:"25",
+				food2:"烧饼、烙饼、馒头",
+				weight2:"35"
+			},{
+				food1:"燕麦片、莜麦面、荞麦面",
+				weight1:"25",
+				food2:"咸面包、窝头",
+				weight2:"35"
+			},{
+				food1:"鲜玉米棒（1中个带棒心）",
+				weight1:"200",
+				food2:"生面条、魔芋生面条",
+				weight2:"35"
+			},{
+				food1:"各种挂面、龙须面",
+				weight1:"25",
+				food2:"马铃薯",
+				weight2:"100"
+			}];
+		},
+		getMeat:function(){
+			return [{
+				food1:"肥瘦猪肉",
+				weight1:"25",
+				food2:"鸡蛋粉",
+				weight2:"15"
+			},{
+				food1:"熟火腿、香肠",
+				weight1:"20",
+				food2:"鸡蛋（带壳）",
+				weight2:"60"
+			},{
+				food1:"熟叉烧肉（无糖）、午餐肉",
+				weight1:"35",
+				food2:"鸭蛋（带壳）",
+				weight2:"60"
+			},{
+				food1:"熟酱牛肉、熟酱鸭、大肉肠",
+				weight1:"35",
+				food2:"鹌鹑蛋（带壳）",
+				weight2:"60"
+			},{
+				food1:"瘦猪、牛、羊肉",
+				weight1:"50",
+				food2:"鸡蛋清",
+				weight2:"150"
+			},{
+				food1:"带骨排骨",
+				weight1:"50",
+				food2:"带鱼",
+				weight2:"80"
+			},{
+				food1:"鸭肉",
+				weight1:"50",
+				food2:"草鱼、鲤鱼",
+				weight2:"80"
+			},{
+				food1:"鹅肉",
+				weight1:"50",
+				food2:"对虾、青虾",
+				weight2:"80"
+			},{
+				food1:"蟹肉、水浸鱿鱼",
+				weight1:"100",
+				food2:"水浸海参",
+				weight2:"350"
+			}];
+		},
+		getVegetable:function(){
+			return [{
+				food1:"大白菜、菠菜、油菜、韭菜",
+				weight1:"500",
+				food2:"白萝卜、青椒、茭白、冬笋",
+				weight2:"400"
+			},{
+				food1:"芹菜、油菜苔、莴笋",
+				weight1:"500",
+				food2:"南瓜、菜花",
+				weight2:"350"
+			},{
+				food1:"西葫芦、西红柿、冬瓜、苦瓜",
+				weight1:"500",
+				food2:"扁豆、洋葱、蒜苗",
+				weight2:"250"
+			},{
+				food1:"黄瓜、茄子、丝瓜",
+				weight1:"500",
+				food2:"胡萝卜",
+				weight2:"200"
+			},{
+				food1:"芥蓝菜、蕹菜、苋菜",
+				weight1:"500",
+				food2:"山药、荸荠、藕、凉薯",
+				weight2:"150"
+			},{
+				food1:"绿豆芽、鲜蘑、水浸海带",
+				weight1:"500",
+				food2:"蘑菇、百合、芋头",
+				weight2:"100"
+			},{
+				food1:"",
+				weight1:"",
+				food2:"毛豆、鲜豌豆",
+				weight2:"70"
+			}];
+		},
+		getSports:function(){
+			return [{
+				allow:"增加动力性身体活动时间。如减少坐、卧时间，增加运动时间等。",
+				abandon:"长时间保持静力性身体活动。如久坐、久卧等。"
+			},{
+				allow:"每周至少2次有氧运动",
+				abandon:"长期不进行体育锻炼"
+			}];
+		}
+	};
+	
+	module.exports=Nutrition;
+});

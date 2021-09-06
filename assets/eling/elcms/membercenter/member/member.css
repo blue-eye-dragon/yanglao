@@ -1,0 +1,119 @@
+/*----------------------------总体处理----------------------------*/
+.el-member .J-member-container,.el-member .J-relative-container,.el-member .J-contract-container,
+	.el-member .J-guarantor-container,.el-member .J-accompany-container,.el-member .J-otherrelation-container,.el-member .J-list{
+	display: none;
+}
+
+.el-member.list .J-list{
+	display: block;
+}
+
+/*----------------------------subnav按钮默认----------------------------*/
+.el-member .J-return,.el-member .J-modify,.el-member .J-datatype{
+	display: none;
+}
+/*----------------------------返回按钮----------------------------*/
+.el-member.member .J-return,.el-member.relative .J-return,.el-member.contract .J-return,
+	.el-member.guarantor .J-return,.el-member.accompany .J-return,.el-member.otherrelation .J-return{
+	display: inline-block;
+}
+/*----------------------------编辑按钮----------------------------*/
+.el-member.detail .J-modify{
+	display: inline-block;
+}
+
+.el-member.edit .J-modify{
+	display: none;
+}
+.el-member.relative .J-modify,.el-member.guarantor .J-modify,.el-member.contract .J-modify,.el-member.accompany .J-modify,.el-member.otherrelation .J-modify{
+	display: none;
+}
+/*----------------------------生活健康快乐buttonGroup----------------------------*/
+.el-member.member .J-datatype,.el-member.guarantor .J-datatype{
+	display: inline-block;
+}
+
+
+/*---会员---*/
+.el-member.member .J-member-container{
+	display: block;
+}
+
+.el-member.member .J-list{
+	display: none;
+}
+
+/*---子女信息---*/
+.el-member.relative .J-relative-container{
+	display: block;
+}
+
+.el-member.relative .J-list{
+	display: none;
+}
+
+.el-member.relative.detail .J-relative-container .el-form{
+	display: none;
+}
+
+.el-member.relative.edit .J-relative-container .el-grid{
+	display: none;
+}
+
+/*担保人信息*/
+.el-member.guarantor .J-guarantor-container{
+	display: block;
+}
+
+.el-member.guarantor .J-list{
+	display: none;
+}
+
+.el-member.guarantor.detail .J-guarantor-container .el-form{
+	display: none;
+}
+
+.el-member.guarantor.edit .J-guarantor-container .el-grid{
+	display: none;
+}
+/*其他社会联系人信息*/
+.el-member.otherrelation .J-otherrelation-container{
+	display: block;
+}
+
+.el-member.otherrelation .J-list{
+	display: none;
+}
+
+.el-member.otherrelation.detail .J-otherrelation-container .el-form{
+	display: none;
+}
+
+.el-member.otherrelation.edit .J-otherrelation-container .el-grid{
+	display: none;
+}
+/*联系人信息*/
+.el-member.contract .J-contract-container{
+	display: block;
+}
+
+.el-member.contract .J-list{
+	display: none;
+}
+
+.el-member.contract.detail .J-contract-container .el-form{
+	display: none;
+}
+
+.el-member.contract.edit .J-contract-container .el-grid{
+	display: none;
+}
+
+/*陪住人信息*/
+.el-member.accompany .J-accompany-container{
+	display: block;
+}
+
+.el-member.accompany .J-list{
+	display: none;
+}

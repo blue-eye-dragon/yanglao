@@ -1,0 +1,14 @@
+<div class="list-block">
+	<ul>
+		{{#each this}}
+		<li>
+			<label class="label-radio item-content">
+				<input type="radio" name="my-radio" {{#if this.isDefault}}checked="checked"{{/if}}>
+        		<div id="{{this.pkMember}}" class="item-inner J-member-item">
+          			<div class="item-title">{{this.personalInfo.name}} {{this.memberSigning.room.number}}</div>
+        		</div>
+      		</label>
+    	</li>
+    	{{/each}}
+  	</ul>
+</div>                       

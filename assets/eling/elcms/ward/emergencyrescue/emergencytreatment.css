@@ -1,0 +1,44 @@
+.J-list-member,
+.J-personal-container{
+	display: none;
+}
+
+
+.el-ward-emergencyrescue .width_sosNo {
+	width: 8%;
+}
+.el-ward-emergencyrescue .width_sosTime {
+	width: 10%;
+}
+.el-ward-emergencyrescue .width_alarmType {
+	width: 6%;
+}
+.el-ward-emergencyrescue .width_sosType {
+	width: 6%;
+}
+.el-ward-emergencyrescue .width_personLiable{
+	width: 6%;
+}
+.el-ward-emergencyrescue .width_hospitalize{
+	width: 6%;
+}
+.el-ward-emergencyrescue .width_flowStatus{
+	width: 5%;
+}
+.el-ward-emergencyrescue .width_place{
+	width: 5%;
+}
+.el-ward-emergencyrescue .width_operate{
+	width: 6%;
+}
+.el-ward-emergencyrescue .width_member{
+	width: 5%;
+}
+.el-ward-emergencyrescue .width_content{
+	width: 17%;
+}
+.el-ward-emergencyrescue .form_content{
+	max-height: 130px;
+	min-height: 130px;
+	width:170%;
+}

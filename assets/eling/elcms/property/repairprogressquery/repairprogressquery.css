@@ -1,0 +1,26 @@
+.el-repairprogressquery .repairNo {
+	width: 11%;
+}
+.el-repairprogressquery .place {
+	width: 7%;
+}
+.el-repairprogressquery .repairClassify {
+	width: 7%;
+}
+.el-repairprogressquery .content {
+	width: 14%;
+}
+.el-repairprogressquery .ifSignificant {
+	width: 6%;
+}
+.el-repairprogressquery .time {
+	width: 10%;
+}
+.el-repairprogressquery .from {
+	width: 8%;
+}
+.el-repairprogressquery .flowStatus {
+	width: 7%;
+}
+
+

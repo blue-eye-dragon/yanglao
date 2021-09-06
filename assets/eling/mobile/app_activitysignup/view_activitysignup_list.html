@@ -1,0 +1,33 @@
+<div class="pages">
+	<div data-page="list" class="page navbar-fixed toolbar-fixed">
+		<!-- 导航条  -->
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="left">
+					<a href="#" class="link icon-only open-panel">
+						<i class="icon icon-bars"></i>
+					</a>
+				</div>
+				<div class="center">{{this.personalInfo.name}}</div>
+			</div>
+		</div>
+		
+		<!-- 主页面 -->
+		<div class="page-content  infinite-scroll">
+			<div class="content-block-title title">活动报名列表</div>
+	 		<div class="list-block accordion-list">
+				<ul>
+					<div class="J-detail-container"></div>
+					<!-- {{#each this.datas}}
+						
+					{{/each}} -->
+				</ul>
+			</div>
+			<!-- 加载提示符-->
+			<div class="infinite-scroll-preloader">
+			    <div class="preloader"></div>
+			</div> 
+		</div>
+		
+	</div>
+</div>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <title>上海亲和源老年度假酒店</title>
+    <link type="text/css" rel="stylesheet" href="clock/css/demo.css">
+    
+    <style>
+        body{
+            font-family: "Microsoft YaHei";
+            overflow: hidden;
+            background:url(./bg.png);
+            position: relative;
+            background-repeat: no-repeat;
+            width:1080px;
+            height:1920px;
+        }
+        .weatherContainer{
+            position: absolute;
+            top:136px;
+            left:34px;
+        }
+        .currenWeatherImg{
+            width:90px;
+            height: 90px;
+            display: inline-block;
+            vertical-align: top;
+            background: url("weather-icon-big.png");
+            background-position: 1000px 1000px;
+            background-repeat: no-repeat;
+        }
+        .futureWeatherImg{
+            width:26px;
+            height: 26px;
+            display: inline-block;
+            vertical-align: middle;
+            background: url("weather-icon-small.png");
+            background-position: 1000px 1000px;
+            background-repeat: no-repeat;
+            margin: 0 4px;
+        }
+        .currenWeatherDesc{
+            margin-left: 50px;
+            margin-top: -5px;
+            color:white;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .futureWeather{
+            margin-top: 22px;
+            padding-left: 12px;
+            font-size: 14px;
+            width: 286px;
+            height: 38px;
+            line-height:38px;
+            color:white;
+            background: #353659;
+        }
+        .clockContainer{
+            position: absolute;
+		    top: -50px;
+		    left: 600px;
+        }
+        .subClockContainer{
+            position: absolute;
+            top: 352px;
+            right: 0;
+        }
+        .sliderContainer{
+        	position: absolute;
+        	top: 482px;
+       	    margin-left: 10.5px;
+    		margin-right: 10.5px;
+    		width: 98%;
+        }
+        .verLine{
+            position: absolute;
+            left:110px;
+            width:4px;
+            height: 90px;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+<div class="weatherContainer">
+        <div class="J-weather-big currenWeatherImg">
+            <div class="verLine"></div>
+        </div>
+        <div class="currenWeatherDesc">
+            <div style="font-size: 18px" class="J-text"></div>
+            <div style="font-size: 28px" class="J-temperature"></div>
+            <div style="font-size: 18px" class="J-huminity"></div>
+            <div style="font-size: 14px;margin-top: 5px;" class="J-date"></div>
+        </div>
+        <div>
+            <div class="futureWeather"></div>
+            <div class="futureWeather"></div>
+            <div class="futureWeather"></div>
+        </div>
+    </div>
+    <div class="clockContainer">
+    </div>
+    <div class="subClockContainer">
+        <iframe src="sub-clock/index.html" width="700" height="600" frameborder="no" scrolling="no"></iframe>
+    </div>
+    <div class="sliderContainer">
+        <iframe src="slider/index.html" width="100%" height="600" frameborder="no" scrolling="no"></iframe>
+    </div>
+    
+    <div style="position: absolute;top: 1140px;color:white;width:100%;text-align: center;font-size: 62px;">
+        <div class="J-normalDoubleRoom" style="margin-top: 38px;margin-left:500px;"></div>
+        <div class="J-richDoubleRoom" style="margin-top: 34px;margin-left:500px;"></div>
+        <div class="J-normalSuite" style="margin-top: 34px;margin-left:500px;"></div>
+        <div class="J-richSuite" style="margin-top: 34px;margin-left:500px;"></div>
+        <div class="J-presidentialSuite" style="margin-top: 34px;margin-left:500px;"></div>
+    </div>
+</body>
+
+<script src="jquery-debug.js"></script>
+<script src="moment-2.1.0.js"></script>
+<script src="clock/js/script.js"></script>
+<script type="text/javascript">
+	function queryWeather(){
+		//查询天气
+	    $.ajax({
+	        url:"https://query.yahooapis.com/v1/public/yql?"+
+	            "q=select * from weather.forecast where woeid=2151849&diagnostics=true&format=json",
+	        dataType:"jsonp",
+	        jsonp:"callback",
+	        success:function(data){
+	            var dayOfWeek = ["日","一","二","三","四","五","六"];
+	            var weather={
+	                "0":{text:"龙卷风",position_x:3,position_y:3},
+	                "1":{text:"风暴",position_x:3,position_y:3},
+	                "2":{text:"飓风",position_x:3,position_y:3},
+	                "3":{text:"雷雨",position_x:4,position_y:0},
+	                "4":{text:"雷雨",position_x:4,position_y:0},
+	                "5":{text:"雨夹雪",position_x:2,position_y:3},
+	                "6":{text:"雨夹雪",position_x:2,position_y:3},
+	                "7":{text:"雨夹雪",position_x:2,position_y:3},
+	                "8":{text:"阵雨",position_x:0,position_y:1},
+	                "9":{text:"阵雨",position_x:0,position_y:1},
+	                "10":{text:"阵雨",position_x:0,position_y:1},
+	                "11":{text:"阵雨",position_x:0,position_y:1},
+	                "12":{text:"阵雨",position_x:0,position_y:1},
+	                "13":{text:"阵雪",position_x:4,position_y:1},
+	                "14":{text:"阵雪",position_x:4,position_y:1},
+	                "15":{text:"阵雪",position_x:4,position_y:1},
+	                "16":{text:"阵雪",position_x:4,position_y:1},
+	                "17":{text:"冰雹",position_x:1,position_y:3},
+	                "18":{text:"雨夹雪",position_x:1,position_y:3},
+	                "19":{text:"霾",position_x:3,position_y:0},
+	                "20":{text:"晴",position_x:0,position_y:0},
+	                "21":{text:"霾",position_x:3,position_y:1},
+	                "22":{text:"霾",position_x:3,position_y:1},
+	                "23":{text:"风",position_x:3,position_y:3},
+	                "24":{text:"大风",position_x:3,position_y:3},
+	                "25":{text:"大风",position_x:3,position_y:3},
+	                "26":{text:"多云",position_x:1,position_y:0},
+	                "27":{text:"多云",position_x:1,position_y:0},
+	                "28":{text:"多云",position_x:1,position_y:0},
+	                "29":{text:"晴转多云",position_x:4,position_y:0},
+	                "30":{text:"晴转多云",position_x:4,position_y:0},
+	                "31":{text:"晴",position_x:0,position_y:0},
+	                "32":{text:"晴",position_x:0,position_y:0},
+	                "33":{text:"晴",position_x:0,position_y:0},
+	                "34":{text:"晴",position_x:0,position_y:0},
+	                "35":{text:"冰雹",position_x:1,position_y:3},
+	                "36":{text:"晴",position_x:0,position_y:0},
+	                "37":{text:"雷雨",position_x:4,position_y:0},
+	                "38":{text:"雷雨",position_x:4,position_y:0},
+	                "39":{text:"雷雨",position_x:4,position_y:0},
+	                "40":{text:"阵雨",position_x:0,position_y:1},
+	                "41":{text:"大雪",position_x:0,position_y:3},
+	                "42":{text:"雨夹雪",position_x:1,position_y:2},
+	                "43":{text:"阵雪",position_x:1,position_y:2},
+	                "44":{text:"多云",position_x:1,position_y:0},
+	                "45":{text:"雷雨",position_x:4,position_y:0},
+	                "46":{text:"雨夹雪",position_x:1,position_y:2},
+	                "47":{text:"雷雨",position_x:4,position_y:0}
+	            };
+
+	            var results=data.query.results.channel.item.forecast || {};
+	            var current=data.query.results.channel.item.condition || {};
+	            var temperature = parseInt((results[0].low-32)*5/9)+"℃"+"-"+parseInt((results[0].high-32)*5/9)+"℃"
+	            $(".J-text").text(weather[current.code].text || "");
+	            $(".J-temperature").text(temperature);
+	            $(".J-huminity").text("湿度：" + data.query.results.channel.atmosphere.humidity + "%");
+	            $(".J-date").text(moment().format("YYYY年MM月DD日") + "星期" + dayOfWeek[moment().days()]);
+	            $(".J-weather-big").css({
+	                "background-position":("-"+weather[current.code].position_x*90)+
+	                        "px " +
+	                        ("-"+weather[current.code].position_y * 90) + "px"
+	            });
+
+	            var forecast = results || [];
+	            for(var i=1;i<4;i++){
+	                var date = moment().add("days",i)
+	                var str = date.format("MM月DD日") + " " +
+	                        "星期" + dayOfWeek[date.days()] + " " +
+	                        "<span class='futureWeatherImg' " +
+	                        "style='background-position: "+
+	                            ("-" + weather[current.code].position_x*26)+"px "+
+	                            ("-" + weather[current.code].position_y*26) + "px'></span>"+
+	                        weather[forecast[i-1].code].text + " " +
+	                        parseInt((forecast[i-1].low-32)*5/9)+"℃"+"-"+parseInt((forecast[i-1].high-32)*5/9)+"℃"
+	                $(".futureWeather").eq(i-1).html(str);
+	            }
+	        }
+	    });
+	}
+	
+	queryWeather();
+	
+	function queryDisplay(){
+		var m = window.location.search.substr(1).match(new RegExp("token=([^&]*)"));
+	    $.ajax({
+	        url: "api/hoteldisplay/query",
+	        dataType:"json",
+	        data: {
+	        	token: m ? m[1] : ""
+	        },
+	        success: function(data){
+	        	
+	        	$(".J-normalDoubleRoom").text(data[0].normalDoubleRoom || "—");
+	            $(".J-richDoubleRoom").text(data[0].richDoubleRoom || "—");
+	            $(".J-normalSuite").text(data[0].normalSuite || "—");
+	            $(".J-richSuite").text(data[0].richSuite || "—");
+	            $(".J-presidentialSuite").text(data[0].presidentialSuite || "—");
+	        	
+	        	if(!window.oldData){
+	        		window.oldData = {};
+	        	}
+	            //比较一下前后两次的数据，如果相同则不再变化，如果不同，则需要重新变化
+	            if(window.oldData.carousel1 != data[0].carousel1 || window.oldData.carousel2 != data[0].carousel2 || 
+	            		window.oldData.carousel3 != data[0].carousel3 || window.oldData.carousel4 != data[0].carousel4 || 
+	            		window.oldData.carousel5 != data[0].carousel5 || window.oldData.carousel6 != data[0].carousel6){
+	            	$("iframe")[1].contentWindow.location.reload();
+	            }
+	            
+	            window.oldData = data[0];
+	        }
+	    });
+	}
+	
+	queryDisplay();
+	
+	window.setInterval(function(){
+		queryWeather();
+		queryDisplay();
+	},30*60*1000);
+
+</script>
+<script src=""></script>
+
+</html>

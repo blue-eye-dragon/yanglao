@@ -1,0 +1,53 @@
+<div class="content-block-title">服务费退款信息</div>
+<div class="list-block">
+	<ul>
+		<li class="item-content" style="list-style-type:none;">
+	        <div class="item-inner">
+	            <div class="item-title">付款人:</div>
+	            <div class="item-after">
+	            	{{this.annualFees.payer.personalInfo.name}}
+	            </div>
+	        </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">应收服务费:</div>
+	             <div class="item-after">
+	             	{{this.annualFees.dueAnnualFees}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">实收服务费:</div>
+	             <div class="item-after">
+	             	{{this.annualFees.realAnnualFees}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">申请人:</div>
+	             <div class="item-after">
+	             	{{this.personalInfo.name}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">退费来源:</div>
+	             <div class="item-after">
+	             	{{this.annualFeesRefundFrom.value}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">退款原因:</div>
+	             <div class="item-after">
+	             	{{this.refundReason}}
+	             </div>
+	         </div>
+		</li>
+	</ul>
+</div>

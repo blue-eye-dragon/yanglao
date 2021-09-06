@@ -1,0 +1,13 @@
+{
+  "name": "com.eling.elcms",
+  "version": "0.0.0",
+  "devDependencies": {
+    "karma":"",
+    "jasmine-core":"",
+    "karma-jasmine":"0.3.8",
+    "mocha":"",
+    "karma-mocha":"",
+    "karma-chrome-launcher":"",
+    "karma-seajs": ""
+  }
+}

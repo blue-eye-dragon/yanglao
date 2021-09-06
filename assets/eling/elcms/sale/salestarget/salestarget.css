@@ -1,0 +1,28 @@
+.el-salestarget .name {
+	width: 10%;
+}
+.el-salestarget .effectiveDate {
+	width: 10%;
+}
+.el-salestarget .firstQuarter {
+	width: 10%;
+}
+.el-salestarget .secondQuarter {
+	width: 10%;
+}
+.el-salestarget .thirdQuarter {
+	width: 10%;
+}
+.el-salestarget .fourthQuarter {
+	width: 10%;
+}
+.el-salestarget .yearTarget {
+	width: 10%;
+}
+.el-salestarget .description {
+	width: 20%;
+}
+.el-salestarget .operate {
+	width:  10%;
+}
+

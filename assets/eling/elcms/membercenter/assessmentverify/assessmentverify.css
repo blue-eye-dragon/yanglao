@@ -1,0 +1,18 @@
+@media print {
+	.J-grid-footer{
+		display: none;
+	}
+	.J-form  {
+		display: none;
+	}
+	.J-printform  {
+		 display: block !important;
+   		 visibility: visible !important;
+	}
+	.J-subnav-button-return{
+		display: none;
+	}
+	.J-subnav-button-print{
+		display: none;
+	}
+}

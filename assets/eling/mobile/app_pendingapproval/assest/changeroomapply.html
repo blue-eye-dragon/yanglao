@@ -1,0 +1,79 @@
+<div class="content-block-title">换房信息</div>
+<div class="list-block">
+	<ul>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">会员</div>
+	             <div class="item-after">
+	             	{{this.name}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	        <div class="item-inner">
+	            <div class="item-title">原房间号</div>
+	            <div class="item-after">
+	            	{{this.memberSigning.room.number}}
+	            </div>
+	        </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">新房间号</div>
+	             <div class="item-after">
+	             	{{this.room.number}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">新房间服务费</div>
+	             <div class="item-after">
+	             	{{this.annualFeeNew}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">原房间服务费</div>
+	             <div class="item-after">
+	             	{{this.memberSigning.annualFee}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">申请人</div>
+	             <div class="item-after">
+	             	{{this.personalInfo.name}}
+	             </div>
+	         </div>
+		</li>
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">经手人</div>
+	             <div class="item-after">
+	             	{{this.user.name}}
+	             </div>
+	         </div>
+		</li>
+		
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">换房日期</div>
+	             <div class="item-after">
+	             	{{this.changeDate}}
+	             </div>
+	         </div>
+		</li>
+		
+		<li class="item-content" style="list-style-type:none;">
+	         <div class="item-inner">
+	             <div class="item-title">换房原因</div>
+	             <div class="item-after">
+	             	{{this.changeReason}}
+	             </div>
+	         </div>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,46 @@
+.el-panel .ajaxloader{
+	background: url("assets/eling/resources/ajaxloader/ajaxloader.gif") no-repeat;
+	height: 50px;
+	background-position: 50%;
+}
+
+.el-panel .form-control{
+	border: 0 none;
+	box-shadow:none;
+	-webkit-box-shadow:none;
+	-molliza-box-shadow:none;
+}
+
+.el-panel .el-panel-row{
+	font-size: 14px;
+  	line-height: 1.42857;
+  	color: #555555;
+  	margin-left: 0;
+	margin-right: 0;
+	padding: 15px 0;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 0;
+}
+
+.el-panel .el-panel-row:nth-child(even){
+	background-color:#f4f4f4;
+}
+
+.el-panel .item,.el-panel .item span,.el-panel .item label{
+	display: inline-block;
+}
+
+.el-panel .item span{
+	text-align: left;
+}
+
+.el-panel .item label{
+	text-align: right;
+}
+
+@media print{
+	.el-panel .el-panel-row{
+		padding: 0 !important;
+		border-bottom: 0 none !important;
+	}
+}

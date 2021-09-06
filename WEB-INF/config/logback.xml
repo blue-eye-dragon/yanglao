@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+
+	<logger name="com.eling" level="debug" />
+	<logger name="jdbc.sqlonly" level="debug" />
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${user.home}/com.eling.elcms.community-1.19.7.13/logs/logFile.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>${user.home}/com.eling.elcms.community-1.19.7.13/logs/logFile.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>%-5level %d{MM-dd HH:mm:ss.SSS} [%thread] %logger{36} -%msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%-5level %d{HH:mm:ss.SSS} [%thread] %logger{36} -%msg%n</Pattern>
+		</layout>
+	</appender>
+
+	<root level="error">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

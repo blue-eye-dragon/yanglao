@@ -1,0 +1,32 @@
+.J-list-furnishing,
+.J-grid-furnishing{
+	display: none;
+}
+
+.el-furnishing.grid .J-save,
+.el-furnishing.grid .J-return,
+.el-furnishing.list .J-status {
+	display: block;
+}
+
+.el-furnishing.list .J-save,
+.el-furnishing.list .J-return,
+.el-furnishing.grid .J-status {
+	display: none;
+}
+
+
+.el-furnishing.list .J-return {
+	display: none;
+}
+.el-furnishing.grid .J-return {
+	display: block;
+}
+
+
+.el-furnishing.grid .J-grid-furnishing,
+.el-furnishing.list .J-list-furnishing{
+	display: block;
+}
+
+

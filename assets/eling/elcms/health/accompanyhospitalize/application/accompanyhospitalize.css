@@ -1,0 +1,91 @@
+.el-health-accompanyhospitalize.main .J-return,
+		.el-health-accompanyhospitalize.main .J-healthStatus,
+		.el-health-accompanyhospitalize.main .J-form,
+		.el-health-accompanyhospitalize.main .J-editForm{
+	display: none;
+}
+
+.el-health-accompanyhospitalize.form .J-add,
+		.el-health-accompanyhospitalize.form .J-dateTime,
+		.el-health-accompanyhospitalize.form .J-healthStatus,
+		.el-health-accompanyhospitalize.form .J-grid,
+		.el-health-accompanyhospitalize.form .J-editForm{
+	display: none;
+}
+
+.el-health-accompanyhospitalize.editform .J-add,
+		.el-health-accompanyhospitalize.editform .J-building,
+		.el-health-accompanyhospitalize.editform .J-dateTime,
+		.el-health-accompanyhospitalize.editform .J-grid,
+		.el-health-accompanyhospitalize.editform .J-form{
+	display: none;
+}
+
+.el-health-accompanyhospitalize .J-printGrid,
+.el-health-accompanyhospitalize .J-printGrid-title,
+.el-health-accompanyhospitalize .J-printGrid-footer{
+	display: none;
+}
+
+.el-health-accompanyhospitalize .J-printGrid .box .box-content{
+	border:0 none;
+}
+
+@media print{
+	.el-health-accompanyhospitalize .J-subnav,
+	.el-health-accompanyhospitalize .J-grid,
+	.el-health-accompanyhospitalize .J-form,
+	.el-health-accompanyhospitalize .J-editForm{
+		display: none;
+	}
+	
+	.el-health-accompanyhospitalize .J-printGrid{
+		display: block;
+	}
+	
+	.el-health-accompanyhospitalize .width_member{
+		width: 18%;
+	}
+	.el-health-accompanyhospitalize .width_papers{
+		width: 15%;
+	}
+	.el-health-accompanyhospitalize .width_sex{
+		width: 7%;
+	}
+	.el-health-accompanyhospitalize .width_birthday{
+		width: 7%;
+	}
+	.el-health-accompanyhospitalize .width_h_d{
+		width: 20%;
+	}
+	.el-health-accompanyhospitalize .width_description{
+		width: 33%;
+	}
+	.el-health-accompanyhospitalize .J-printGrid-title,.el-health-accompanyhospitalize .J-printGrid-footer{
+		display: block;
+	}
+	.el-health-accompanyhospitalize .J-printGrid{
+		display: block;
+		margin-top: 20px;
+	}
+	.el-health-accompanyhospitalize .J-printGrid-title{
+		display: block;
+		text-align: center;
+		font-size: 30px;
+	}
+	.el-health-accompanyhospitalize .J-printGrid-footer{
+		display: block;
+		margin-top: 20px;
+	}
+	.el-health-accompanyhospitalize .J-printGrid-footer .J-name{
+		text-align: left;
+		margin-left: 30px;
+		float: left;
+	}
+	
+	.el-health-accompanyhospitalize .J-printGrid-footer .J-printtime{
+		text-align: right;
+		margin-right: 20px;
+		float: right;
+	}
+}

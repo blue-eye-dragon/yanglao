@@ -1,0 +1,28 @@
+.el-memberstatus .pricing-tables{
+	margin-left: 20%;
+	padding-top: 15px;
+}
+
+.el-memberstatus .base_life_heal_hpy_btn{
+	display: block !important;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.el-memberstatus .text_left{
+	text-align: left;
+	padding: 0px;
+}
+
+.el-memberstatus .text_right{
+	text-align: right;
+	padding: 0 10% 0 0;
+}
+
+.el-memberstatus .img-responsive{
+	width: 100%;
+}
+
+.el-memberstatus .panel{
+	margin-top: 10px;
+}

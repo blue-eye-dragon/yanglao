@@ -1,0 +1,7 @@
+.el-notifyshow #carousel_container{
+	padding: 0 !important;
+}
+
+.el-notifyshow .caroufredsel_wrapper{
+	width: auto !important;
+}

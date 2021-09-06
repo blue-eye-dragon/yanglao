@@ -1,0 +1,27 @@
+.el-contractmachineaccount .departmentname{
+	width:10%;
+}
+.el-contractmachineaccount .name{
+	width:10%;
+}
+.el-contractmachineaccount .contractcategorysetcategory{
+	width:10%;
+}
+.el-contractmachineaccount .relative{
+	width:10%;
+}
+.el-contractmachineaccount .agreementStartTime{
+	width:15%;
+}
+.el-contractmachineaccount .agreementendTime{
+	width:15%;
+}
+.el-contractmachineaccount .advanceTime{
+	width:10%;
+}
+.el-contractmachineaccount .username{
+	width:10%;
+}
+.el-contractmachineaccount .operate{
+	width:10%;
+}

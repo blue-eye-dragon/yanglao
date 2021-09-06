@@ -1,0 +1,62 @@
+.el-location{
+	padding: 0;
+}
+.el-location img.background{
+	position: absolute;
+}
+.el-location .icon-map-marker{
+	color: red;
+	position: absolute;
+	cursor: pointer;
+	font-size: 50px;
+}
+.el-location .icon-map-marker-grey{
+	color: grey;
+	position: absolute;
+	cursor: pointer;
+	font-size: 50px;
+}
+.el-location .tip{
+	position: absolute;
+}
+.el-location .tipContainer{
+	width: 350px;
+	height: 350px;
+	position: absolute;
+	border-radius: 5px;
+}
+.el-location .member-img{
+	width: 99px;
+	height: 132px;
+	margin: 20px;
+}
+.el-location .member-text{
+	position: absolute;
+	top: 10px;
+	left: 130px;
+}
+
+.el-location .detail{
+	width: 280px;
+	background: black;
+	position: absolute;
+	opacity: 0.7;
+	margin-left: 10px;
+}
+.member-text .detail-text i{
+	padding-right: 15px;
+}
+.el-location h4{
+	color: white;
+	padding-left: 10px;
+}
+.el-location-queryPanel{
+	position: relative;
+}
+.el-location .item.active{
+	background: red;
+	color: white;
+}
+.el-location .prev, .el-location .next{
+	cursor: pointer;
+}

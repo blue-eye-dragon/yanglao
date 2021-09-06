@@ -1,0 +1,43 @@
+<div class="content-block-title">退住信息</div>
+<div class="list-block">
+	<ul>
+	 	<li class="item-content">
+			<div class="item-inner">
+            	<div class="item-title">会员</div>
+            	<div class="item-after">{{this.member.personalInfo.name}}</div>
+          	</div>
+        </li>
+        <li class="item-content">
+			<div class="item-inner">
+            	<div class="item-title">房间号</div>
+            	<div class="item-after">{{this.member.memberSigning.room.number}}</div>
+          	</div>
+        </li>
+		<li class="item-content">
+			<div class="item-inner">
+            	<div class="item-title">服务费</div>
+            	<div class="item-after">{{this.member.memberSigning.annualFee}}</div>
+          	</div>
+        </li>
+        
+       
+        <li class="item-content">
+			<div class="item-inner">
+            	<div class="item-title">申请人</div>
+            	<div class="item-after">{{this.personalInfo.name}}</div>
+          	</div>
+        </li>
+        <li class="item-content">
+			<div class="item-inner">
+            	<div class="item-title">经手人</div>
+            	<div class="item-after">{{this.user.name}}</div>
+          	</div>
+        </li>
+        <li class="item-content">
+			<div class="item-inner">
+            	<div class="item-title">退住原因</div>
+            	<div class="item-after">{{this.checkOutReason.value}}</div>
+          	</div>
+        </li>
+    </ul>
+</div>
