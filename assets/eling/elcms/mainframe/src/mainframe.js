@@ -32,7 +32,7 @@ define(function(require, exports, module) {
 			template : tpl,
 			model : {
 				logo_width : 81,
-				logo_height : 21,
+				logo_height : 30,
 				logo_left : "assets/eling/theme/" + themeName + "/logo.png",
 				logo_left_xs : "assets/eling/theme/" + themeName + "/logo_xs.png",
 				todos : [],
