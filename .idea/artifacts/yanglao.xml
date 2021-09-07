@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="yanglao">
+    <output-path>$PROJECT_DIR$/out/artifacts/yanglao</output-path>
+    <root id="archive" name="yanglao.war" />
+  </artifact>
+</component>
