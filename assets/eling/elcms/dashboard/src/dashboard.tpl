@@ -4,9 +4,9 @@
 			<div class='row' style="margin-right: 0px;">
 				{{#each this.top.items}}
 					<div class='{{../top.columnClass}} J-dashboard-top-item' style="padding-right: 0px;">
-						<div class='box-quick-link {{this.color}}-background'>
+						<div class='box-quick-link'>
 							<a data-url="{{this.url}}" data-params="{{this.params}}" class="J-dashboard-top-item-{{this.id}}" href="javascript:void(0);">
-								<div class='header'>
+								<div class='header {{this.color}}-background'>
 									<div class='{{this.icon}}'></div>
 								</div>
 								<div class='content'>{{this.text}}</div>

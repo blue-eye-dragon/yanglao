@@ -2482,12 +2482,20 @@ body {
 
 .box-quick-link {
   text-align: center;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  border: 1px solid #999999;
+  padding-top: 15px }
+  .box-quick-link:hover {
+    box-shadow:0px 0px 4px 2px #aaa
+  }
   .box-quick-link a {
     text-decoration: none; }
     .box-quick-link a .header {
-      height: 60px;
-      line-height: 60px;
+      height: 80px;
+      line-height: 80px;
+      width: 80px;
+      margin: 0 auto;
+      border-radius: 50%;
       padding-bottom: 2px; }
       .box-quick-link a .header [class^="icon-"], .box-quick-link a .header [class*=" icon-"] {
         color: white;
@@ -2495,22 +2503,24 @@ body {
         vertical-align: middle; }
     .box-quick-link a .content {
       text-transform: uppercase;
-      font-size: 85%;
+      font-size: 140%;
       white-space: nowrap;
       overflow: hidden;
       -ms-text-overflow: ellipsis;
       -o-text-overflow: ellipsis;
       text-overflow: ellipsis;
       color: #5b5b5b;
-      background-color: #dbdbdb;
-      border-bottom: 1px solid #cecece;
-      padding: 5px; }
+      /* background-color: #dbdbdb; */
+      /* border-bottom: 1px solid #cecece; */
+      padding: 5px;
+      /* width: 90px; */
+      margin: 15px auto }
     .box-quick-link a:hover .header [class^="icon-"], .box-quick-link a:hover .header [class*=" icon-"] {
       font-size: 40px; }
-    .box-quick-link a:hover .content {
+    /* .box-quick-link a:hover .content {
       text-decoration: underline;
       border-bottom-color: #c1c1c1;
-      background-color: #cecece; }
+      background-color: #cecece; } */
   .box-quick-link.contrast-background a:active .header {
     background: #f01611; }
   .box-quick-link.contrast-background:hover .header {
