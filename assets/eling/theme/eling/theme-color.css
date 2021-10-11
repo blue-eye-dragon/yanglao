@@ -44,6 +44,8 @@
     .contrast-eling header .navbar > .nav > li.medium > a:hover > a, .contrast-eling header .navbar > .nav > li.medium > a:active > a, .contrast-eling header .navbar > .nav > li.medium > a:focus > a {
       background-color: #1a0dcb; }
   .contrast-eling header .navbar > .nav > li.dark > a {
+    background: #4679fc; }
+  .contrast-eling header .navbar > .nav > li.dark > a:hover {
     background: #0c28c3; }
     .contrast-eling header .navbar > .nav > li.dark > a .label {
       color: #0c28c3; }
@@ -137,8 +139,8 @@
 }
 
 .contrast-eling .el-mainframe .logo{
-	width: 81px;
-	height: 30px;
+	width: 180px;
+	/* height: 30px; */
 }
 
 .contrast-eling .el-mainframe .logo-xs{

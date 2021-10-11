@@ -9,10 +9,10 @@
 				<i class="icon-reorder"></i>
 			</a>
 			<ul class="nav">
-				<li><a href="javascript:void(0);" class="navbar-brand el-headerbar-datetime J-headerbar-datetime"></a></li>
+				<!-- <li><a href="javascript:void(0);" class="navbar-brand el-headerbar-datetime J-headerbar-datetime"></a></li>
 				<li><a href="javascript:void(0);" class="navbar-brand el-headerbar-datetime J-headerbar-weekday"></a></li>
-				<li><a href="javascript:void(0);" class="navbar-brand el-headerbar-weather J-headerbar-weather"></a></li>
-				{{#if this.todolist}}
+				<li><a href="javascript:void(0);" class="navbar-brand el-headerbar-weather J-headerbar-weather"></a></li> -->
+				<!-- {{#if this.todolist}}
 				<li class="dropdown medium only-icon widget J-header-todolist">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">
 						<i class="icon-rss"></i>
@@ -38,10 +38,10 @@
 		            </ul>
         		</li>
         		{{/if}}
+          -->
 				<li class="dropdown dark user-menu J-username" >
-					<a href="javascript:void(0);" data-toggle="dropdown" class="dropdown-toggle" style="background: none;">
-						<img width="23" height="23" src="{{this.logo_right}}"/>
-						<span class="user-name">{{this.name}}</span><b class="caret"></b>
+					<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle">
+						<span class="user-name"><i class="icon-cog"></i></span>
 					</a>
 					<ul class="dropdown-menu">
 						<li>
@@ -62,8 +62,16 @@
 					</ul>
 				</li>
 			</ul>
+			<ul class="mensList">
+				
+			</ul>
 		</nav>
 	</header>
+  <div class="headerB">
+    <ul class="mensList2">
+
+    </ul>
+  </div>
 	<div id="wrapper">
 		<nav id="main-nav">
 			<div class="navigation">
@@ -76,57 +84,21 @@
 				        </div>
 				    </form>
 				</div>
+        <div class="adminInfo">
+					<img width="40" height="40" class="adminImg"/>
+					<span class="adminName"></span>
+				</div>
 				<ul class="nav nav-stacked">
 				{{#each this.menus}}
 					<li>
-					   <a data-url="{{path}}" data-params="{{parameter}}" id="{{code}}" class="{{#if subItems}}dropdown-collapse{{else}}isleaf{{/if}}" href="javascript:void(0);">
+					   <a data-url="{{path}}" data-params="{{parameter}}" id="{{code}}" class="dropdown-collapse isleaf menuOne" href="javascript:void(0);">
 					       <i class="{{icon}}"></i>
 					       <span>{{display}}</span>
-					       {{#if subItems}}<i class="icon-angle-down angle-down"></i>{{/if}}
 					   </a>
-					   {{#if subItems}}
-					   <ul class="nav nav-stacked">
-					   {{#each subItems}}
-					  	   <li>
-					  	   		<a data-url="{{path}}" data-params="{{parameter}}" id="{{code}}" class="{{#if subItems}}dropdown-collapse{{else}}isleaf{{/if}}" href="javascript:void(0);">
-						        	<i class="{{icon}}"></i>
-						        	<span>{{display}}</span>
-						        	{{#if subItems}}<i class="icon-angle-down angle-down"></i>{{/if}}
-					    		</a>
-								{{#if subItems}}
-								<ul class="nav nav-stacked">
-									{{#each subItems}}
-									<li>
-									   <a data-url="{{path}}" data-params="{{parameter}}" id="{{code}}" class="{{#if subItems}}dropdown-collapse{{else}}isleaf{{/if}}" href="javascript:void(0);">
-									       <i class="{{icon}}"></i>
-									       <span>{{display}}</span>
-									       {{#if subItems}}<i class="icon-angle-down angle-down"></i>{{/if}}
-									   </a>
-										{{#if subItems}}
-										<ul class="nav nav-stacked">
-											{{#each subItems}}
-												<li>
-												   <a data-url="{{path}}" data-params="{{parameter}}" id="{{code}}" class="{{#if subItems}}dropdown-collapse{{else}}isleaf{{/if}}" href="javascript:void(0);">
-												       <i class="{{icon}}"></i>
-												       <span>{{display}}</span>
-												       {{#if subItems}}<i class="icon-angle-down angle-down"></i>{{/if}}
-												   </a>
-												</li>
-											{{/each}}
-										</ul>
-										{{/if}}
-									</li>
-									{{/each}}
-								</ul>
-								{{/if}}
-							</li>
-						{{/each}}
-					</ul>
-					{{/if}}
 					</li>
 				{{/each}}
 				</ul>
-            </div>
+      </div>
 		</nav>
 	</div>
 	<!-- 增加一个隐藏的form用于切换用户 -->

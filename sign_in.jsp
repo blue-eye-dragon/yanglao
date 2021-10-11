@@ -16,31 +16,32 @@
   <body>
   		<div class="container el-container">
 	  		<div class="middle row">
-	  			<div class="left col-xs-12 col-md-6">
-	  				<div class="left-bg">
-	  					<img class="J-signin-left">
-	  				</div>
-	  			</div>
-	  			<div class="right col-xs-12 col-md-6">
+          <!-- <div>
+            <div class="loginTitle">智慧养老云平台</div>
+          </div> -->
+          <div class="left">
+            <img src="" alt="" class="left-bg J-signin-left">
+          </div>
+	  			<div class="right">
 	  				<div class="right-bg">
 	  					<div class="logo">
-	  						<img class="J-signin-right">
+	  						<img class="J-signin-right"><div class="loginTitle">智慧养老云平台</div>
 	  					</div>
 	  					<div class="login-container">
 	       					<form action="<c:url value="/j_spring_security_check"/>" class='validate-form' method='post'>
 	          					<div class="form-group">
 	          						<div class="controls with-icon-over-input">
-	            						<input required placeholder="用户名" class="form-control" name="j_username" id="j_username" type="text">
+	            						<input required placeholder="请输入用户名" class="form-control" name="j_username" id="j_username" type="text">
 	            						<i class="icon-user text-muted"></i>
 	          						</div>
 	          					</div>
 	          					<div class="form-group">
 	          						<div class="controls with-icon-over-input">
-	            						<input required placeholder="密码" class="form-control" name="j_password" id="j_password" type="password">
+	            						<input required placeholder="请输入密码" class="form-control" name="j_password" id="j_password" type="password">
 	          							<i class="icon-lock text-muted"></i>
 	  								</div>
 	          					</div>
-	           					<button id='j_btn_submite' class='loginBtn btn btn-block btn-danger'>登 录</button>
+	           					<button id='j_btn_submite' class='loginBtn btn btn-block  '>登 录</button>
 	           					<div class="forgetandregister">
 	           						<%--<a href="html/findpwd.html" class="forget">忘记密码?</a>--%>
 	           					</div>
@@ -93,7 +94,7 @@
 				}
 				store.set("theme",themeName);
 
-				$(".J-signin-left").attr("src","assets/eling/theme/" + themeName + "/signin_left.png");
+				$(".J-signin-left").attr("src","assets/eling/theme/" + themeName + "/slogan.png");
 				$(".J-signin-right").attr("src","assets/eling/theme/" + themeName + "/signin_right.png");
 
 				//1.获取最近使用用户名
