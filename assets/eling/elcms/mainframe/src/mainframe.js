@@ -263,6 +263,7 @@ define(function (require, exports, module) {
       $('.mensList').html(content)
       if (menusList[num].path || menusList[num].subItems[0].path) {
         $('.mensList2').html('')
+        $('#content').css("height",`calc(100vh - 60px)`);
       }
 
       const allLength = $('.mensList').width()
@@ -347,6 +348,9 @@ define(function (require, exports, module) {
       $('.mensList2').html(content)
 			$(".mensList2").find("span").css("color","black");
 			$('.mensList2').find("span").first().css("color","#4679fc");
+      const mensList2H = $('.mensList2').css('height')
+      const mensList2HN = mensList2H.substring(0,mensList2H.length-2)
+      $('#content').css("height",`calc(100vh - ${ +mensList2HN + 60}px)`);
       
     },
     _dropdown3: function (e) {
@@ -415,6 +419,9 @@ define(function (require, exports, module) {
           $('.mensList2').html(content2)
           $(".mensList2").find("span").css("color","black");
           $(".mensList2").find("span").first().css("color","#4679fc");
+          const mensList2H = $('.mensList2').css('height')
+          const mensList2HN = mensList2H.substring(0,mensList2H.length-2)
+          $('#content').css("height",`calc(100vh - ${ +mensList2HN + 60}px)`);
           this.openView({
             id: "snode" + menusList[num].subItems[0].subItems[0].code,
             url: menusList[num].subItems[0].subItems[0].path,

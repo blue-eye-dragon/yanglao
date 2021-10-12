@@ -2156,8 +2156,8 @@ header .navbar {
   padding: 0 15px;
   background-color: #f34541;
   border: none;
-  min-height: 80px;
-  height: 80px;
+  min-height: 60px;
+  height: 60px;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -2171,9 +2171,9 @@ header .navbar .navbar-brand {
   text-shadow: none;
   font-weight: 200;
   padding: 0;
-  height: 80px;
+  height: 60px;
   vertical-align: middle;
-  line-height: 80px;
+  line-height: 60px;
 }
 
 header .navbar .navbar-brand:hover,
@@ -2200,11 +2200,13 @@ header .navbar .navbar-brand .logo-xs {
     display: none;
   }
 }
+
 @media (max-width: 767px) {
   header .navbar {
     min-height: 40px;
     height: 40px;
   }
+
   header .navbar .navbar-brand {
     min-height: 40px;
     height: 40px;
@@ -2220,9 +2222,10 @@ header .navbar .toggle-nav {
   color: white;
   text-shadow: none;
   vertical-align: middle;
+  display: none;
   padding: 4px 12px;
-  margin-top: 25px;
-  margin-left: 35px;
+  margin-top: 15px;
+  margin-left: 15px;
   background-color: #f34541;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -2239,6 +2242,7 @@ header .navbar .toggle-nav {
   header .navbar .toggle-nav {
     margin-top: 5px;
     margin-left: 15px;
+    display: block;
   }
 }
 
@@ -2350,8 +2354,8 @@ header .navbar .navbar-form:hover input {
 }
 
 header .navbar .user-menu .dropdown-toggle {
-  height: 80px;
-  line-height: 80px;
+  height: 60px;
+  line-height: 60px;
   font-size: 35px;
   color: #fff;
   cursor: pointer;
@@ -2462,19 +2466,24 @@ header .navbar .widget .dropdown-menu .divider {
 }
 
 header .navbar>.mensList {
-  margin-left: 250px;
+  margin-left: 200px;
   margin-right: 95px;
   list-style: none;
-  height: 80px;
-  line-height: 80px;
+  height: 60px;
+  line-height: 60px;
   color: #fff;
   font-size: 16px;
-
+  margin-bottom: 0;
 }
 
 header .navbar>.mensList>li {
   list-style: none;
   float: left;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 10px;
+  margin-right: 20px;
+  border-radius: 10px
 }
 
 header .navbar>.mensList>li:hover {
@@ -2493,10 +2502,12 @@ header .navbar>.mensList>li>a {
   height: 100%;
   padding: 0 15px;
 }
+
 header .navbar>.mensList>li>a:hover {
   text-decoration: none;
   color: #fff;
 }
+
 header .navbar>.mensList>li>a:focus {
   text-decoration: none;
   color: #fff;
@@ -2504,10 +2515,10 @@ header .navbar>.mensList>li>a:focus {
 
 @media (max-width: 767px) {
   header .navbar>.mensList {
-      margin-left: 80px;
-      margin-right: 65px;
-      height: 40px;
-      line-height: 40px;
+    margin-left: 80px;
+    margin-right: 65px;
+    height: 40px;
+    line-height: 40px;
   }
 }
 
@@ -2610,18 +2621,21 @@ header .navbar .dropdown-menu {
 }
 
 .headerB {
-  width: calc(100% - 240px);
-  margin-left: 230px;
+  width: calc(100% - 230px);
+  margin-left: 200px;
+  background-color: #f4f4f4;
 }
+
 .headerB .mensList2 {
   list-style: none;
   overflow: hidden;
 }
+
 .headerB .mensList2>li {
   float: left;
   margin: 10px 0;
-  height: 30px;
-  line-height: 30px;
+  height: 25px;
+  line-height: 25px;
   border-right: 1px solid;
 }
 
@@ -2647,13 +2661,20 @@ header .navbar .dropdown-menu {
 
 .headerB .mensList2>li>a:hover {
   text-decoration: none;
-  color: #1a0dcb;
+  /* color: #1a0dcb; */
+}
+
+.headerB .mensList2>li>a>span:hover {
+  color: rgb(70, 121, 252) !important;
 }
 
 @media (max-width: 767px) {
   .headerB {
     width: 100%;
-  };
+  }
+
+  ;
+
   .headerB .mensList2 {
     padding: 0
   }
@@ -2666,7 +2687,7 @@ header .navbar .dropdown-menu {
 }
 
 #main-nav-bg {
-  width: 251px;
+  width: 201px;
   position: absolute;
   float: left;
   border-right: 1px solid #dddddd;
@@ -2696,16 +2717,16 @@ header .navbar .dropdown-menu {
 }
 
 #main-nav {
-  width: 250px;
+  width: 200px;
   position: absolute;
   left: 0;
-  top: 80px;
+  top: 60px;
   bottom: 0;
   background-color: #f4f4f4;
 }
 
 #main-nav.main-nav-fixed {
-  top: 80px;
+  top: 60px;
   left: 0;
   bottom: 0;
   background-color: #f4f4f4;
@@ -2718,7 +2739,7 @@ header .navbar .dropdown-menu {
 }
 
 #main-nav.main-nav-fixed.affix-top {
-  top: 80px !important;
+  top: 60px !important;
 }
 
 #main-nav.main-nav-fixed.affix-bottom {
@@ -2745,11 +2766,11 @@ header .navbar .dropdown-menu {
 }
 
 .main-nav-opened #main-nav-bg {
-  width: 251px;
+  width: 200px;
 }
 
 .main-nav-opened #main-nav {
-  width: 250px;
+  width: 200px;
   overflow: visible;
 }
 
@@ -2855,6 +2876,38 @@ header .navbar .dropdown-menu {
   width: 100%;
 }
 
+.nav-stacked {
+  overflow-y: auto;
+  height: calc(100vh - 150px);
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #CCCCCC;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #f4f4f4;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #CCCCCC;
+}
+
+/* #content */
+::-webkit-scrollbar {
+  display: none;
+}
+
 #main-nav .navigation .nav {
   margin-bottom: 0;
 }
@@ -2883,7 +2936,7 @@ header .navbar .dropdown-menu {
   height: 42px;
   display: block;
   line-height: 45px;
-  padding: 0 10px;
+  padding: 0 10px 0 25px;
   border-bottom: 1px solid white;
   border-top: 1px solid #e7e7e7;
   overflow: hidden;
@@ -3074,7 +3127,7 @@ header .navbar .dropdown-menu {
 
 #main-nav .navigation .search form .search-wrapper {
   border: 1px solid #e7e7e7;
-  width: 210px;
+  width: 180px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -3146,7 +3199,7 @@ header .navbar .dropdown-menu {
 }
 
 .main-nav-opened #content {
-  margin-left: 251px;
+  margin-left: 201px;
 }
 
 .main-nav-closed #content {
@@ -3178,7 +3231,7 @@ body.fixed-header #wrapper {
 
 body.fixed-header #main-nav.main-nav-fixed {
   position: fixed;
-  top: 80px;
+  top: 60px;
   left: 0;
   bottom: 0;
   background-color: #f4f4f4;
@@ -3203,11 +3256,19 @@ body.without-footer #footer {
 }
 
 #content {
-  margin-left: 251px;
-  background: #fbfbfb;
+  margin-left: 201px;
+  padding: 20px;
+  background: #ffffff;
   min-width: 276px;
-  background: #fbfbfb;
+  border: 15px solid #dad9d9;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
 }
+
+#content>div {
+  background-color: #fff;
+}
+
 
 @media (max-width: 991px) {
   #content {
@@ -7799,6 +7860,4 @@ span {
   line-height: 90px;
 }
 
-.moreMenu {
-
-}
+.moreMenu {}
