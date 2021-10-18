@@ -1,10 +1,12 @@
 <div class="el-mainframe">
 	<header id="header">
 		<nav class="el-headerbar navbar navbar-default">
-			<a href="javascript:void(0);" class="J-headerbar-logo navbar-brand">
-				<img src="{{this.logo_left}}" class="logo"/>
-				<img src="{{this.logo_left_xs}}" class="logo-xs"/>
-			</a>
+      <div class="boxLogo">
+			  <a href="javascript:void(0);" class="J-headerbar-logo navbar-brand">
+			  	<img src="{{this.logo_left}}" class="logo"/>
+			  	<img src="{{this.logo_left_xs}}" class="logo-xs"/>
+			  </a>
+      </div>
 			<a href="javascript:void(0);" class="toggle-nav btn pull-left">
 				<i class="icon-reorder"></i>
 			</a>
@@ -92,7 +94,7 @@
 				{{#each this.menus}}
 					<li>
 					   <a data-url="{{path}}" data-params="{{parameter}}" id="{{code}}" class="dropdown-collapse isleaf menuOne" href="javascript:void(0);">
-					       <i class="{{icon}}"></i>
+					       <i class="{{icon}}" style="display:none"></i>
 					       <span>{{display}}</span>
 					   </a>
 					</li>

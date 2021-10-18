@@ -2015,7 +2015,7 @@ h1 [class^="icon-"] {
 
 
 .page-header {
-  border-bottom-color: #dddddd;
+  /* border-bottom-color: #dddddd; */
   margin-left: -15px;
   margin-right: -15px;
   position: relative;
@@ -2154,7 +2154,7 @@ hr.hr-double {
 header .navbar {
   margin: 0;
   padding: 0 15px;
-  background-color: #f34541;
+  /* background-color: #f34541; */
   border: none;
   min-height: 60px;
   height: 60px;
@@ -2174,6 +2174,17 @@ header .navbar .navbar-brand {
   height: 60px;
   vertical-align: middle;
   line-height: 60px;
+  margin-left: 15px;
+}
+
+header .navbar .boxLogo {
+  width: 202px;
+  height: 60px;
+  float: left;
+  margin-left: -15px;
+  padding-left: 7px;
+  text-align: center;
+  background-color: #fff;
 }
 
 header .navbar .navbar-brand:hover,
@@ -2211,6 +2222,13 @@ header .navbar .navbar-brand .logo-xs {
     min-height: 40px;
     height: 40px;
     line-height: 40px;
+    margin: 0 auto;
+  }
+
+  header .navbar .boxLogo {
+    width: 80px;
+    height: 40px;
+    background-color: transparent;
   }
 }
 
@@ -2240,8 +2258,8 @@ header .navbar .toggle-nav {
 } */
 @media (max-width: 767px) {
   header .navbar .toggle-nav {
-    margin-top: 5px;
-    margin-left: 15px;
+    margin-top: 6px;
+    margin-left: 0px;
     display: block;
   }
 }
@@ -2356,7 +2374,7 @@ header .navbar .navbar-form:hover input {
 header .navbar .user-menu .dropdown-toggle {
   height: 60px;
   line-height: 60px;
-  font-size: 35px;
+  font-size: 27px;
   color: #fff;
   cursor: pointer;
 }
@@ -2379,9 +2397,13 @@ header .navbar .user-menu .dropdown-toggle img {
   height: 23px;
 }
 
-/* header .navbar .user-menu .dropdown-toggle .user-name {
-  display: none;
-} */
+header .navbar .user-menu .dropdown-toggle .user-name {
+  color: #666;
+}
+
+header .navbar .user-menu .dropdown-toggle:hover .user-name{
+  color: #4679fc;  
+}
 
 
 @media (max-width: 767px) {
@@ -2487,20 +2509,25 @@ header .navbar>.mensList>li {
 }
 
 header .navbar>.mensList>li:hover {
-  background-color: #1a0dcb;
+  background-color: #4679fc;
   cursor: pointer;
 }
 
 .mensListACtive {
-  background-color: #1a0dcb;
+  background-color: #4679fc;
 }
 
+
 header .navbar>.mensList>li>a {
-  color: #fff;
+  color: black;
   display: block;
   width: 100%;
   height: 100%;
   padding: 0 15px;
+}
+
+header .navbar>.mensList>.mensListACtive>a {
+  color: #fff;
 }
 
 header .navbar>.mensList>li>a:hover {
@@ -2519,6 +2546,11 @@ header .navbar>.mensList>li>a:focus {
     margin-right: 65px;
     height: 40px;
     line-height: 40px;
+  }
+  header .navbar>.mensList>li {
+    height: 20px;
+    line-height: 20px;
+    border-radius: 5px;
   }
 }
 
@@ -2586,17 +2618,18 @@ header .navbar>.nav>li.medium>a:focus {
 }
 
 header .navbar>.nav>li.dark>a {
-  background: #c2100c;
+  /* background: #c2100c; */
 }
 
-header .navbar>.nav>li.dark>a .label {
-  color: #aa0e0b;
+header .navbar>.nav>li.dark>a .label .user-name{
+  color: #4679fc;
 }
 
 header .navbar>.nav>li.dark>a:hover,
 header .navbar>.nav>li.dark>a:active,
-header .navbar>.nav>li.dark>a:focus {
-  background-color: #aa0e0b;
+header .navbar>.nav>li.dark>a:focus .user-name{
+  /* background-color: #666; */
+  color: #4679fc !important;
 }
 
 header .navbar>.nav>li>a {
@@ -2883,8 +2916,8 @@ header .navbar .dropdown-menu {
 
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background-color: #CCCCCC;
   position: absolute;
   right: 0;
@@ -2900,13 +2933,13 @@ header .navbar .dropdown-menu {
 /*定义滑块 内阴影+圆角*/
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: #CCCCCC;
+  background-color: #24232352;
 }
 
 /* #content */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 #main-nav .navigation .nav {
   margin-bottom: 0;
@@ -2942,6 +2975,11 @@ header .navbar .dropdown-menu {
   overflow: hidden;
   *zoom: 1;
   overflow: visible !important;
+}
+
+#main-nav .navigation>.nav>li>a:hover {
+  background-color: #fff !important;
+  color: rgb(70, 121, 252) !important;
 }
 
 #main-nav .navigation>.nav>li>a.in [class^="icon-"],
@@ -3222,7 +3260,7 @@ body {
 }
 
 body {
-  background: #fbfbfb;
+  background: #f4f4f4;
 }
 
 body.fixed-header #wrapper {
@@ -3766,7 +3804,7 @@ body.without-footer #footer {
   text-align: center;
   margin-bottom: 10px;
   border: 1px solid #999999;
-  padding-top: 15px
+  /* padding-top: 15px */
 }
 
 .box-quick-link:hover {
@@ -3778,6 +3816,7 @@ body.without-footer #footer {
 }
 
 .box-quick-link a .header {
+  display: none;
   height: 80px;
   line-height: 80px;
   width: 80px;
@@ -3801,7 +3840,7 @@ body.without-footer #footer {
   -ms-text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
-  color: #5b5b5b;
+  color: #fff;
   /* background-color: #dbdbdb; */
   /* border-bottom: 1px solid #cecece; */
   padding: 5px;
@@ -7860,4 +7899,6 @@ span {
   line-height: 90px;
 }
 
-.moreMenu {}
+.moreMenu li>a:hover {
+  background-color: #4679fc;
+}

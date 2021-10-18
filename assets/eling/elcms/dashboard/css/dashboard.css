@@ -8,3 +8,14 @@
 	height: 70px;
 	cursor: pointer;
 }
+/* 
+.bottomBox {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+.bottomItem {
+  float: left;
+  width: 24%;
+  margin-left: 1%;
+}

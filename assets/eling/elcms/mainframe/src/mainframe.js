@@ -189,7 +189,7 @@ define(function (require, exports, module) {
       model.name = user.name;
       model.logo_right = "api/attachment/userphoto/" + store.get("user").pkUser;
       $('.adminName').html(model.name)
-      $('.adminImg').attr("src",model.logo_right)
+      $('.adminImg').attr("src","assets/eling/theme/eling/people.png")
       this.renderPartial(".J-username");
     },
     setMenu: function () {
@@ -234,7 +234,11 @@ define(function (require, exports, module) {
     _dropdown: function (e) {
       e.preventDefault();
 			$(".menuOne").find("span").css("color","black");
+      $(".menuOne").css("background-color","#f4f4f4");
+			$(".menuOne").find("i").css("color","black");
 			$(e.currentTarget).find("span").css("color","#4679fc");
+			$(e.currentTarget).find("i").css("color","#4679fc");
+			$(e.currentTarget).css("background-color","#fff");
       var model = this.get("model");
       var listName = e.target.innerText
       var menusList = Array.from(model.menus)
@@ -268,14 +272,14 @@ define(function (require, exports, module) {
 
       const allLength = $('.mensList').width()
       var showLength = 0
-      console.log(showLength);
+      console.log(allLength);
       if (flag) {
         console.log(showLength);
         var num = menuTop.length
         var showNum = 0
         for (let i = 0; i < num; i++) {
           showLength = showLength + $('.mensList li').eq(i).width()
-          if ( showLength < allLength - 80 ) {
+          if ( showLength < allLength - 300 ) {
             showNum = i + 1
           }
         }
