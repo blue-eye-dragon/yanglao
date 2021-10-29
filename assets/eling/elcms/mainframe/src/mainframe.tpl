@@ -88,7 +88,7 @@
 				</div>
         <div class="adminInfo">
 					<img width="40" height="40" class="adminImg"/>
-					<span class="adminName"></span>
+					<p class="adminName"></p>
 				</div>
 				<ul class="nav nav-stacked">
 				{{#each this.menus}}

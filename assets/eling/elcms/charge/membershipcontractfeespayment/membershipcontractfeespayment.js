@@ -455,7 +455,7 @@ define(function(require, exports, module) {
 						name:"房间号"
 					},{
 						key:"memberShipContract.memberShipFees",
-						name:i18ns.get("charge_shipfees_confees","会籍卡费"),
+						name:i18ns.get("charge_shipfees_confees","会员余额"),
 						className:"text-right",
 						format:"thousands"
 					},{

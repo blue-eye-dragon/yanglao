@@ -7887,16 +7887,23 @@ span {
 .adminInfo {
   height: 90px;
   text-align: center;
+  display: flex;
+  justify-content: space-around;
+  /* min-height: 90px; */
+  padding: 25px;
 }
 
 .adminInfo img {
   vertical-align: middle;
 }
 
-.adminInfo span {
-  font-size: 25px;
-  margin-left: 20px;
-  line-height: 90px;
+.adminInfo p {
+  line-height: 40px;
+  font-size: 20px;
+  height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .moreMenu li>a:hover {

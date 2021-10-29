@@ -160,10 +160,10 @@ define(function(require, exports, module) {
 						name: i18ns.get("sale_card_type","卡号类型"),
 					},{
 						key:"cardStatus.value",
-						name: i18ns.get("sale_card_status","会籍状态"),
+						name: i18ns.get("sale_card_status","会员状态"),
 					},{
 						key:"toBeStatus.value",
-						name:"调整状态"
+						name:"入住状态"
 					},{
 						name:"查看权益人",
 						format:"button",
