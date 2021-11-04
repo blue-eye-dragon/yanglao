@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>找回密码</title>
+		<meta content='text/html;charset=utf-8' http-equiv='content-type'>
+    	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    	
+    	<!-- / bootstrap [required] -->
+    	<link href="../assets/bootstrap/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
+    	
+    	<!-- / theme file [required] -->
+    	<link href="../assets/flatty/light-theme.css" media="all" id="color-settings-body-color" rel="stylesheet" type="text/css" />
+    	<link href="../assets/flatty/theme-colors.css" media="all" id="color-settings-body-color" rel="stylesheet" type="text/css" />
+    	
+    	<link type="text/css" rel="stylesheet" href="../assets/eling/elcms/signin/signin.css">
+    	<script type="text/javascript" src="../assets/jquery/jquery/jquery.js"></script>
+    	<script type="text/javascript" src="../assets/jquery/jquery/jquery-debug.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				 var thisURL = document.URL;    
+				  var  getval =thisURL.split('?')[1];  
+				  if(!(getval==null)){
+					  if(getval.split("&").length>2 || getval.split("&").length<2){
+						  // url 不正确
+					  }
+					  var pkUser_l = getval.split("&")[0]; 
+					  var pkUser_s = pkUser_l.split("=")[1]; 
+					  var result_l = getval.split("&")[1];
+					  var result_s = result_l.split("=")[1];
+					  if(result_s=="success"){
+						  $("#setnewpwd").show();
+						  $("#phonefind_div").hide();
+						  $("#emailfind_div").hide();
+						//隐藏与显示
+						  $('#emailfind_form').hide();
+						  $('#phonefind_form').hide();
+						  $('#phonefind_submit').show();
+						  
+						  $("#pkUser").text(pkUser_s);
+						  
+					  }if(result_s=="overdue"){
+						  $("#overdue").show();
+					  }
+				  } else {
+					  //隐藏与显示
+					  $("#phonefind_div").show();
+					  $("#emailfind_div").hide();
+					  $('#emailfind_form').hide();
+					  $('#phonefind_form').show();
+					  $('#phonefind_submit').hide(); 
+				  }
+			});
+		</script>
+    	<style type="text/css">
+			.left, .right,.center {
+				position: relative;
+				top: 148px;
+				height: 480px;
+			}
+			.formtableright,.formtablecenter,.formtableleft {
+				position: relative;
+				top: 20px;
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+	<div id="pkUser" hidden></div>
+		<div class="container el-container">
+			<div class="middle row">
+				<div class="right col-xs-12 col-md-3"></div>
+				<div class="center col-xs-12 col-md-6" style="background-color: white;border-radius:5px "> 
+					<div >
+	  					<img  src="../assets/eling/theme/eling/signin_right.png" style="margin-left: 36px;margin-top: 50px;">
+	  				</div>
+	  				
+					<div class="formtableright col-xs-12 col-md-3">
+						
+					</div>
+					
+					<div class="formtablecenter col-xs-12 col-md-6">
+						<div>
+							<div class="col-xs-12 col-md-12 text-center" style="padding: 0;">
+								<div hidden id="setnewpwd" style=" cursor:pointer;border-bottom: solid; padding-bottom: 8px; border-bottom-color: #f34541; font-size: 20px">
+									<font id="phonefind_font" color="#f34541" >设置新密码</font>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-11 text-center" style="padding-left: 35px;padding-right: 0;">
+								<div hidden id="phonefind_div" style=" cursor:pointer;border-bottom: solid; padding-bottom: 8px; border-bottom-color: #f34541; font-size: 20px">
+									<font id="phonefind_font" color="#f34541" >手机找回</font>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-6 text-center" style="padding-left: 0;">
+								<div hidden id="emailfind_div" style=" cursor:pointer;border-bottom: solid; padding-bottom: 8px; border-bottom-color: #d7d7d7; font-size: 20px">
+									<font id="emailfind_font" color="#999999" >邮箱找回</font>
+								</div>
+							</div>
+						</div>
+					<div style="margin-top: 65px">
+						<div class="col-xs-12 col-md-12 text-center" style="padding: 0;">
+								<div hidden id="overdue" style=" cursor:pointer; padding-bottom: 8px;  font-size: 20px">
+									<font  color="#999999" >您的密码重置链接已失效，无法重置密码，点击<a href="html/findpwd.html"><font color="red">这里</font></a>重新进行密码找回！</font>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-12 text-center" style="padding: 0;">
+								<div hidden id="updatepwdsuccess" style=" cursor:pointer; padding-bottom: 8px;  font-size: 20px">
+									<font  color="#999999" >您的新密码设置成功，3秒后将跳转至登录页面。如无法跳转，请点击<a href="../sign_in"><font color="red">这里</font></a>进行跳转！</font>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-12 text-center" style="padding: 0;">
+								<div hidden id="sendemailsuccess" style=" cursor:pointer; padding-bottom: 8px;  font-size: 20px">
+									<font  color="#999999" >重置密码邮件发送成功，点击<a id="sign_inemail" target="_blank"><font color="red">这里</font></a>登录邮箱！</font>
+								</div>
+							</div>
+						<form class="" action="" id="phonefind_form" method="post" hidden>
+							<div class="form-group" style="margin-bottom: 15px">
+								<div class="controls with-icon-over-input">
+									<input placeholder="请输入用户名" class="form-control"
+										name="username" id="username" type="text">
+								</div>
+								<div style="position: absolute;">
+									<span class="text-error has-error" id="emailusernameerror"
+										style="color: red;"></span>
+								</div>
+							</div>
+							<div class="form-group" style="    margin-top: 28px;">
+								<div class="controls with-icon-over-input">
+									<input placeholder="请输入手机号" class="form-control" name="phone"
+										id="phone" type="text"> 
+								</div>
+								<div style="position: absolute;">
+								<span class="has-error"
+										style="color: red;"
+										id="phoneerror"></span>
+								</div>
+							</div>
+							<div class="form-group " style="    margin-top: 28px;">
+								<div class="controls with-icon-over-input col-xs-12 col-md-9"
+									style="padding-left: 0px;">
+									<input placeholder="请输入验证码" class="form-control"
+										name="validatecode" id="validatecode" type="text">
+								</div>
+								<div class="controls with-icon-over-input col-xs-12 col-md-3"
+									style="padding-right: 0px;">
+									<button id='sendVerificationCode'
+										class=' btn btn-block btn-danger'>发送验证码</button>
+								</div>
+								<div style="position: absolute;     top: 228px;">
+									<span style="color: red;" class="has-error" id="validateerror"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-12 col-md-3 "></div>
+								<div class="col-xs-12 col-md-6 " style="margin-top: 25px;">
+									<button id="validate" class=" btn btn-block btn-danger">验证手机验证码</button>
+								</div>
+								<div class="col-xs-12 col-md-3 text-right"
+									style="padding: 0px; margin-top: 45px;">
+									<a id="returnlogin" href="../sign_in" class="forget"
+										style="width: 85px;"><font color="red">返回登录</font></a>
+								</div>
+							</div>
+						</form>
+
+						<form class="" action="" id="emailfind_form"
+							style="display: none;" method="post" hidden>
+							<div class="form-group" style="margin-bottom: 15px">
+								<div class="controls with-icon-over-input">
+									<input placeholder="请输入邮箱" class="form-control" name="email"
+										id=email type="text"> 
+								</div>
+								<div style="position: absolute;">
+								<span
+										class="text-error has-error" id="emailerror"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-12 col-md-3 "></div>
+								<div class="col-xs-12 col-md-6 " style="margin-top: 15px;">
+									<button id="sendemail" class=' btn btn-block btn-danger'>发送重置密码邮件</button></div>
+								</div>
+							<div>
+								<div class="col-xs-12 col-md-3 text-right"
+									style="padding: 0px; margin-top: 35px;">
+									<a id="returnlogin" href="../sign_in" class="forget"
+										style="width: 85px;"><font color="red">返回登录</font></a>
+								</div>
+							</div>
+						</form>
+
+					<form class="" action="" id="phonefind_submit"
+						style="display: none;" method="post" hidden>
+						<div class="form-group" style="margin-bottom: 28px">
+							<div class="controls with-icon-over-input">
+								<input placeholder="请输入8-16位新密码，可由字母和数字组成" class="form-control"
+									name="passWord" id="passWord" type="password">
+								<div class="required" style="position: absolute;">
+									<span class="text-error has-error" id="pwderror"></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group" style="margin-bottom: 16px"> 
+							<div class="controls with-icon-over-input">
+								<input placeholder="再次输入新密码" class="form-control"
+									name="password_confirmation" id="password_confirmation"
+									type="password">
+								<div class="required" style="position: absolute;">
+									<span class="text-error has-error" id="repwderror"></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+								<div class="col-xs-12 col-md-3 "></div>
+								<div class="col-xs-12 col-md-6 " style="margin-top: 15px;">
+									<button id="updatePwd" class=' btn btn-block btn-danger' >确定</button>
+								</div>
+								<div class="col-xs-12 col-md-3 text-right"
+									style="padding: 0px; margin-top: 35px;">
+									<a id="returnlogin" href="../sign_in" class="forget"
+										style="width: 85px;"><font color="red">返回登录</font></a>
+								</div>
+						</div>
+					</form>
+					<div class="col-xs-12 col-md-12 text-right"
+						style="padding: 0px; margin-top: 35px;">
+						<a id="sendemailreturnsign" href="../sign_in" class="forget"
+							style="width: 85px;" hidden><font color="red">返回登录</font></a>
+					</div>
+					</div>
+					</div>
+				</div>
+				<div class="left col-xs-12 col-md-3"></div>
+			</div>
+		</div>
+		<div class="footer"></div>
+		
+		<script type="text/javascript">
+			
+			$('#phonefind_div').click(function() {
+				$('#phonefind_font').css("color","#f34541");
+				$('#phonefind_div').css("border-bottom-color","#f34541");
+				$('#emailfind_font').css("color","#999999");
+				$('#emailfind_div').css("border-bottom-color","#d7d7d7");
+				//清空表单
+				$("#email").val("");
+				$("#emailerror").text("");
+				$("#emailerror").removeClass("help-block");
+				//隐藏与显示
+				$('#emailfind_form').hide();
+				$('#phonefind_form').show();
+				$('#phonefind_submit').hide();
+			});
+			$('#emailfind_div').click(function() {
+				$('#emailfind_font').css("color","#f34541");
+				$('#emailfind_div').css("border-bottom-color","#f34541");
+				$('#phonefind_font').css("color","#999999");
+				$('#phonefind_div').css("border-bottom-color","#d7d7d7");
+				//清空表单
+				$("#username").val("");
+				$("#emailusernameerror").text("");
+				$("#emailusernameerror").removeClass("help-block");
+				
+				$("#phone").val("");
+				$("#phoneerror").text("");
+				$("#phoneerror").removeClass("help-block");
+				
+				$("#validatecode").val("");
+				$("#validateerror").text("");
+				$("#validateerror").removeClass("help-block");
+				
+				$("#passWord").val("");
+				$("#pwderror").text("");
+				$("#pwderror").removeClass("help-block");
+				
+				$("#password_confirmation").val("");
+				$("#repwderror").text("");
+				$("#repwderror").removeClass("help-block");
+				//隐藏与显示
+				$('#emailfind_form').show();
+				$('#phonefind_form').hide();
+				$('#phonefind_submit').hide();
+				
+				$('#sendemail').attr("disabled",false);
+			});
+			
+			/* 校验用户名 */
+			$('#username').on("blur",function(){//手机号
+				if($("#username").val()==""){
+					$("#emailusernameerror").addClass("help-block");
+					$("#emailusernameerror").text("请输入用户名");
+					return false;
+				}else {
+					$("#emailusernameerror").text("");
+					$("#emailusernameerror").removeClass("help-block");
+				}
+			});
+			/* 校验手机号 */
+			$('#phone').on("blur",function(){//手机号
+				var re=/^1\d{10}$/;
+				if($("#phone").val()==""){
+					$("#phoneerror").addClass("help-block");
+					$("#phoneerror").text("请输入手机号");
+					return false;
+				}
+				else if($("#phone").val()!=""&&!re.test($("#phone").val())){
+					$("#phoneerror").addClass("help-block");
+					$("#phoneerror").text("请输入正确的手机号");
+					return false;
+				}else if($("#phone").val()!=""){
+					$("#phoneerror").text("");
+					$("#phoneerror").removeClass("help-block");
+				}else{
+					return false;
+				}
+			});
+			/* 发送验证码 */
+			$('#sendVerificationCode').on("click",function(){//发送验证码
+				var re=/^1\d{10}$/;
+				if($("#username").val()==""){
+					$("#emailusernameerror").text("请输入用户名");
+					$("#emailusernameerror").addClass("help-block");
+					return false;
+				}else {
+					$("#emailusernameerror").text("");
+					$("#emailusernameerror").removeClass("help-block");
+				}
+				if($("#phone").val()==""){
+					$("#phoneerror").text("请输入手机号");
+					$("#phoneerror").addClass("help-block");
+					return false;
+				}else if($(".help-block").length>0){
+					return false;
+				}else{
+					$("#phoneerror").removeClass("help-block");
+					$("#sendVerificationCode").attr("disabled",true);
+					var num=59;
+					var d=setInterval(function(){
+						if(num<1){
+							$("#sendVerificationCode").text("发送验证码");
+							clearInterval(d);
+						}else{
+							$("#sendVerificationCode").text("重新发送("+num+")");
+							num--;
+						}
+					},1000);
+				}
+				$.ajax({ 
+					url: "api/user/getvalidatecode",  
+					type:"post",
+					data:"phone="+$("#phone").val()+"&username="+$("#username").val(),
+					success: function(data){
+						 if(data.msg=="notMatch"){
+							$("#emailusernameerror").text("用户名和手机号不匹配");
+							$("#sendVerificationCode").text("发送验证码");
+							clearInterval(d);
+							$("#sendVerificationCode").attr("disabled",false);
+							return false;
+						}else if(data.msg=="notRegister"){
+							$("#emailusernameerror").text("用户未注册");
+							$("#sendVerificationCode").text("发送验证码");
+							clearInterval(d);
+							$("#sendVerificationCode").attr("disabled",false);
+							return false;
+						}else if(data.msg=="notAssociatedMobilePhone"){
+							$("#emailusernameerror").text("用户未关联手机，请联系管理员");
+							$("#sendVerificationCode").text("发送验证码");
+							clearInterval(d);
+							$("#sendVerificationCode").attr("disabled",false);
+							return false;
+						}else{
+							$("#validateerror").removeClass("hidden");
+							$("#validateerror").text("发送验证码成功");
+							setTimeout(function(){
+								$("#sendVerificationCode").attr("disabled",false);
+							},60000);
+						}
+					}
+				});
+			});
+			//提交验证码
+			$('#validate').on("click",function(){//提交验证码
+				if($("#username").val()==""){
+					$("#emailusernameerror").text("请输入用户名");
+					$("#emailusernameerror").addClass("help-block");
+					return false;
+				}else {
+					$("#emailusernameerror").text("");
+					$("#emailusernameerror").removeClass("help-block");
+				}
+				if($("#phone").val()==""){
+					$("#phoneerror").text("请输入手机号");
+					$("#phoneerror").addClass("help-block");
+					return false;
+				}else {
+					$("#phoneerror").text("");
+					$("#phoneerror").removeClass("help-block");
+				}
+				if($("#validatecode").val()==""){
+					$("#validateerror").text("请输入验证码");
+					$("#validateerror").addClass("help-block");  
+					return false;
+				}else {
+					$("#validatecode").text("");
+					$("#validatecode").removeClass("help-block");
+				}
+				if($(".help-block").length>0){
+					return false;
+				}
+				$.ajax({ 
+					url: "api/user/validateCode", 
+					type:"post",
+					data:"openid="+2+"&phone="+$("#phone").val()+"&validatecode="+$("#validatecode").val()+"&username="+$("#username").val(), 
+					success: function(data){
+						if(data.msg=="overdueOrError"){
+							$("#validateerror").text("验证码错误或过期，请重新输入或获取");
+							return false;
+						}else if(data.msg=="notMatch"){
+							$("#validateerror").text("用户名和手机号不匹配");
+							return false;
+						}else if(data.msg=="notRegister"){
+							$("#validateerror").text("用户未注册");
+							return false;
+						}else if(data.msg=="notAssociatedMobilePhone"){
+							$("#validateerror").text("用户未关联手机，请联系管理员");
+							return false;
+						}else{
+							$("#setnewpwd").show();
+							$("#phonefind_div").hide();
+							$("#emailfind_div").hide();
+							$("#validateerror").text("");
+							$('#phonefind_submit').show();
+							$('#phonefind_form').hide(); 
+							$("#pkUser").text(data.msg);
+						}
+					}
+				});
+				return false;
+			});
+			
+			$('#passWord').on("blur",function(){//密码
+				var re = /^[\w.]{8,}$/;
+				if($("#passWord").val()!=""&&$("#passWord").val().length<8){
+					$("#pwderror").text("密码不能少于8位数");
+					$("#pwderror").addClass("help-block");
+					return false;
+				}else{
+					$("#pwderror").text("");
+					$("#pwderror").removeClass("help-block");
+				}
+				if(!re.test($("#passWord").val())){
+					$("#pwderror").text("您输入的密码格式错误，请根据要求设置");
+					$("#pwderror").addClass("help-block");
+					return false;
+				}else{
+					$("#pwderror").text("");
+					$("#pwderror").removeClass("help-block");
+				}
+				if($("#password_confirmation").val()!=""&&$("#password_confirmation").val()!=$("#passWord").val()){
+					$("#repwderror").text("两次密码输入不一致");
+					$("#repwderror").addClass("help-block");
+					return false;
+				}else{
+					$("#pwderror").text("");
+					$("#repwderror").removeClass("help-block");
+				}
+			});
+			
+			$('#password_confirmation').on("blur",function(){//密码确认
+				if($("#password_confirmation").val()!=$("#passWord").val()){
+					$("#repwderror").text("两次密码输入不一致");
+					$("#repwderror").addClass("help-block");
+//					$("#password_confirmation").val("");
+					return false;
+				}else{
+					$("#repwderror").text("");
+					$("#repwderror").removeClass("help-block");;
+				}
+				var re = /^[\w.]{8,}$/;
+				if($("#passWord").val()!=""&&$("#passWord").val().length<8){
+					$("#pwderror").text("密码不能少于8位数");
+					$("#pwderror").addClass("help-block");
+					return false;
+				}else{
+					$("#pwderror").text("");
+					$("#pwderror").removeClass("help-block");
+				}
+				if(!re.test($("#passWord").val())){
+					$("#pwderror").text("您输入的密码格式错误，请根据要求设置");
+					$("#pwderror").addClass("help-block");
+					return false;
+				}else{
+					$("#pwderror").text("");
+					$("#pwderror").removeClass("help-block");
+				}
+			});
+			$('#updatePwd').on("click",function(){
+				if($("#passWord").val()==""){
+					$("#pwderror").text("密码不能为空");
+					$("#pwderror").addClass("help-block");
+					return false;
+				}
+				if($("#password_confirmation").val()==""){
+					$("#repwderror").text("确认密码不能为空");
+					$("#repwderror").addClass("help-block");
+					return false;
+				}
+				if($(".help-block").length>0){
+					return false;
+				}
+				phonefind_submit=$("#phonefind_submit").serialize();
+				$("#updatePwd").attr("disabled",true);
+				$.ajax({ 
+					url: "api/user/updateuserpwd", 
+					type:"post",
+					data:"pkUser="+$("#pkUser").text()+"&"+phonefind_submit,
+					success: function(data){
+						if(data!=null && data.msg == "success"){ 
+							$("#setnewpwd").hide();
+							$("#updatepwdsuccess").show();
+							$("#phonefind_div").hide();
+							$("#emailfind_div").hide();
+							//隐藏与显示
+							$('#emailfind_form').hide();
+							$('#phonefind_form').hide();
+							$('#phonefind_submit').hide();
+							setTimeout(function(){
+								location.href = "../sign_in";
+							},3000);
+						}
+					}
+				});
+			});
+			//校验邮箱
+			$('#email').on("blur",function(){//邮箱
+				var re=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+				if($("#email").val()==""){
+					$("#emailerror").text("邮箱不能为空");
+					$("#emailerror").addClass("help-block");
+					$('#sendemail').attr("disabled",true);
+					return false;
+				}
+				else if($("#email").val()==""||!re.test($('#email').val())){
+					$("#emailerror").text("邮箱的格式不正确");
+					$("#emailerror").addClass("help-block");
+					$('#sendemail').attr("disabled",true);
+					return false;
+				}else{
+					$("#emailerror").text("");
+					$("#emailerror").removeClass("help-block");
+					$('#sendemail').attr("disabled",false);
+				}
+			});
+			
+			$('#sendemail').on("click",function(){
+				if($("#email").val()==""){
+					$("#emailerror").text("邮箱不能为空");
+					$("#emailerror").addClass("help-block");
+					return false;
+				} 
+				$('#sendemail').attr("disabled",true);
+				//截取邮箱地址
+				var email = $("#email").val();
+				var emailLocation = "http://mail."+email.split("@")[1];
+				
+				$.ajax({ 
+					url: "api/user/sendfindpwdemail", 
+					type:"post",
+					data:{
+						"email":$("#email").val(),
+					},
+					success: function(data){
+						if(data.msg=="success"){
+							$("#sign_inemail").attr("href",emailLocation); 
+							$("#sendemailsuccess").show();
+							$("#sendemailreturnsign").show();
+							$("#phonefind_div").hide();
+							$("#emailfind_div").hide();
+							//隐藏与显示
+							$('#emailfind_form').hide();
+							$('#phonefind_form').hide();
+							$('#phonefind_submit').hide();
+						}  else if(data.msg=="error"){
+							$('#sendemail').attr("disabled",false);
+							$("#emailerror").text("邮箱尚未注册，请检查邮箱是否正确！");
+						}else {
+							$('#sendemail').attr("disabled",false);
+							$("#emailerror").text("邮件发送失败，请检查邮箱是否正确！");
+						}
+					}
+				});
+				return false;
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,115 @@
+.el-worktaskplan .J-worktaskplan-start .J-worktaskplan-departmentlabel {
+	display: inline-block;
+	text-align: left;
+	font-size: 20px;
+	padding-left: 0.5cm;
+
+}
+.el-worktaskplan .J-worktaskplan-start .J-worktaskplan-department {
+	display: inline-block;
+	text-align: left;
+	font-size: 20px;
+
+}
+.el-worktaskplan .J-worktaskplan-start .J-worktaskplan-userCreatelabel {
+	display: inline-block;
+	text-align: left;
+	font-size: 20px;
+	padding-left: 0.5cm;
+
+}
+.el-worktaskplan .J-worktaskplan-start .J-worktaskplan-userCreate {
+	display: inline-block;
+	text-align: left;
+	font-size: 20px;
+
+}
+.el-worktaskplan .J-worktaskplan-start .J-lastweek {
+	display: inline-block;
+	text-align: left;
+	margin-right: 15px;
+	
+}
+.el-worktaskplan .J-worktaskplan-start .J-nextweek {
+	display: inline-block;
+	text-align: left;
+	margin-right: 15px;
+	
+}
+
+.el-worktaskplan  .ggg{
+	width: 5%;
+}
+.el-worktaskplan  .content{
+	width: 20%;
+}
+.el-worktaskplan .startDate{
+	width: 10%;
+}
+.el-worktaskplan .endDate{
+	width: 10%;
+}
+.el-worktaskplan .priority{
+	width: 5%;
+}
+.el-worktaskplan .ratio{
+	width: 5%;
+}
+.el-worktaskplan .finishDate{
+	width: 10%;
+}
+.el-worktaskplan .outTime{
+	width: 5%;
+}
+.el-worktaskplan .reason{
+	width: 20%;
+}
+.el-worktaskplan .operate{
+	width: 10%;
+}
+.J-printgriddetail1
+{
+	display: none;
+}
+.J-printgriddetail1-title
+{
+	display: none;
+}
+.J-printgriddetail2
+{
+	display: none;
+}
+.J-printgriddetail2-title
+{
+	display: none;
+}
+@media print {
+	.J-subnav,
+	.J-grid{
+		display: none;
+	}
+	.J-printgriddetail1{
+		display: block;
+	}
+	.J-printgriddetail1-title{
+		display: block;
+		text-align:center;
+		width:100%;
+		font-size: 30px;
+	}
+	.J-printgriddetail2{
+		display: block;
+	}
+	.J-printgriddetail2-title{
+		display: block;
+		text-align:center;
+		width:100%;
+		font-size: 30px;
+	}
+	.J-grid-title{
+		display: block;
+		text-align:center;
+		width:100%;
+		font-size: 20px;
+	}
+}

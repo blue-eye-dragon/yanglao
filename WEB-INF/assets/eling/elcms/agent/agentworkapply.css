@@ -1,0 +1,22 @@
+.el-agentworkapply .J-grid2 .el-grid{
+	padding-right: 0
+}
+.el-agentworkapply .J-grid3 .el-grid{
+	padding-left: 0
+}
+.el-agentworkapply .J-grid22 .el-grid{
+	padding-right: 0
+}
+.el-agentworkapply .J-grid33 .el-grid{
+	padding-left: 0
+}
+.box .box-header .title {
+	float: none;
+    color: #3c3c3c;
+}
+.box .box-header {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 30px;
+    text-align: center;
+}

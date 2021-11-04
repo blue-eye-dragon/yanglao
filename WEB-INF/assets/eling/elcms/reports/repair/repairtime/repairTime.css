@@ -1,0 +1,15 @@
+.el-grid .oneColumn{
+		width: 8%;
+}
+.el-grid .oneHalfColumn{
+		width: 12%;
+}
+.el-grid .twoColumn{
+		width: 16%;
+}
+.el-grid .twoHalfColumn{
+		width: 64%;
+}
+.el-grid .threeColumn{
+		width: 24%;
+}

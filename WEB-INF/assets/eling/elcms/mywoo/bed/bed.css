@@ -1,0 +1,13 @@
+.J-bed-code {
+    margin-left: 4px;
+    border: 1px solid #4679fc;
+    padding:2px 8px;
+    border-radius:2px;
+    cursor: pointer;
+    color:#000000;
+}
+
+.J-bed-code:hover{
+    background: #4679fc;
+    color:#ffffff;
+}

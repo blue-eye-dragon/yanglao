@@ -1,0 +1,21 @@
+.el-dashboard .loading{
+	background: url("../img/ajaxloader.gif");
+  	background-repeat: no-repeat;
+  	height: 32px;
+}
+
+.el-dashboard .el-dashboard-bottom-item{
+	height: 70px;
+	cursor: pointer;
+}
+/* 
+.bottomBox {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+.bottomItem {
+  float: left;
+  width: 24%;
+  margin-left: 1%;
+}

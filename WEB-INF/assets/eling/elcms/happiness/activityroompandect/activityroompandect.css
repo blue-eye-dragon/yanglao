@@ -1,0 +1,108 @@
+.el-activityroompandect .circle{
+  	display: inline-block;
+  	width: 120px;
+	height: 120px;
+	border-radius:50%;
+	position: relative;
+}
+.el-activityroompandect .circlemax{
+  	display: inline-block;
+  	width: 130px;
+	height: 130px;
+	border-radius:50%;
+	position: relative;
+	padding: 10px;
+}
+.el-activityroompandect .status{
+	width: 120px;
+	height: 120px;
+	display: inline-block;
+	font-size: 48px;
+}
+.el-activityroompandect .box{
+	height:280px;
+    border-radius:8px;
+    border:1px solid #F0F0F0;
+    background-color: #FFFFFF;
+    padding: 20px;
+    maigin:22px;
+}
+.el-activityroompandect .box-content{
+	border: 0px #FFFFFF solid; 
+}
+.el-activityroompandect .environment{
+	display: inline-block;
+}
+.el-activityroompandect .success_statusmax{
+	border:1px dashed #66cc99
+}
+.el-activityroompandect .danger_statusmax{
+	border:1px dashed #e25353
+}
+.el-activityroompandect .warning_statusmax{
+	border:1px dashed #ffcc33
+}
+.el-activityroompandect .common_statusmax{
+	border:1px dashed #2FABE9
+}
+.el-activityroompandect .success_status{
+	border: 12px #66cc99 solid; 
+}
+
+.el-activityroompandect .danger_status{
+	border: 12px #e25353 solid; 
+}
+
+.el-activityroompandect .warning_status{
+	border: 12px #ffcc33 solid; 
+}
+.el-activityroompandect .common_status{
+	border: 12px #2FABE9 solid; 
+}
+.el-activityroompandect .success_font{
+	color: #66cc99 !important;
+}
+.el-activityroompandect .warning_font{
+	color: #ffcc33 !important;
+}
+.el-activityroompandect .danger_font{
+	color:#e25353 !important;
+}
+.el-activityroompandect .common_font{
+	color:#2FABE9 !important;
+}
+
+.el-activityroompandect .environment{
+	width: 30%;
+  	border-radius: 20px;
+  	vertical-align: top;
+  	height: 48px;
+  	position: relative;
+  	text-align: center;
+  	margin-left: 1%;    
+}
+
+.el-activityroompandect .environment-item{
+	display: inline-block;
+ 	vertical-align: top;
+  	position: relative;
+  	top: -10px;
+  	font-size: 24px;
+  	color: rgb(186, 186, 186);
+}
+
+.el-activityroompandect .environment-item .value{
+  	position: relative;
+  	top: 5px;
+  	font-size: 40px;
+}
+.el-activityroompandect .environment-item small{
+	font-size: 10px;
+  	position: relative;
+  	top: 2px;
+  	left: -7px;
+}
+
+.el-activityroompand a{
+	text-decoration: none;
+}

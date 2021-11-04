@@ -1,0 +1,27 @@
+.el-activityroomorder .name{
+	width: 6%;
+}
+.el-activityroomorder .roomNumber{
+	width: 5%;
+}
+.el-activityroomorder .theme{
+	width: 17%;
+}
+.el-activityroomorder .usersname{
+	width: 12%;
+}
+.el-activityroomorder .contactInformation{
+	width: 10%;
+}
+.el-activityroomorder .activityStartTime{
+	width: 7%;
+}
+.el-activityroomorder .activityEndTime{
+	width: 7%;
+}
+.el-activityroomorder .pkActivityRoomReserve{
+	width: 3%;
+}
+.el-activityroomorder .particulars{
+	width: 14%;
+}

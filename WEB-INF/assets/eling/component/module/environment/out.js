@@ -1,0 +1,254 @@
+define(function(require,exports,module){
+	var ELView=require("elview");
+	var aw=require("ajaxwrapper");
+	var store=require("store");
+	
+	var template=require("./out.tpl");
+	require("./environment.css");
+	
+	var ch={
+		"1":"一",
+		"2":"二",
+		"3":"三",
+		"4":"四",
+		"5":"五",
+		"6":"六",
+		"0":"日"
+	};
+	
+	var weather={
+		"0":{
+			text:"龙卷风",
+			img:"7.png"
+		},
+		"1":{
+			text:"7.png",
+			img:"风暴"
+		},
+		"2":{
+			text:"7.png",
+			img:"飓风"
+		},
+		"3":{
+			text:"雷雨",
+			img:"5.png"
+		},
+		"4":{
+			text:"雷雨",
+			img:"5.png"
+		},
+		"5":{
+			text:"雨夹雪",
+			img:"16.png"
+		},
+		"6":{
+			text:"雨夹雪",
+			img:"16.png"
+		},
+		"7":{
+			text:"雨夹雪",
+			img:"16.png"
+		},
+		"8":{
+			text:"阵雨",
+			img:"13.png"
+		},
+		"9":{
+			text:"阵雨",
+			img:"13.png"
+		},
+		"10":{
+			text:"冰雨",
+			img:"13.png"
+		},
+		"11":{
+			text:"阵雨",
+			img:"13.png"
+		},
+		"12":{
+			text:"阵雨",
+			img:"13.png"
+		},
+		"13":{
+			text:"阵雪",
+			img:"15.png"
+		},
+		"14":{
+			text:"阵雪",
+			img:"15.png"
+		},
+		"15":{
+			text:"阵雪",
+			img:"15.png"
+		},
+		"16":{
+			text:"阵雪",
+			img:"15.png"
+		},
+		"17":{
+			text:"冰雹",
+			img:"8.png"
+		},
+		"18":{
+			text:"雨夹雪",
+			img:"16.png"
+		},
+		"19":{
+			text:"霾",
+			img:"12.png"
+		},
+		"20":{
+			text:"晴",
+			img:"1.png"
+		},
+		"21":{
+			text:"灰尘",
+			img:"12.png"
+		},
+		"22":{
+			text:"霾",
+			img:"12.png"
+		},
+		"23":{
+			text:"风",
+			img:"7.png"
+		},
+		"24":{
+			text:"大风",
+			img:"7.png"
+		},
+		"25":{
+			text:"寒风",
+			img:"7.png"
+		},
+		"26":{
+			text:"多云",
+			img:"6.png"
+		},
+		"27":{
+			text:"多云",
+			img:"6.png"
+		},
+		"28":{
+			text:"多云",
+			img:"6.png"
+		},
+		"29":{
+			text:"晴转多云",
+			img:"3.png"
+		},
+		"30":{
+			text:"晴转多云",
+			img:"3.png"
+		},
+		"31":{
+			text:"晴",
+			img:"1.png"
+		},
+		"32":{
+			text:"晴",
+			img:"1.png"
+		},
+		"33":{
+			text:"晴",
+			img:"1.png"
+		},
+		"34":{
+			text:"晴",
+			img:"1.png"
+		},
+		"35":{
+			text:"冰雹",
+			img:"8.png"
+		},
+		"36":{
+			text:"晴",
+			img:"1.png"
+		},
+		"37":{
+			text:"雷雨",
+			img:"5.png"
+		},
+		"38":{
+			text:"雷雨",
+			img:"5.png"
+		},
+		"39":{
+			text:"雷雨",
+			img:"5.png"
+		},
+		"40":{
+			text:"阵雨",
+			img:"13.png"
+		},
+		"41":{
+			text:"大雪",
+			img:"15.png"
+		},
+		"42":{
+			text:"雨夹雪",
+			img:"16.png"
+		},
+		"43":{
+			text:"阵雪",
+			img:"11.png"
+		},
+		"44":{
+			text:"多云",
+			img:"6.png"
+		},
+		"45":{
+			text:"雷雨",
+			img:"5.png"
+		},
+		"46":{
+			text:"雨夹雪",
+			img:"16.png"
+		},
+		"47":{
+			text:"雷雨",
+			img:"5.png"
+		}
+	};
+	
+	var Inner=ELView.extend({
+		attrs:{
+			template:template,
+			autoRender:false
+		},
+		initWeather:function(){
+			var city=store.get("city");
+			aw.ajax({
+				url:"https://query.yahooapis.com/v1/public/yql?"+
+					"q=select * from weather.forecast where woeid="+city+"&diagnostics=true&format=json",
+				dataType:"jsonp",
+				jsonp:"callback",
+				success:function(data){
+					//当前日期
+					var date=moment();
+					$(".J-today-date").text(date.format("MM-DD"));
+					$(".J-today-week").text("星期"+ch[date.days()]);
+					
+					var results=data.query.results.channel.item.forecast || [];
+					var current=data.query.results.channel.item.condition || {};
+					
+					$(".J-weather-icon-0").attr("src",store.get("ctx")+"assets/eling/resources/whether/large/"+weather[current.code].img);
+					
+					for(var i=1;i<results.length;i++){
+						var temp=parseInt((results[i].low-32)*5/9)+"℃"+"-"+parseInt((results[i].high-32)*5/9)+"℃";
+						$(".J-weather_"+i).text(temp);
+						$(".J-weather-icon-"+i).attr("src",store.get("ctx")+"assets/eling/resources/whether/little/"+weather[results[i].code].img);
+						$(".J-weather-text_"+i).text(weather[results[i].code].text);
+						var weekday=date.days()+i;
+						if(weekday>=7){
+							weekday=weekday-7;
+						}
+						$(".J-weather-week-text-"+i).text("星期"+ch[weekday]);
+					}
+				}
+			});
+		}
+	});
+	
+	module.exports=Inner;
+});

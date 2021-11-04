@@ -1,0 +1,149 @@
+body{
+	/* background: #4679fc; */
+  background: linear-gradient(#9dd1f8, #ffffff);
+	margin: 0 auto;
+}
+
+.el-container{
+	padding: 0;
+}
+
+.middle{
+  background: linear-gradient(#9dd1f8, #ffffff);
+	width : 100%;
+	height: 100vh;
+	margin: 0 auto;
+	position: relative;
+}
+
+/* .left,.right{
+	position: absolute;
+	top: 148px;
+} */
+
+.left {
+  position: absolute;
+  left: 300px;
+  top: 250px;
+}
+
+.right {
+  position: absolute;
+	top: 148px;
+  right: 220px;
+	height: 280px;
+}
+
+.left-bg{
+  width: 350px;
+  transform: rotate(5deg)
+}
+
+.right-bg{
+	width: 350px;
+	height: 350px;
+	/* background: white; */
+	border-radius: 5px;
+	padding-top: 20px;
+}
+
+.J-signin-right {
+  width: 30%;
+}
+
+
+
+@media (max-width: 768px){
+  .left {
+    display: none;
+  }
+	.left,.right{
+		top: 200px;
+    right: 50%;
+    transform: translateX(50%);
+	}
+	.left-bg,.right-bg{
+		margin: 0 auto !important;
+    width: 290px;
+    height: 280px;
+	}
+	
+	.middle{
+		height: auto;
+	}
+	
+	.footer{
+		display: none;
+	}
+}
+
+
+
+
+.logo{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+	background-repeat: no-repeat;
+}
+
+.loginBtn{
+	font-size: 20px;
+	line-height: 20px;
+  height: 38px;
+  background-color: #fc5158;
+  color: #fff;
+  border-radius: 38px !important;
+}
+
+.loginTitle {
+	width: 60%;
+  font-size: 25px;
+  padding-left: 5px;
+  border-left: 2px solid #98b7ec;
+}
+
+.login-container{
+	margin: 30px 20px 10px 20px;
+}
+
+.with-icon-over-input{
+	position:relative;
+}
+
+.with-icon-over-input input{
+    padding-left: 10px;
+    border-radius : 20px !important;
+}
+
+.forgetandregister{
+	float: right;
+	margin-top:5px;
+	padding-right: 5px;
+}
+
+.register{
+	padding-left: 20px;
+}
+
+.icon-user,.icon-lock{
+	position: absolute;
+    top: 3px;
+    right: 10px;
+    font-size: 28px;
+    color : #DDDDDD !important;
+}
+
+.btn-danger{
+	height: 38px;
+    border-radius: 5px !important;
+}
+
+.footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 196px;
+	background: url("./down.png");
+	margin-bottom: 0;
+}

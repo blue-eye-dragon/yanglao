@@ -1,0 +1,143 @@
+.el-generalfees .J-generalfeesprintgrid table td,.el-generalfees .J-generalfeesprintgrid table th{
+	padding: 0 !important;
+	font-size : 12px !important;
+}
+.el-generalfees .J-generalfeesprintgrid-title{
+	font-size : 20px !important;
+}
+.el-generalfees .J-generalfeesprintgrid-a,.J-generalfeesprintgrid-b{
+	width:50%;
+	float:left;
+	margin-bottom: 20px;
+}
+#generalfeesprintgridTitleA,#generalfeesprintgridTitleB{
+	font-size: 20px;
+	text-align:center;
+}
+#generalfeesprintgridTopA,#generalfeesprintgridTopB{
+	font-size: 16px;
+	text-align:center;
+}
+#generalfeesprintgridBottomAa,#generalfeesprintgridBottomBa{
+	padding-left:18px;
+	width:30%;
+	float:left;
+	font-size: 14px;
+}
+#generalfeesprintgridBottomAb,#generalfeesprintgridBottomBb{
+	width:35%;
+	float:left;
+	font-size: 14px;
+}
+#generalfeesprintgridBottomAc,#generalfeesprintgridBottomBc{
+	width:35%;
+	float:right;
+	text-align:right;
+	padding-right:18px;
+	font-size: 14px;
+}
+ .el-generalfees .J-printGrid-title{
+	display: none;
+}
+ .el-generalfees .J-printGrid-top{
+	display: block;
+	text-align: center;
+	font-size: 20px;
+}
+
+ .el-generalfees .J-feesDetilsGrid-top{
+	display: block;
+	text-align: left;
+	font-size: 20px;
+	margin-left:20px;
+}
+
+ .el-generalfees .J-importGrid-top{
+	 	display: block;
+	 	margin-left:20px;
+	 	color:red;
+}
+@media print {
+	@page {
+	  size: A4 landscape;
+	  margin-right : 0.05in;	
+	}
+	  .el-generalfees .J-subnav,
+	  .el-generalfees .J-grid{
+		display: none;
+	}
+	 
+	  .el-generalfees .J-printGrid{
+		display: block;
+		margin-top: 20px;
+	}
+	  .el-generalfees .J-printGrid-title{
+		display: block;
+		text-align: center;
+		font-size: 30px;
+	}
+	  .el-generalfees .J-printGrid-top{
+		display: block;
+		text-align: center;
+		font-size: 20px;
+	}
+	  .el-generalfees .J-printGrid-bottom{
+		display: block;
+		margin-top: 20px;
+	}
+	
+	 .col-md-1{
+		width: 8.33333%;
+	}
+	 .col-md-2{
+		width: 16.66667%;
+	}
+	 .col-md-3{
+		width:25%;
+	}
+	
+	.el-generalfees .J-generalfeesprintgrid{
+		-webkit-transform : scale(0.9);
+		page-break-inside: avoid;
+	}
+	
+	.el-generalfees .J-generalfeesprintgrid table td,.el-generalfees .J-generalfeesprintgrid table th{
+		padding: 0 !important;
+		font-size : 5px !important;
+	}
+	.el-generalfees .J-generalfeesprintgrid-title{
+		font-size : 4px ;
+	}
+	.el-generalfees .J-generalfeesprintgrid-a,.J-generalfeesprintgrid-b{
+		width:50%;
+		float:left;
+		margin-bottom: 28px !important;
+		-webkit-transform : scale(0.9);
+	}
+	#generalfeesprintgridTitleA,#generalfeesprintgridTitleB{
+		font-size: 4px;
+		text-align:center;
+	}
+	#generalfeesprintgridTopA,#generalfeesprintgridTopB{
+		font-size: 4px;
+		text-align:center;
+	}
+	#generalfeesprintgridBottomAa,#generalfeesprintgridBottomBa{
+		padding-left:18px;
+		width:30%;
+		float:left;
+		font-size: 4px;
+	}
+	#generalfeesprintgridBottomAb,#generalfeesprintgridBottomBb{
+		width:35%;
+		float:left;
+		font-size: 4px;
+	}
+	#generalfeesprintgridBottomAc,#generalfeesprintgridBottomBc{
+		width:35%;
+		float:right;
+		text-align:right;
+		padding-right:18px;
+		font-size: 4px;
+	}
+}

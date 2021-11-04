@@ -1,0 +1,17 @@
+.grid8{
+		width: 8%;
+}
+.grid16{
+		width: 16%;
+}
+.grid40{
+		width: 40%;
+}
+@media print {
+.el-grid .J-checkTime{
+		width: 12%;
+}
+.el-grid .J-note{
+		width: 40%;
+}
+}

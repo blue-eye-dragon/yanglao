@@ -1,0 +1,30 @@
+.el-property-repair .repairNo {
+	width: 12%;
+}
+.el-property-repair .place {
+	width: 7%;
+}
+.el-property-repair .repairClassify {
+	width: 7%;
+}
+.el-property-repair .content {
+	width: 28%;
+}
+.el-property-repair .user {
+	width: 7%;
+}
+.el-property-repair .createDate {
+	width: 10%;
+}
+.el-property-repair .ifSignificant {
+	width: 6%;
+}
+.el-property-repair .from {
+	width: 8%;
+}
+.el-property-repair .flowStatus {
+	width:  6%;
+}
+.el-property-repair .opear {
+	width: 9%;
+}

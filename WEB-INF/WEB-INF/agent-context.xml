@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="org.springframework.remoting.rmi.RmiProxyFactoryBean" lazy-init="true">
+		<property name="lookupStubOnStartup" value="false" />
+		<property name="refreshStubOnConnectFailure" value="true" />
+		<property name="serviceUrl" value="rmi://158.40.125.161:1199/RmiBaseService" />
+		<!--<property name="serviceUrl" value="rmi://58.40.125.16:1199/RmiBaseService" />-->
+		<!-- <property name="serviceUrl" value="rmi://117.121.26.96:1199/BaseService" /> -->
+		<property name="serviceInterface" value="com.eling.elcms.agent.impl.IRmiBaseService" />
+	</bean>
+</beans>

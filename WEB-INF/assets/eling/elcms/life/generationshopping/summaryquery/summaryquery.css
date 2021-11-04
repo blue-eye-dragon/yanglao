@@ -1,0 +1,27 @@
+.el-summaryquery .billcode {
+	width: 13%;
+}
+.el-summaryquery .member {
+	width: 13%;
+}
+.el-summaryquery .shoppinglists {
+	width: 12%;
+}
+.el-summaryquery .quantity {
+	width: 6%;
+}
+.el-summaryquery .text-right {
+	width: 13%;
+}
+.el-summaryquery .principal {
+	width: 9%;
+}
+.el-summaryquery .purchaser {
+	width: 9%;
+}
+.el-summaryquery .description {
+	width: 15%;
+}
+.el-summaryquery .flowStatus {
+	width: 10%;
+}

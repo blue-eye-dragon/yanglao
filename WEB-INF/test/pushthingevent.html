@@ -1,0 +1,63 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+
+<form action="api/device/thingevent/save" target="_blank">
+<p>deviceId:<input name="deviceId" type="text" value="44aa8ba9-591e-4a64-89ed-10ef8a66ec97"/>
+<p>date:<input name="date" value="2014-08-26 19:57:00"/>
+<p>value:<input name="value" value="inactive">
+<p>description:<input name="description" value="测试">
+<p><input type="submit">
+</form>
+
+<div>
+deviceId:<input id="motionSensorId" name="deviceId" type="text" value="ab730836-e3bc-43f1-9ca9-4f0953cfa74e"/>
+<button id="j-active">active</button><button id="j-inactive">inactive</button>
+</div>
+<div>
+door contact:<input id="doorContact" type="text" value="213608b8-0eeb-406b-a436-e13e1ec5c1a6">
+<button id="j-open">open</button><button id="j-close">close</button>
+</div>
+<div id="result"></div>
+<script>
+$(function(){
+	$("#j-active").click(function(){
+		$.get("api/device/thingevent/save", {
+			deviceId : $("#motionSensorId").val(),
+			date : new moment().format("YYYY-MM-DD HH:mm:ss"),
+			value : "active"
+		}, function(data){
+			$("#result").append($("<p></p>").html("active " + new Date()));
+		});
+	});
+
+	$("#j-inactive").click(function(){
+		$.get("api/device/thingevent/save", {
+			deviceId : $("#motionSensorId").val(),
+			date : new moment().format("YYYY-MM-DD HH:mm:ss"),
+			value : "inactive"
+		}, function(data){
+			$("#result").append($("<p></p>").html("inactive " + new Date()));
+		});
+	});
+
+	$("#j-open").click(function(){
+		$.get("api/device/thingevent/save", {
+			deviceId : $("#doorContact").val(),
+			date : new moment().format("YYYY-MM-DD HH:mm:ss"),
+			value : "open"
+		}, function(data){
+			$("#result").append($("<p></p>").html("open " + new Date()));
+		});
+	});
+
+	$("#j-close").click(function(){
+		$.get("api/device/thingevent/save", {
+			deviceId : $("#doorContact").val(),
+			date : new moment().format("YYYY-MM-DD HH:mm:ss"),
+			value : "closed"
+		}, function(data){
+			$("#result").append($("<p></p>").html("close " + new Date()));
+		});
+	});
+});
+</script>

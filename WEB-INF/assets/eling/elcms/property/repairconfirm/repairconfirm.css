@@ -1,0 +1,34 @@
+.el-repairconfirm .repairconfirmNo {
+	width: 12%;
+}
+.el-repairconfirm .place {
+	width: 7%;
+}
+.el-repairconfirm .repairconfirmClassify {
+	width: 7%;
+}
+.el-repairconfirm .content {
+	width: 16%;
+}
+.el-repairconfirm .user {
+	width: 7%;
+}
+.el-repairconfirm .createDate {
+	width: 10%;
+}
+.el-repairconfirm .ifSignificant {
+	width: 5%;
+}
+.el-repairconfirm .from {
+	width: 8%;
+}
+.el-repairconfirm .flowStatus {
+	width: 11%;
+}
+.el-repairconfirm .maintainer {
+	width: 7%;
+}
+.el-repairconfirm .endDate {
+	width: 10%;
+}
+

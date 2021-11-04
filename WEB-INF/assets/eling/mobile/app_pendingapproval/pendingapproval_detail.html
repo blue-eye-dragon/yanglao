@@ -1,0 +1,65 @@
+<div class="pages">
+
+	<!-- 与pageName参数的值必须一致 -->
+	<div data-page="detail" class="page navbar-fixed toolbar-fixed">
+	
+		<!-- 导航条  -->
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="left">
+					<a href="#" class="link icon-only J-goback-list">
+						<i class="icon icon-back"></i>
+					</a>
+				</div>
+				<div class="center">{{this.title}}</div>
+				
+			</div>
+		</div>
+		
+		<!-- 主页面 -->
+		<div class="page-content">
+			<div class="J-detail-top"></div>
+			{{#each this.datas}}
+ 	 			<div class="card approval-card el-approval-card">
+					 <div class="card-header color-gray">
+					 	<div>{{this.no}}</div>
+					 	<div>{{this.name}}</div>
+		   				<div>{{this.status}}</div>
+					 </div>
+					 <div class="card-content">
+					 	{{#if this.isEdit}}
+					 	<form id="my-form" class="list-block color-redb  store-data">
+			 			 	<ul>
+			 			 		<li>
+			 			 			<div class="item-content">
+			 			 				<div class="item-inner">
+			 			 					<div class="item-input">
+			 			 						<textarea class="J-note" name="note" placeholder="请输入审批结果"></textarea>
+						          			</div>
+						        		</div>
+						      		</div>
+						    	</li>
+						  	</ul>
+						 </form>
+					 	{{else}}
+					 	<div class="card-content-inner">{{this.note}}</div>
+					 	{{/if}}
+		  			 </div>
+		  			 <div class="card-footer">
+		  			 	{{#if this.isEdit}}
+		  			 	<div class="content-block content-btn-block">
+						 	<div class="row">
+						 		<div class="width_50"><a href="#" class="button button-big button-fill color-red J-notPass">不通过</a></div>
+						 		<div class="width_50"><a href="#" class="button button-big button-fill color-green J-pass">通过</a></div>
+			                </div>
+			             </div>
+		  			 	{{else}}
+		  			 	<p></p>
+		  			 	<p class="color-gray">{{this.time}}</p>
+		  			 	{{/if}}
+		  			 </div>
+	 			</div>
+			 {{/each}}
+		</div>
+	</div>
+</div>

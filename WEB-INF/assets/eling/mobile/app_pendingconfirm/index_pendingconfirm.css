@@ -1,0 +1,29 @@
+/*****基本样式*****/
+body{
+	font-family: Microsoft YaHei;
+	font-size: 20px;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.content-block{
+	margin: 0;
+}
+
+.infinite-scroll-preloader {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.infinite-scroll-preloader .preloader {
+  width:34px;
+  height:34px;
+}     
+
+.card-content-inner{
+	max-width: 100% !important;
+	white-space: inherit !important;
+	max-height : inherit !important;
+	word-break:break-all !important;
+}   

@@ -1,0 +1,37 @@
+.el-MemberOtherpartyAndRetirementDetails .J-grid {
+	display: block;
+}
+.el-MemberOtherpartyAndRetirementDetails .J-subnav {
+	display: block;
+}
+.el-MemberOtherpartyAndRetirementDetails .J-grid-printTitle {
+	display: none;
+}
+.el-MemberOtherpartyAndRetirementDetails .J-grid-printTime {
+	display: none;
+}
+.el-MemberOtherpartyAndRetirementDetails .J-grid-print {
+	display: none;
+}
+@MEDIA  print{
+	.el-MemberOtherpartyAndRetirementDetails .J-grid {
+		display: none;
+	}
+	.el-MemberOtherpartyAndRetirementDetails .J-subnav {
+	display: none;
+	}
+	.el-MemberOtherpartyAndRetirementDetails .J-grid-printTitle {
+		display: block;
+		font-size: 35px;
+		text-align: center;
+		border: medium;
+	}
+	.el-MemberOtherpartyAndRetirementDetails .J-grid-printTime {
+		display: block;
+		font-size: 20px;
+		text-align: right;
+	}
+	.el-MemberOtherpartyAndRetirementDetails .J-grid-print {
+		display: block;
+	}
+}

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans" 
+             xmlns:p="http://www.springframework.org/schema/p"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+              http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+ 	<http  pattern="/assets*/assets/**"  security="none"/>
+    <http request-matcher="regex"  pattern="/assets/eling/(\b((?!mobile)\w)+\b[\w\W]*|)|/assets/\b((?!eling)\w)+\b/[\w\W]*" security="none" />
+   
+	<!-- 登陆页 -->
+    <http  pattern="/sign_in*" security="none"/>
+    <!-- 注册页 -->
+    <http  pattern="/sign_up*" security="none"/>
+    <http  pattern="/app/api/register/**" security="none"/>
+    <http  pattern="/app/api/callLog/save" security="none"/>
+    <http  pattern="/emailverification*" security="none"/>
+    <http  pattern="/verificationback*" security="none"/>
+    <!-- 找回密码-->
+    <http  pattern="/html/findpwd*" security="none"/>
+    <http auto-config="true" entry-point-ref="authenticationEntryPoint">
+        <!-- 找回密码-->
+   		<intercept-url pattern="/app/api/user/getvalidatecode*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+   		<intercept-url pattern="/app/api/user/validateCode*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+   		<intercept-url pattern="/app/api/user/updateuserpwd*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+   		<intercept-url pattern="/app/api/user/sendfindpwdemail*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+   		<intercept-url pattern="/app/api/user/validatefindpwdemail*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+    	<!-- 注册 -->
+	    <intercept-url pattern="/app/api/organizationuser/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+	    <!-- 重置密码 -->
+	    <intercept-url pattern="/app/requestRecoveryToken*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+	    <intercept-url pattern="/app/updatePassword*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+	    <!-- 设备服务，暂时设置为无需认证 -->
+	    <intercept-url  pattern="/app/api/device/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+	    <!-- 活动图片 -->
+		<intercept-url pattern="/app/api/attachment/activityphoto/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+ 		<!-- 活动报告图片 -->
+		<intercept-url pattern="/app/api/attachment/activityreportphoto/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		
+ 		<!-- 集成接口 -->
+		<intercept-url pattern="/app/api/integration/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		
+		<!-- 支付宝验证接口 -->
+		<intercept-url pattern="/app/api/alipay/notify**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		
+		<intercept-url pattern="/assets/eling/mobile/**" access="ROLE_USER" />
+ 		
+ 		<intercept-url pattern="/**" access="ROLE_USER"/>
+        <form-login login-page="/sign_in" always-use-default-target="true"
+         		authentication-success-handler-ref="passwordStrategyChecker"
+        		authentication-failure-url="/sign_in?error=true"/>
+
+   		<custom-filter ref="tokenBasedPreAuthFilter" position="PRE_AUTH_FILTER" />
+   		<!-- <remember-me data-source-ref="dataSource" /> -->
+    </http>
+    
+    <beans:bean id="tokenBasedPreAuthFilter" class="com.eling.elcms.core.security.filter.TokenBasedPreAuthFilter">
+    	<beans:property name="authenticationManager" ref="authenticationManager"/>
+    </beans:bean>
+
+	<beans:bean id="passwordStrategyChecker" class="com.eling.elcms.core.security.filter.PasswordStrategyCheckeAuthenticationSuccessHandler">
+		<beans:property name="changePasswordPage" value="/changepwd"/>
+	</beans:bean>
+
+    <authentication-manager  alias="authenticationManager">
+        <authentication-provider user-service-ref="userDao">
+            <password-encoder ref="passwordEncoder">
+            </password-encoder>
+        </authentication-provider>
+        <authentication-provider ref="noPwdTokenBasedPreAuth"/>
+        <authentication-provider ref="tokenBasedPreAuth"/>
+    </authentication-manager>
+
+	<!-- 处理预授权的认证信息 -->
+    <beans:bean id="tokenBasedPreAuth" class="org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationProvider">
+    	<beans:property name="preAuthenticatedUserDetailsService">
+    		<beans:bean class="org.springframework.security.core.userdetails.UserDetailsByNameServiceWrapper">
+    			<beans:property name="userDetailsService" ref="userDao"/>
+    		</beans:bean>
+    	</beans:property>
+    </beans:bean>
+
+	<!-- 没有password的token预授权的认证信息 -->
+    <beans:bean id="noPwdTokenBasedPreAuth" class="org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationProvider">
+    	<beans:property name="preAuthenticatedUserDetailsService">
+    		<beans:bean class="com.eling.elcms.core.security.filter.NoPasswordTokenAuthUserDetailsService">
+    			<beans:property name="userDetailsService" ref="userDao"/>
+    		</beans:bean>
+    	</beans:property>
+    </beans:bean>
+
+	<!-- 使用自己的禁止访问处理器，加入Ajax的从定向信息，需要Ajax调用特殊处理 -->
+	<beans:bean id="authenticationEntryPoint" class="com.eling.elcms.core.security.web.AjaxAwareAuthenticationEntryPoint">
+		<beans:constructor-arg value="/sign_in"/>
+	</beans:bean>
+
+    <!-- Override the default password-encoder (BCrypt) by uncommenting the following and changing the class -->
+    <!-- <bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/> -->
+
+    <global-method-security>
+        <protect-pointcut expression="execution(* *..service.UserManager.getUsers(..))" access="ROLE_ADMIN"/>
+        <protect-pointcut expression="execution(* *..service.UserManager.removeUser(..))" access="ROLE_ADMIN"/>
+    </global-method-security>
+</beans:beans>

@@ -1,0 +1,21 @@
+.name{
+		width: 5%;
+}
+.idNumber{
+		width: 10%;
+}
+.sex{
+		width: 5%;
+}
+.address{
+		width: 25%;
+}
+.bed{
+		width: 25%;
+}
+.device{
+		width: 10%;
+}
+.operate{
+		width: 10%;
+}

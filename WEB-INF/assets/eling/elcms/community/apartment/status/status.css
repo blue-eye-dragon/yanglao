@@ -1,0 +1,53 @@
+.el-apartment-status .mix {
+	display: none;
+	font-size: 3px !important;
+	padding: 1px;
+	height: 106px;
+	float: left;
+}
+
+.el-apartment-status .title{
+	overflow:hidden;
+	width: 100%;
+}
+
+.el-apartment-status .title i{
+	font-size: 2.5em !important;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.el-apartment-status .title strong{
+	font-size:0.6em;
+	display: inline-block;
+}
+
+.el-apartment-status #mycontainer .box-content{
+	margin: 0; 
+	padding: 0; 
+	border-top: none
+}
+
+.el-apartment-status #mycontainer .box-toolbox{
+	margin: 0; 
+	padding:0;
+}
+
+.el-apartment-status #mycontainer .pull-right{
+	width: 100%;
+}
+
+.el-apartment-status #mycontainer .icon{
+	padding: 3px 0px;
+	text-decoration: none;
+	display: inline-block;
+	width: 29%;
+	text-align: center;
+	color:rgb(150, 147, 147);
+}
+
+.box .box-header.box-header-small{
+	font-size: 8px;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}

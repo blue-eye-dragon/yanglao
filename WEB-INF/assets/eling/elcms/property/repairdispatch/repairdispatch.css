@@ -1,0 +1,35 @@
+.el-repairdispatch .repairNo{
+	width: 11%;
+}
+.el-repairdispatch .place{
+	width: 8%;
+}
+.el-repairdispatch .repairClassify{
+	width: 10%;
+}
+.el-repairdispatch .content{
+	width: 16%;
+}
+.el-repairdispatch .repairperson{
+	width: 10%;
+}
+.el-repairdispatch .repairtime{
+	width: 10%;
+}
+.el-repairdispatch .ifSignificant{
+	width: 5%;
+}
+.el-repairdispatch .maintainer{
+	width: 7%;
+}
+.el-repairdispatch .expectedDate{
+	width: 10%;
+}
+.el-repairdispatch .repairsource{
+	width: 8%;
+}
+.el-repairdispatch .operate{
+	width: 6%;
+}
+
+

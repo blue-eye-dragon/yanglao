@@ -1,0 +1,24 @@
+.el-health-buymedicine-summary .member{
+		width: 12%;
+}
+.el-health-buymedicine-summary .buyMedicinePapers{
+		width: 15%;
+}
+.el-health-buymedicine-summary .medicine{
+		width: 17%;
+}
+.el-health-buymedicine-summary .specification{
+		width: 15%;
+}
+.el-health-buymedicine-summary .quantity{
+		width: 7%;
+}
+.el-health-buymedicine-summary .date{
+		width: 11%;
+}
+.el-health-buymedicine-summary .flowStatus{
+		width: 7%;
+}
+.el-health-buymedicine-summary .description{
+		width: 16%;
+}

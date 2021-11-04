@@ -1,0 +1,139 @@
+define(function(require, exports, module) {
+	var BaseView=require("baseview");
+	
+	var Community  = BaseView.extend({
+		initSubnav:function(widget){
+			return {
+				model:{
+					title:"社区信息查看",
+					buttons:[{
+						id:"return",
+						text:"返回",
+						show:false,
+						handler:function(){
+							widget.list2Card(false);
+							return false;
+						}
+					}]
+				}
+			};
+		},
+		initList:function(widget){
+			return {
+				url : "api/community/query",
+				fetchProperties:"*,organization.name",
+				model:{
+					columns:[{
+						key:"name",
+						name:"名称",
+						format:"detail",
+						formatparams:[{
+							key:"detail",
+							handler:function(index,data,rowEle){
+								widget.edit("detail",data);
+								return false;
+							}
+						}]
+					},{
+						key:"zipCode",
+						name:"邮编"
+					},{
+						key:"address",
+						name:"地址"
+					},{
+						key:"contact1Name",
+						name:"联系人"
+					},{
+						key:"contact1Phone",
+						name:"联系电话"
+					},{
+						key:"organization",
+						name:"所属机构",
+						format:function(value,row){
+							return value.name;
+						}
+					},{
+						key:"membersLimit",
+						name:"会员上限"
+					}]
+				}
+			};
+		},
+		initCard:function(widget){
+			return {
+				compType:"profile",
+				model:{
+					id:"community",
+					items:[{
+						title:"社区信息",
+						icon:"github",
+						children:[{
+							label:"名称",
+							name:"name"
+						},{
+							label:"邮编",
+							name:"zipCode"
+						},{
+							label:"地址",
+							name:"address",
+							type:"textarea"
+						},{
+							label:"所属机构",
+							name:"organization",
+							value:"name"
+						},{
+							label:"会员上限",
+							name:"membersLimit"
+						},{
+							label:"备注",
+							type:"textarea",
+							name:"description"
+						}]
+					},{
+						title:"联系人1（必填）",
+						icon:"user",
+						children:[{
+							label:"姓名",
+							name:"contact1Name"
+						},{
+							label:"联系电话",
+							name:"contact1Phone"
+						},{
+							label:"E-mail",
+							name:"contact1Email"
+						},{
+							label:"邮编",
+							name:"contact1ZipCode"
+						},{
+							label:"地址",
+							name:"contact1Address",
+							type:"textarea"
+						}]
+					},{
+						title:"联系人2（非必填）",
+						icon:"user",
+						children:[{
+							label:"姓名",
+							name:"contact2Name"
+						},{
+							label:"联系电话",
+							name:"contact2Phone"
+						},{
+							label:"E-mail",
+							name:"contact2Email"
+						},{
+							label:"邮编",
+							name:"contact2ZipCode"
+						},{
+							label:"地址",
+							name:"contact2Address",
+							type:"textarea"
+						}]
+					}]
+					
+				}
+			};
+		}
+	});
+	module.exports = Community;
+})

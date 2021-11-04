@@ -1,0 +1,92 @@
+.J-record-add {
+    border: 1px solid #DCDFE6;
+    border-radius: 1px;
+    margin-top: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+    padding:8px;
+}
+
+#choose-care-record-date{
+    width:200px;
+    height:60px;
+}
+
+.J-select-care-content{
+    max-height:400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+.J-care-item {
+    border: 1px solid #548B54;
+    width: 120px;
+    height:60px;
+    margin-left: 8px;
+    border-radius: 2px;
+    cursor:pointer;
+    text-align: center;
+    line-height: 60px;
+}
+
+.J-care-item.active {
+    background: #548B54;
+}
+
+.J-select-user{
+    max-height:400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+
+
+.J-user-item {
+    border: 1px solid #548B54;
+    width: 120px;
+    height:60px;
+    margin-left: 8px;
+    border-radius: 2px;
+    cursor:pointer;
+    text-align: center;
+    line-height: 60px;
+}
+
+.J-user-item.active {
+    background: #548B54;
+}
+
+.care-record-step {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 8px;
+    border-bottom: 1px solid #DCDFE6;
+    position: relative;
+}
+
+
+.el-grid .oneColumn{
+    width: 8%;
+}
+.el-grid .oneHalfColumn{
+    width: 12%;
+}
+.el-grid .twoColumn{
+    width: 16%;
+}
+.el-grid .threeColumn{
+    width: 24%;
+}
+.el-grid .sixColumn{
+    width: 24%;
+}
+.el-grid .sevenColumn{
+    width: 64%;
+}

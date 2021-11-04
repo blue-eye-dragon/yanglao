@@ -1,0 +1,35 @@
+.el-bowoutmembershipcontractapply .width_card{
+	width:10%;
+}
+.el-bowoutmembershipcontractapply .width_name{
+	width:10%;
+}
+.el-bowoutmembershipcontractapply .width_sign{
+	width:10%;
+}
+.el-bowoutmembershipcontractapply .width_fee{
+	width:10%;
+}
+.el-bowoutmembershipcontractapply .width_type{
+	width:10%;
+}
+.el-bowoutmembershipcontractapply .width_number{
+	width:10%;
+}
+.el-bowoutmembershipcontractapply .width_checkin{
+	width:10%;
+}
+.el-bowoutmembershipcontractapply .width_checkout{
+	width:10%;
+}
+.el-bowoutmembershipcontractapply .width_status{
+	width:10%;
+}
+.el-bowoutmembershipcontractapply .width_op{
+	width:10%;
+}
+@media print {
+	.J-grid-footer{
+		display: none;
+	}
+}

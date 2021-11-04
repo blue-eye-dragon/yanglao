@@ -1,0 +1,91 @@
+body{
+	font-family: Microsoft YaHei;
+	font-size: 20px;
+}
+
+.content-block-title{
+	margin-top: 10px;
+}
+
+.content-block{
+	padding: 0 1px !important;
+	margin-bottom: 8px !important;
+}
+
+.red-background{
+	background: #f34541;
+}
+
+.purple-background{
+	background-color: #9564e2;
+}
+.green-background{
+	background: #49bf67;
+}
+.blue-background{
+	background:#00acec;
+}
+.orange-background{
+	background: #f8a326;
+}
+.muted-background{
+	background: #999;
+}
+.pink-background{
+	background: #c44a83;
+}
+.banana-background{
+	background-color: #fcd052;
+}
+.dark-orange-background{
+	background-color: #f56e00;
+}
+
+.icon{
+	border-radius:5px;
+	width: 50px;
+    height: 45px;
+    text-align: center;
+    padding-top: 5px;
+}
+.icon i{
+	color: white;
+	font-size: 40px;
+}
+
+.item-title{
+	margin-left:10%;
+}
+.item-subtitle{
+	margin-left:10%;
+	margin-top: 5px;
+}
+
+.tab-link.active{
+	background: red !important;
+	color: white !important;
+}
+.toolbar-inner{
+	padding: 0 !important;
+}
+
+.icon-calendar{
+	line-height: 40px;
+}
+
+.icon-ok-sign{
+	color: green;
+}
+
+.icon-exclamation-sign{
+	color: deepskyblue;
+	margin-top: 11px;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.toolbar .right{
+	margin-right: 10px;
+}

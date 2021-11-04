@@ -1,0 +1,9 @@
+.fc-event-inner{
+	padding: 0 15px;
+	font-size: 14px;
+}
+
+.el-activitysignup.detail .J-building,.el-activitysignup.detail .J-members{
+	display: none;
+}
+

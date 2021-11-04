@@ -1,0 +1,37 @@
+.mask{
+	background: black;
+	opacity:0.2;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	left: 0;
+}
+
+.el-mainframe .el-headerbar .el-headerbar-datetime,.el-mainframe .el-headerbar .el-headerbar-weather{
+	padding-top: 0;
+	margin-right: 10px;
+	font-weight: 400;
+}
+.el-mainframe .login{
+	position: absolute;
+	right: 30px;
+	top: 50px;
+	width: 20%;
+	z-index: 500;
+	background: white;
+	border-radius:25px;
+	box-shadow:0 1px 3px rgba(0,0,0,0.45);
+}
+
+.el-mainframe .login-container:before{
+	left: 80% !important;
+}
+
+/*****兼容手机*****/
+@media (max-width : 768px){
+	.el-mainframe .el-headerbar-datetime, .el-mainframe .el-headerbar-weather{
+		display: none;
+	}
+}

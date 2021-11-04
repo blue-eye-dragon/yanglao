@@ -1,0 +1,46 @@
+.el-notifyshow-fullscreen #carousel_container{
+	padding: 0 !important;
+}
+
+.el-notifyshow-fullscreen .caroufredsel_wrapper{
+	width: auto !important;
+}
+
+.el-notifyshow-fullscreen li{
+	position: relative;
+	list-style: none;
+}
+
+.el-notifyshow-fullscreen .notifytext{
+	position: absolute;
+	top: 450px;
+	color: red;
+	width: 78%;
+	margin: 0 11%;
+}
+
+.el-notifyshow-fullscreen .secretary{
+	position: absolute;
+	top: 560px;
+	color: red;
+	left:42%;
+}
+
+.el-notifyshow-fullscreen .membername{
+	top: 370px;
+	color: red;
+	left: 25%;
+	position: absolute;
+}
+
+.el-notifyshow-fullscreen .fullscreen-btn{
+	position: absolute;
+	bottom: 60px;
+	right:20px;
+}
+
+.el-notifyshow-fullscreen .fullscreen-btn input{
+	color:white;
+	float: right;
+	background: none;
+}

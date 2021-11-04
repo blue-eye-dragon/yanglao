@@ -1,0 +1,24 @@
+.el-customer .width_name{
+	width:10%;
+}
+.el-customer .width_phone{
+	width:18%;
+}
+.el-customer .width_int{
+	width:10%;
+}
+.el-customer .width_card{
+	width:12%;
+}
+.el-customer .width_status{
+	width:12%;
+}
+.el-customer .width_visit{
+	width:15%;
+}
+.el-customer .width_return{
+	width:15%;
+}
+.el-customer .width_op{
+	width:8%;
+}

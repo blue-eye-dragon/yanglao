@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+					<property name="jobDetail">
+						<bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="com.eling.elcms.happiness.service.impl.FillingActivity" />
+							<property name="targetMethod" value="createActivity" />
+						</bean>
+					</property>
+					<!-- run every morning at 2 AM -->
+					<property name="cronExpression" value="0 0 2 * * ?" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+					<property name="jobDetail">
+						<bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="com.eling.elcms.community.service.impl.FillingActivityRoomReserve" />
+							<property name="targetMethod" value="createActivityRoomReserve" />
+						</bean>
+					</property>
+					<!-- run every morning at 2 AM -->
+					<property name="cronExpression" value="0 0 2 * * ?" /> 
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+					<property name="jobDetail">
+						<bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="com.eling.elcms.life.service.impl.CreateMemberConcern" />
+							<property name="targetMethod" value="createAction" />
+						</bean>
+					</property>
+					<!-- run every morning at 2 AM -->
+					<property name="cronExpression" value="0 0 2 * * ?" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+					<property name="jobDetail">
+						<bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="com.eling.elcms.schedule.service.impl.PeriodActionLoader" />
+							<property name="targetMethod" value="loadActions" />
+						</bean>
+					</property>
+					<!-- run every morning at 2 AM -->
+					<property name="cronExpression" value="0 0 2 * * ?" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+					<property name="jobDetail">
+						<bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="com.eling.elcms.oa.dailywork.service.impl.WorkTaskPlanManagerImpl" />
+							<property name="targetMethod" value="snapShot" />
+						</bean>
+					</property>
+					<!-- run every night at snapShot 23:30 AM -->
+					<property name="cronExpression" value="0 30 23 * * ?" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<bean class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+					<property name="jobDetail">
+						<bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="com.eling.elcms.device.netatmo.schedule.FetchTask" />
+							<property name="targetMethod" value="fetch" />
+							<property name="concurrent" value="false"/>
+						</bean>
+					</property>
+					<property name="startDelay" value="30000" />
+					<!-- 每十分钟 10 * 60 * 1000 -->
+					<property name="repeatInterval" value="600000" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,54 @@
+.el-checkdetailedregistration .buildingName{
+	width: 80px;
+}
+.el-checkdetailedregistration .roomNumber{
+	width: 80px;
+}
+.el-checkdetailedregistration .roomType{
+	width: 120px;
+}
+.el-checkdetailedregistration .cardNumber{
+	width: 120px;
+}
+.el-checkdetailedregistration .memberShipFees{
+	width: 120px;
+}
+.el-checkdetailedregistration .personName{
+	width: 200px;
+}
+.el-checkdetailedregistration .memName{
+	width: 150px;
+}
+.el-checkdetailedregistration .memStauts{
+	width: 120px;
+}
+.el-checkdetailedregistration .memPhone{
+	width: 220px;
+}
+.el-checkdetailedregistration .annualFee{
+	width: 120px;
+}
+.el-checkdetailedregistration .realAnnualFees{
+	width: 120px;
+}
+.el-checkdetailedregistration .payername{
+	width: 100px;
+}
+.el-checkdetailedregistration .beginDate{
+	width: 180px;
+}
+.el-checkdetailedregistration .checkInDate{
+	width: 100px;
+}
+.el-checkdetailedregistration .epName{
+	width: 100px;
+}
+.el-checkdetailedregistration .epPhone{
+	width: 200px;
+}
+.el-checkdetailedregistration .userName{
+	width: 120px;
+}
+.el-checkdetailedregistration .memFullname{
+	width: 120px;
+}

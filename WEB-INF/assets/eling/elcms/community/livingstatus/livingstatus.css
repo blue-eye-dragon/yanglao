@@ -1,0 +1,93 @@
+.el-livingstatus .el-livingstatus-container{
+	color: #2FABE9;
+	font-weight: bold !important;
+	text-align: center;
+}
+.el-livingstatus .el-livingstatus-container .title{
+	font-size: 30px;
+	color: #2FABE9 !important;
+}
+
+.el-livingstatus .el-livingstatus-container .latestvalue{
+	font-size: 20px;
+	text-align: center;
+}
+
+.el-livingstatus .el-livingstatus-container .font_10{
+	font-size: 12px !important;
+	padding: 3px 0;
+}
+
+.el-livingstatus .el-livingstatus-container .text_in_circle{
+	width: 37px; 
+	height: 20px; 
+	position: absolute; 
+	vertical-align: middle; 
+	margin-top: 25px; 
+	margin-left: -70px; 
+	border: 0px; 
+	font-weight: bold; 
+	font-style: normal; 
+	font-variant: normal; 
+	font-size: 20px; 
+	line-height: normal; 
+	font-family: Arial; 
+	text-align: right; 
+	padding: 0px; 
+	-webkit-appearance: none; 
+	background: none;
+}
+.el-livingstatus .el-livingstatus-container .text_in_circle_nopercent{
+	width: 50px; 
+	height: 25px; 
+	position: absolute; 
+	vertical-align: middle; 
+	margin-top: 30px; 
+	margin-left: -76px; 
+	border: 0px; 
+	font-weight: bold; 
+	font-style: normal; 
+	font-variant: normal; 
+	font-size: 120%; 
+	line-height: normal; 
+	font-family: Arial; 
+	text-align: center; 
+	padding: 0px; 
+	-webkit-appearance: none; 
+	background: none;
+	
+}
+
+
+
+.el-livingstatus .el-livingstatus-container .percent_in_circle{
+	margin-top: 42px !important;
+	width: 40px !important; 
+	margin-left: -65px !important;
+	text-align: right !important; 
+}
+.el-livingstatus .el-livingstatus-container .nopercent_in_circle{
+	display: none;
+}
+/**
+.el-livingstatus .J-houses-value,.el-livingstatus .J-totalNumber-value,.el-livingstatus .J-empty-value,
+.el-livingstatus .J-repair-value,.el-livingstatus .J-checkIn-value,.el-livingstatus .J-market-value,.el-livingstatus .J-housesMonth-value{
+	cursor: not-allowed;
+}
+
+.el-livingstatus .J-total-value,.el-livingstatus .J-man-value,.el-livingstatus .J-women-value,.el-livingstatus .J-accompany-value,
+.el-livingstatus .J-shack-value,.el-livingstatus .J-totalMonth-value ,.el-livingstatus .J-manMonth-value,.el-livingstatus .J-womenMonth-value,
+.el-livingstatus .J-accompanyMonth-value,.el-livingstatus .J-shackMonth-value ,.el-livingstatus .J-goOut-value,.el-livingstatus .J-inHospital-value,
+.el-livingstatus .J-inNursingHome-value{
+	cursor: pointer;
+}
+
+*/
+
+
+
+
+
+
+
+

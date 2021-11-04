@@ -1,0 +1,46 @@
+.el-healthdata{
+	color: #2FABE9;
+	font-weight: bold !important;
+	text-align: center;
+}
+.el-healthdata .title{
+	font-size: 30px;
+	color: #2FABE9 !important;
+}
+
+.el-healthdata .latestvalue{
+	font-size: 50px;
+	text-align: center;
+}
+
+.el-healthdata .item-head{
+	text-align: center;
+	font-size: 50px;
+	color: #2FABE9 !important;
+	font-weight: bold;
+}
+
+.font_10{
+	font-size: 10px !important;
+	padding: 10px 0;
+}
+
+.el-healthdata .unit{
+	text-align: left;
+	margin-top: 30px;
+}
+
+.height_50{
+	height: 50%;
+	padding: 18px 0;
+}
+
+.success-font{
+	color: #5AAD34 !important;
+}
+.warning-font{
+	color: #F4A506 !important;
+}
+.danger-font{
+	color:#FA5833 !important;
+}

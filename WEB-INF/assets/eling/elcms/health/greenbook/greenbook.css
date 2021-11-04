@@ -1,0 +1,188 @@
+@media print{
+	h1{
+		font-size: 30px !important;
+	}
+	h2{
+		font-size: 18px !important;
+		font-weight: 700;
+	}
+	h3{
+		font-size: 16px !important; 
+	}
+	h4{
+		font-size: 16px !important;
+	}
+	.el-greenbook .healthinfo .title h1,.el-greenbook .disease .title h1{
+		font-size: 30px;
+	}
+	.el-greenbook .healthinfo .title section{
+		font-size: 16px;
+	}
+	.el-greenbook .healthinfo .title h2,.el-greenbook .disease .title h2{
+		font-size: 18px;
+	}
+	.el-greenbook .healthinfo .content h3{
+		font-size: 16px;
+	}
+	.el-greenbook .healthinfo .content li{
+		font-size: 16px;
+	}
+	.el-greenbook .totalDisease span{
+		font-size: 16px;
+	}
+	.el-greenbook .disease .content p{
+		font-size: 16px;
+	}
+	.el-greenbook table pre,.el-greenbook table thead,.el-greenbook table tfoot{
+		font-size: 16px;
+	}
+	.el-greenbook .nutrition section,.el-greenbook .sportsguide section{
+		font-size: 16px;
+	}
+	.J-grid-title{
+		font-size: 16px;
+	}
+	.el-greenbook .healthguide_symptom{
+		width: 30%;
+	}	
+	.el-greenbook .healthguide_attention{
+		width: 70%;
+	}
+	
+	.el-greenbook .nutrition .exchange .box-header{
+		padding: 0px 15px !important;
+	}
+	.el-greenbook .nutrition .calorie h2,.el-greenbook .nutrition .suggest h2{
+		margin-top: 10px !important;
+		margin-bottom: 2px !important;
+	}
+}
+/******************整体样式**********************/
+.el-greenbook li{
+	list-style: none;
+	font-size: 16px !important;
+}
+
+.el-greenbook .title h1{
+	text-align: center;
+	font-size: 30px !important;
+}
+.el-greenbook .title section{
+	text-indent: 28px;
+	font-size: 16px !important;
+}
+
+.el-greenbook .page-break{
+	page-break-after: always;
+}
+
+/******************封面样式**********************/
+.el-greenbook header{
+	margin-top:35%;
+	text-align: center;
+	page-break-after: always;
+}
+
+.el-greenbook header h1{
+	font-size: 30px;
+}
+
+.el-greenbook header h4{
+	text-align:right;
+	margin-top:50px;
+	font-size: 28px;
+	margin-right: 20px;
+}
+
+
+/****************有关outline的样式*****************/
+.el-greenbook .outline h2{
+	margin-top: 18px !important;
+	margin-bottom: 8px !important; 
+}
+
+.el-greenbook .outline h4{
+	margin-top: 8px !important;
+	margin-bottom: 8px !important; 
+}
+
+.el-greenbook .outline{
+	page-break-after: always;
+}
+
+.el-greenbook .outline section{
+	margin-left: 15px;
+}
+
+.el-greenbook .outline section h5{
+	font-size:13px;
+	margin-left: 15px;
+}
+
+/****************健康信息汇总的样式******************/
+.el-greenbook .healthinfo .answer{
+	margin-left: -18px;
+}
+.el-greenbook .healthinfo h4{
+	font-size: 18px
+}
+
+/****************主要疾病信息及健康指导******************/
+.el-greenbook .disease .totalDisease{
+	text-indent: 42px;
+	font-size: 20px;
+}
+
+.el-greenbook .disease .totalDisease span{
+	padding-left: 30px;
+	font-size: 16px !important;
+}
+
+
+
+/****************营养专项信息汇总及健康指导******************/
+
+.el-greenbook .healthguide h1{
+	text-align: center;
+}
+
+.el-greenbook .healthguide .healthguide_symptom{
+	width: 25%;
+}	
+
+.el-greenbook .healthguide .healthguide_attention{
+	width: 75%;
+}
+
+.el-greenbook .healthguide .calorie section,.el-greenbook .healthguide .calorie h3,
+.el-greenbook .healthguide .suggest section,.el-greenbook .healthguide .suggest h3{
+	text-indent: 24px;
+	padding: 0 10px;
+}
+
+.el-greenbook .healthguide .exchange{
+	page-break-after: always;
+}
+
+.el-greenbook .sportsguide{
+	page-break-after: always;
+}
+
+.el-greenbook .sportsguide h1{
+	text-align: center;
+}
+.el-greenbook .sportsguide .sprotguide_title{
+	text-indent: 14px
+}
+.el-greenbook .sportsguide .sprotguide_content{
+	text-indent: 28px
+}
+
+@media print {
+	.el-greenbook .J-subnav{
+		display: none;
+	}
+	.el-greenbook header{
+		display: block;
+	}
+}

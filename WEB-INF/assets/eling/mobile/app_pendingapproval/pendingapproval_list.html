@@ -1,0 +1,34 @@
+<div class="pages">
+
+	<div data-page="list" class="page navbar-fixed toolbar-fixed">
+	
+		<!-- 导航条  -->
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="center">待审批列表({{this.datas.length}})</div>
+			</div>
+		</div>
+		
+		<!-- 主页面 -->
+		<div class="page-content">
+			{{#each this.datas}}
+			<div id="detail-{{this.pkApprovalProcess}}" class="card approval-card J-detail-item" data-index="{{@index}}">
+				 <div class="card-header">
+				 	<div class="approval-name">{{this.description}}</div>
+	   				<div class="approval-date">{{this.commitTimeStr}}</div>
+				 </div>
+				 <div class="card-content">
+				 	<div class="card-content-inner">{{this.msg}}</div>
+	  			 </div>
+	  			 <div class="card-footer">
+		  			 <p class="color-gray">{{this.beforeTimeStr}}</p>
+		  			 <p class="color-gray">{{this.beforeProcess.checker.name}}</p>
+		  			 <p class="color-gray">{{this.beforeProcess.status.value}}</p>
+	  			 </div>
+ 			</div>
+ 			 {{/each}}
+		</div>
+		
+	</div>
+	
+</div>

@@ -1,0 +1,72 @@
+<li class="accordion-item J-detail">
+	<a href="#" class="item-content item-link">
+	    	<div class="item-inner">
+		       	<div class="item-title list">{{this.startDate}}</div>
+		       	<div class="item-after list-after">
+		       			{{this.signup.activity.theme}}
+		       	</div>
+	    	</div>
+	</a>
+	<div class="accordion-item-content">
+		<div class="content-block">
+			<ul>
+				<li class="item-content" style="list-style-type:none;">
+					<div class="item-inner">
+					    <div class="item-title">主题:</div>
+					    <div class="item-after">
+					    	{{this.signup.activity.theme}}
+					    </div>
+					</div>
+				</li>
+				<li class="item-content" style="list-style-type:none;">
+					<div class="item-inner">
+					    <div class="item-title">活动地点:</div>
+					    <div class="item-after">
+					    	{{this.signup.activity.activitySite}}
+					    </div>
+					</div>
+				</li>
+				<li class="item-content" style="list-style-type:none;">
+					<div class="item-inner">
+					    <div class="item-title">开始时间:</div>
+					    <div class="item-after">
+					    	{{this.signup.activity.activityStartTime}}
+					    </div>
+					</div>
+				</li>
+				<li class="item-content" style="list-style-type:none;">
+					<div class="item-inner">
+					    <div class="item-title">结束时间:</div>
+					    <div class="item-after">
+					    	{{this.signup.activity.activityEndTime}}
+					    </div>
+					</div>
+				</li>
+				<li class="item-content" style="list-style-type:none;">
+					<div class="item-inner">
+					    <div class="item-title">活动类型:</div>
+					    <div class="item-after">
+					    	{{this.signup.activity.interestTypes}}
+					    </div>
+					</div>
+				</li>
+				<li class="item-content" style="list-style-type:none;">
+				    <div class="item-inner">
+				        <div class="item-title">活动范围:</div>
+				        <div class="item-after">
+				        	{{this.signup.activity.scope.value}}
+				        </div>
+				    </div>
+				</li>
+				<li class="item-content" style="list-style-type:none;">
+				    <div class="item-inner">
+				        <div class="item-title">会员负责人:</div>
+				        <div class="item-after">
+				        	{{this.signup.activity.members}}
+				        </div>
+				    </div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</li>

@@ -1,0 +1,70 @@
+.el-importtaskexecute .J-importtaskexecute-start .J-worktaskplan-department {
+	display: inline-block;
+	text-align: left;
+	font-size: 20px;
+
+}
+.el-importtaskexecute .J-importtaskexecute-start .J-worktaskplan-userCreate {
+	display: inline-block;
+	text-align: left;
+	font-size: 20px;
+
+}
+.el-importtaskexecute .J-importtaskexecute-start .J-lastweek {
+	display: inline-block;
+	text-align: left;
+	margin-right: 15px;
+	
+}
+.el-importtaskexecute .J-importtaskexecute-start .J-nextweek {
+	display: inline-block;
+	text-align: left;
+	margin-right: 15px;
+	
+}
+.J-printgriddetail1
+{
+	display: none;
+}
+.J-printgriddetail1-title
+{
+	display: none;
+}
+.J-printgriddetail2
+{
+	display: none;
+}
+.J-printgriddetail2-title
+{
+	display: none;
+}
+@media print {
+	.J-subnav,
+	.J-grid{
+		display: none;
+	}
+	.J-printgriddetail1{
+		display: block;
+	}
+	.J-printgriddetail1-title{
+		display: block;
+		text-align:center;
+		width:100%;
+		font-size: 30px;
+	}
+	.J-printgriddetail2{
+		display: block;
+	}
+	.J-printgriddetail2-title{
+		display: block;
+		text-align:center;
+		width:100%;
+		font-size: 30px;
+	}
+	.J-grid-title{
+		display: block;
+		text-align:center;
+		width:100%;
+		font-size: 20px;
+	}
+}

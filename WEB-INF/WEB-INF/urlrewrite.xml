@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+<urlrewrite default-match-type="wildcard">
+    <!-- Add rules here for anything that shouldn't be served up by Spring MVC. -->
+    <rule>
+        <from>/</from>
+        <to>/index.jsp</to>
+    </rule>
+    <rule>
+    	<from>/index.jsp</from>
+    	<to type="redirect">%{context-path}/</to>
+    </rule>
+    <rule>
+    	<from>**/richeditor/**</from>
+    	<to>/richeditor/$2</to>
+    </rule>
+    <rule>
+    	<from>/sign_up.jsp</from>
+    	<to>/sign_up.jsp</to>
+    </rule>
+    <rule>
+        <from>/changepwd</from>
+        <to>/changepwd.html</to>
+    </rule>
+    <rule>
+        <from>/app/**</from>
+        <to last="true" type="redirect">%{context-path}/$1</to>
+    </rule>
+    <rule>
+        <from>/sign_in*</from>
+        <to>/sign_in.jsp</to>
+    </rule>
+    <rule>
+        <from>/j_spring_security_*</from>
+        <to>/j_spring_security_$1</to>
+    </rule>
+    <rule>
+        <from>/emailverification*</from>
+        <to>/emailverification.html</to>
+    </rule>
+    <rule>
+        <from>/memberhealth*</from>
+        <to>/memberhealth.html</to>
+    </rule>
+     <rule>
+        <from>/qrcode*</from>
+        <to>/qrcode.html</to>
+    </rule>
+    <rule>
+        <from>/agencysignupinfo*</from>
+        <to>/agencysignupinfo.html</to>
+    </rule>
+    <rule>
+        <from>/disclaimer*</from>
+        <to>/disclaimer.html</to>
+    </rule>
+    <rule>
+        <from>/verificationback*</from>
+        <to>/verificationback.html</to>
+    </rule>
+    <!-- 将所有api(Ajax)请求定向到Spring MVC 下 -->
+	<rule>
+		<from>**/api/**</from>
+		<to>/app/api/$2</to>
+	</rule>
+
+	<!-- 解决js缓存问题，每次打包生成不同的时间戳：ts* 
+    <rule>
+        <from>/assets/ts*/**</from>
+        <to>/assets/$2</to>
+    </rule>-->
+
+	<!-- 所有不需要重定向的配置，必须在上面的规则之后 -->
+    <rule>
+    	<from>/html/**</from>
+    	<to>/html/$1</to>
+    </rule>
+    <rule>
+        <from>/assets/**</from>
+        <to>/assets/$1</to>
+    </rule>
+    <rule>
+        <from>/assets*/assets/**</from>
+        <to>/assets$1/assets/$2</to>
+    </rule>
+    <rule>
+    	<from>/mobile/**</from>
+    	<to>/mobile/$1</to>
+    </rule>
+
+    <!-- Spring MVC 保持在配置文件最后 -->
+    <rule>
+        <from>/**</from>
+        <to>/app/$1</to>
+    </rule>
+    <outbound-rule>
+        <from>/app/**</from>
+        <to>/$1</to>
+    </outbound-rule>
+</urlrewrite>

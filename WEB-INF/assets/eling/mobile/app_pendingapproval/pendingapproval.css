@@ -1,0 +1,61 @@
+body{
+	font-family: Microsoft YaHei;
+	font-size: 20px;
+}
+
+.content-block-title{
+	margin-top: 15px;
+}
+
+
+/* .item-title,.item-subtitle{
+	padding-left: 30px;
+} */
+
+.item-after{
+	padding-right: 40px;
+}
+
+.item-title-row{
+	background-image:none !important;
+}
+
+.width_50{
+	width: 48%;
+}
+
+.color-red{
+    background: #ff3b30 !important;
+    color: #fff;
+}
+.color-redb{
+	border-color: #ff0000;
+	border-style: Solid;
+	border-width: 1px;
+}
+
+.color-green{
+    background: #4cd964 !important;
+    color: #fff;
+}
+
+.content-btn-block{
+	width: 100%;
+}
+
+.el-approval-card {
+	margin: 10px 0;
+}
+
+.item-after{
+	max-width: 150px !important;
+	white-space: inherit !important;
+	max-height : inherit !important;
+	word-break:break-all !important;
+}
+.card-content-inner{
+	max-width: 100% !important;
+	white-space: inherit !important;
+	max-height : inherit !important;
+	word-break:break-all !important;
+}

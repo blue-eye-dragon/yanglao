@@ -1,0 +1,161 @@
+.el-salestatus .mix {
+    display: none;
+}
+
+/*.el-salestatus .building{
+    width: 8%;
+    float: left;
+    font-size: 1.5em;
+}*/
+
+.el-salestatus .room-container{
+    width: 90%;
+    float: left;
+    margin-left:2%;
+    margin-top: 4px;
+}
+
+.el-salestatus .room-item{
+    width: 9%;
+    float: left;
+}
+
+.el-salestatus .nopadding {
+    padding: 0;
+}
+
+.J-salestatus-total-content .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+    min-height: 100px;
+
+}
+
+.J-salestatus-total-content .building {
+    min-width:80px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    border-right: 1px solid #DCDFE6;
+}
+
+.J-salestatus-total-content .container {
+    border: 1px solid #DCDFE6;
+    border-radius: 1px;
+    margin-top: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
+}
+
+.J-salestatus-total-content .container .level-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    min-height: 100px;
+    width: 100%;
+}
+
+.J-salestatus-total-content .container .level-container .level-item{
+    border-bottom: 1px solid #DCDFE6;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+    min-height: 80px;
+}
+
+.level-item .level {
+    min-width:40px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 1px solid #DCDFE6;
+
+}
+
+.level-item .room-container {
+    flex-grow: 1;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.room-container .room-item{
+    border: 1px solid #00B83F;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    min-width:120px;
+    min-height: 80px;
+}
+
+.room-item .room{
+    border-bottom: 1px solid #DCDFE6;
+    text-align: center;
+}
+
+.room-item .bed-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2px;
+}
+
+.bed-container .bed{
+    margin-left: 4px;
+    border: 1px solid #4679fc;
+    padding:2px 8px;
+    border-radius:2px;
+    cursor: pointer;
+    color:#000000;
+}
+
+.bed-container .bed:hover{
+    background: #4679fc;
+    color:#ffffff;
+}
+
+.bed-container .bed-occupy:hover{
+    background: #4679fc;
+    color:#ffffff;
+}
+
+.bed-container  .bed-occupy {
+    border-radius: 50%;
+    margin-left: 4px;
+    border: 1px solid #ff8221;
+    padding:2px 8px;
+    cursor: pointer;
+    color:#000000;
+}
+
+.J-salestatus-bindPeronToBed {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 8px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.J-salestatus-bindPeronToBed-form {
+    width:50%;
+}
+
+.J-salestatus-bindPeronToBed-cardOwnerGrid{
+    flex-grow:1;
+    margin-left: 8px;
+
+}

@@ -1,0 +1,82 @@
+<div class="pages">
+	<div data-page="detail" class="page navbar-fixed toolbar-fixed">
+		<!-- 导航条  -->
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="left">
+					<a href="#" class="link icon-only J-goback">
+						<i class="icon icon-back"></i>
+					</a>
+				</div>
+				<div class="center">{{this.header}}</div>
+			</div>
+		</div>
+		
+		<div class="page-content">
+			<div class="content-block-title">详细信息</div>
+			<div class="list-block">
+	  			<ul>
+	    			<li>
+	      				<div class="item-content">
+	       					<div class="item-inner">
+	       						<div class="item-title label">缴费金额</div>
+	       						<div class="item-input">
+	           						<input type="text" value="{{this.detail.fees}}" disabled>
+	       						</div>
+	       					</div>
+	   					</div>
+	   				</li>
+	    			<li>
+	      				<div class="item-content">
+	       					<div class="item-inner">
+	       						<div class="item-title label">缴费时间</div>
+	   							<div class="item-input">
+	       							<input type="text" value="{{this.detail.payDate}}" disabled>
+	   							</div>
+	   						</div>
+	   					</div>
+	   				</li>
+	   				<li>
+	      				<div class="item-content">
+	       					<div class="item-inner">
+	       						<div class="item-title label">房间号</div>
+	   							<div class="item-input">
+	       							<input type="text" value="02-205" disabled>
+	   							</div>
+	   						</div>
+	   					</div>
+	   				</li>
+	   				<li>
+	      				<div class="item-content">
+	       					<div class="item-inner">
+	       						<div class="item-title label">联系电话</div>
+	   							<div class="item-input">
+	       							<input type="text" value="13720053651" disabled>
+								</div>
+							</div>
+						</div>
+	   				</li>
+	   				<li>
+	      				<div class="item-content">
+	       					<div class="item-inner">
+	   						<div class="item-title label">付款方式</div>
+	   							<div class="item-input">
+	       							<input type="text" value="{{this.detail.payTypeStr}}" disabled>
+	   							</div>
+	   						</div>
+						</div>
+	   				</li>
+				</ul>
+				<div class="text-center">
+					{{#if this.detail.status}}
+					<h2><i class="icon icon-ok-sign"></i>已缴清</h2>
+					{{else}}
+						{{#if this.detail.notStatus}}
+						<h2><i class="icon icon-exclamation-sign"></i>未缴清</h2>
+						{{/if}}
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

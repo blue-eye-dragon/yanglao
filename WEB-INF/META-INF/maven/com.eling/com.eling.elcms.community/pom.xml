@@ -1,0 +1,504 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>com.eling.elcms.community</artifactId>
+	<packaging>war</packaging>
+	<description>elcms的养老社区项目</description>
+	<version>1.19.7.13</version>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<attachClasses>true</attachClasses>
+					<escapeString>\</escapeString>
+					<packagingExcludes>${app.packagingExcludes}</packagingExcludes>
+ 					<webResources>
+                		<resource>
+							<directory>src/main/webapp/WEB-INF/config</directory>
+							<targetPath>WEB-INF/config</targetPath>
+							<filtering>${app.build.filtering}</filtering>
+						</resource>
+					</webResources>
+					<overlays>
+						<!-- com.eling.elcms.system-web -->
+ 						<overlay>
+							<groupId>com.eling</groupId>
+							<artifactId>com.eling.elcms.system-web</artifactId>
+							<skip>${app.build.overlay.skip}</skip>
+							<includes>
+								<include>index.jsp</include>
+								<include>WEB-INF/config/</include>
+								<include>assets/config/</include>
+								<include>mobile/requirejs/</include>
+							</includes>
+							<filtered>${app.build.filtering}</filtered>
+						</overlay>
+ 						<overlay>
+							<groupId>com.eling</groupId>
+							<artifactId>com.eling.elcms.system-web</artifactId>
+							<skip>${app.build.overlay.skip}</skip>
+							<excludes>
+								<exclude>WEB-INF/config/</exclude>
+								<exclude>assets/config/</exclude>
+								<exclude>mobile/requirejs/</exclude>
+							</excludes>
+						</overlay>
+
+ 						<!-- com.eling.elcms -->
+ 						<overlay>
+							<groupId>com.eling</groupId>
+							<artifactId>com.eling.elcms</artifactId>
+							<skip>${app.build.overlay.skip}</skip>
+							<includes>
+								<include>WEB-INF/config/</include>
+							</includes>
+							<filtered>${app.build.filtering}</filtered>
+						</overlay>
+ 						<overlay>
+							<groupId>com.eling</groupId>
+							<artifactId>com.eling.elcms</artifactId>
+							<skip>${app.build.overlay.skip}</skip>
+							<excludes>
+								<exclude>WEB-INF/config/</exclude>
+							</excludes>
+						</overlay>
+					</overlays>
+				</configuration>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<filtering>false</filtering>
+				<includes><include>**/*.xlsx</include></includes>
+			</resource>
+			<!-- 新增需编译的属性文件 -->
+			<resource>
+				<directory>WEB-INF/config/</directory>
+				<filtering>true</filtering>
+				<includes><include>*.properties</include></includes>
+			</resource>
+		</resources>
+	</build>
+	<profiles>
+		<profile>
+			<id>m2e</id>
+			<!-- This profile is only activated when building in Eclipse with m2e -->
+			<activation>
+				<property>
+					<name>m2e.version</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.4</version>
+						<configuration>
+							<attachClasses>true</attachClasses>
+							<packagingExcludes>${app.packagingExcludes}</packagingExcludes>
+		 					<webResources>
+		                		<resource>
+									<directory>src/main/webapp/WEB-INF/config</directory>
+									<targetPath>WEB-INF/config</targetPath>
+									<filtering>${app.build.filtering}</filtering>
+								</resource>
+		                		<resource>
+									<directory>target/m2e-wtp/overlays/com.eling.elcms.system-web-1.8.8.8.war/assets/config</directory>
+									<targetPath>assets/config</targetPath>
+									<filtering>${app.build.filtering}</filtering>
+								</resource>
+								<resource>
+									<directory>target/m2e-wtp/overlays/com.eling.elcms.system-web-1.8.8.8.war/mobile/requirejs</directory>
+									<targetPath>mobile/requirejs</targetPath>
+									<filtering>${app.build.filtering}</filtering>
+								</resource>
+		                		<resource>
+									<directory>target/m2e-wtp/overlays/com.eling.elcms.system-web-1.8.8.8.war/WEB-INF/config</directory>
+									<targetPath>WEB-INF/config</targetPath>
+									<filtering>${app.build.filtering}</filtering>
+								</resource>
+		                		<resource>
+									<directory>target/m2e-wtp/overlays/com.eling.elcms-1.20.7.13.war/WEB-INF/config</directory>
+									<targetPath>WEB-INF/config</targetPath>
+									<filtering>${app.build.filtering}</filtering>
+								</resource>
+							</webResources>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>properties-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>initialize</phase>
+								<goals>
+									<goal>read-project-properties</goal>
+								</goals>
+								<configuration>
+									<files>
+										<file>${basedir}/src/test/dev.properties</file>
+									</files>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.eclipse.m2e</groupId>
+							<artifactId>lifecycle-mapping</artifactId>
+							<version>1.0.0</version>
+							<configuration>
+								<lifecycleMappingMetadata>
+									<pluginExecutions>
+										<pluginExecution>
+											<pluginExecutionFilter>
+												<groupId>org.codehaus.mojo</groupId>
+												<artifactId>properties-maven-plugin</artifactId>
+												<versionRange>1.0-alpha-2</versionRange>
+												<goals>
+													<goal>read-project-properties</goal>
+												</goals>
+											</pluginExecutionFilter>
+											<action>
+												<execute>
+													<runOnConfiguration>true</runOnConfiguration>
+													<runOnIncremental>true</runOnIncremental>
+												</execute>
+											</action>
+										</pluginExecution>
+									</pluginExecutions>
+								</lifecycleMappingMetadata>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+				</build>
+		</profile>
+
+		<!-- ================= test环境配置项 ================= -->
+		<profile>
+			<id>kq-test</id>
+			<properties>
+				<db.host>192.168.1.108</db.host>
+				<db.name>kq_test</db.name>
+				<app.js.parentdir>ts${buildNumber}/</app.js.parentdir>
+				<app.js.mode></app.js.mode>
+				<app.build.finalName>kq-t</app.build.finalName>
+				<app.usermanager.validatePasswordPolicy>true</app.usermanager.validatePasswordPolicy>
+				<app.theme>eling</app.theme>
+				<app.packagingExcludes>%regex[WEB-INF/lib/(?!com\.eling\.)(.)+(\.jar)]</app.packagingExcludes>
+				<app.city>2151330</app.city>
+				<app.log.appender>FILE</app.log.appender>
+
+				<app.fileserver.url>${app.fileserver.url.intranet.qingcloud}/release</app.fileserver.url>
+				<app.fileserver.basedir>${app.build.finalName}</app.fileserver.basedir>
+
+				<wechat.server.qy.url>${wechat.server.qy.test.url}</wechat.server.qy.url>
+		    	<wechat.qy.agentid>${wechat.qy.test.agentid}</wechat.qy.agentid>
+		    	<wechat.qy.organization.code>e-ling</wechat.qy.organization.code>
+		    	<wechat.qy.server.valid>YES</wechat.qy.server.valid>
+
+			</properties>
+		</profile>
+		<!-- ================= release环境配置项 ================= -->
+		<profile>
+			<id>kq-release</id>
+			<properties>
+				<db.host>192.168.1.108</db.host>
+				<db.name>kq_release</db.name>
+				<app.js.parentdir>ts${buildNumber}/</app.js.parentdir>
+				<app.js.mode></app.js.mode>
+				<app.build.finalName>kq-r</app.build.finalName>
+				<app.theme>eling</app.theme>
+				<app.packagingExcludes>%regex[WEB-INF/lib/(?!com\.eling\.)(.)+(\.jar)]</app.packagingExcludes>
+				<app.city>2151330</app.city>
+				<app.log.appender>FILE</app.log.appender>
+
+				<app.fileserver.url>${app.fileserver.url.intranet.qingcloud}/release</app.fileserver.url>
+				<app.fileserver.basedir>${app.build.finalName}</app.fileserver.basedir>
+
+				<wechat.server.qy.url>${wechat.server.qy.test.url}</wechat.server.qy.url>
+		    	<wechat.qy.agentid>${wechat.qy.test.agentid}</wechat.qy.agentid>
+		    	<wechat.qy.organization.code>e-ling</wechat.qy.organization.code>
+		    	<wechat.qy.server.valid>YES</wechat.qy.server.valid>
+
+
+			</properties>
+		</profile>
+		<!-- ================= hotfix环境配置项 ================= -->
+		<profile>
+			<id>kq-hotfix</id>
+			<properties>
+				<db.host>192.168.1.108</db.host>
+				<db.name>kq_hotfix</db.name>
+				<app.js.parentdir>ts${buildNumber}/</app.js.parentdir>
+				<app.js.mode></app.js.mode>
+				<app.build.finalName>kq-h</app.build.finalName>
+				<app.theme>eling</app.theme>
+				<app.packagingExcludes>%regex[WEB-INF/lib/(?!com\.eling\.)(.)+(\.jar)]</app.packagingExcludes>
+				<app.city>2151330</app.city>
+				<app.log.appender>FILE</app.log.appender>
+
+				<app.fileserver.url>${app.fileserver.url.intranet.qingcloud}/release</app.fileserver.url>
+				<app.fileserver.basedir>${app.build.finalName}</app.fileserver.basedir>
+
+				<wechat.server.qy.url>${wechat.server.qy.test.url}</wechat.server.qy.url>
+		    	<wechat.qy.agentid>${wechat.qy.test.agentid}</wechat.qy.agentid>
+		    	<wechat.qy.organization.code>e-ling</wechat.qy.organization.code>
+		    	<wechat.qy.server.valid>YES</wechat.qy.server.valid>
+
+
+			</properties>
+		</profile>
+		<!-- ================= validate环境配置项 ================= -->
+		<profile>
+			<id>kq-validate</id>
+			<properties>
+				<db.host>192.168.1.108</db.host>
+				<db.name>kq_validate</db.name>
+				<app.js.parentdir>ts${buildNumber}/</app.js.parentdir>
+				<app.js.mode></app.js.mode>
+				<app.build.finalName>kq-v</app.build.finalName>
+				<app.theme>eling</app.theme>
+				<app.packagingExcludes>%regex[WEB-INF/lib/(?!com\.eling\.)(.)+(\.jar)]</app.packagingExcludes>
+				<app.city>2151330</app.city>
+				<app.log.appender>FILE</app.log.appender>
+
+				<app.fileserver.url>${app.fileserver.url.intranet.qingcloud}/release</app.fileserver.url>
+				<app.fileserver.basedir>${app.build.finalName}</app.fileserver.basedir>
+
+				<wechat.server.qy.url>${wechat.server.qy.test.url}</wechat.server.qy.url>
+		    	<wechat.qy.agentid>${wechat.qy.test.agentid}</wechat.qy.agentid>
+		    	<wechat.qy.organization.code>e-ling</wechat.qy.organization.code>
+		    	<wechat.qy.server.valid>YES</wechat.qy.server.valid>
+
+
+			</properties>
+		</profile>
+		<!-- =================康桥的正式环境配置项 ================= -->
+		<profile>
+			<id>kq</id>
+			<properties>
+				<db.host>192.168.1.200</db.host>
+				<db.name>qinheyuan</db.name>
+				<app.js.parentdir>ts${buildNumber}/</app.js.parentdir>
+				<app.js.mode></app.js.mode>
+				<app.build.finalName>qinheyuan</app.build.finalName>
+				<app.usermanager.validatePasswordPolicy>true</app.usermanager.validatePasswordPolicy>
+				<app.theme>eling</app.theme>
+				<app.packagingExcludes>%regex[WEB-INF/lib/(?!com\.eling\.)(.)+(\.jar)]</app.packagingExcludes>
+				<app.city>2151849</app.city>
+				<app.log.appender>FILE</app.log.appender>
+
+				<app.fileserver.url>${app.fileserver.url.intranet.aliyun}/release</app.fileserver.url>
+				<app.fileserver.basedir>${app.build.finalName}</app.fileserver.basedir>
+
+				<wechat.server.qy.url>${wechat.server.qy.zs.url}</wechat.server.qy.url>
+		    	<wechat.qy.agentid>${wechat.qy.xzs.agentid}</wechat.qy.agentid>
+		    	<wechat.qy.organization.code>qinheyuan</wechat.qy.organization.code>
+		    	<wechat.qy.server.valid>YES</wechat.qy.server.valid>
+
+
+			</properties>
+		</profile>
+		<!-- ================= 康桥的demo环境配置项 ================= -->
+		<profile>
+			<id>kq-demo</id>
+			<properties>
+				<db.host>192.168.1.108</db.host>
+				<db.name>kq_demo</db.name>
+				<app.js.parentdir>ts${buildNumber}/</app.js.parentdir>
+				<app.js.mode></app.js.mode>
+				<app.build.finalName>demo</app.build.finalName>
+				<app.theme>eling</app.theme>
+				<app.packagingExcludes>%regex[WEB-INF/lib/(?!com\.eling\.)(.)+(\.jar)]</app.packagingExcludes>
+				<app.city>2151849</app.city>
+				<app.log.appender>FILE</app.log.appender>
+
+				<app.fileserver.url>${app.fileserver.url.intranet.qingcloud}/release</app.fileserver.url>
+				<app.fileserver.basedir>${app.build.finalName}</app.fileserver.basedir>
+
+				<wechat.server.qy.url>${wechat.server.qy.test.url}</wechat.server.qy.url>
+		    	<wechat.qy.agentid>${wechat.qy.test.agentid}</wechat.qy.agentid>
+		    	<wechat.qy.organization.code>e-ling</wechat.qy.organization.code>
+		    	<wechat.qy.server.valid>YES</wechat.qy.server.valid>
+
+				<monitor.port>58080</monitor.port>
+			</properties>
+		</profile>
+	</profiles>
+	<properties>
+		<app.build.finalName>${project.artifactId}-${project.version}</app.build.finalName>
+		<app.js.mode>-debug</app.js.mode>
+    	<app.city>2151330</app.city>
+		<!-- <db.host>47.106.214.70</db.host>
+		<db.port>24200</db.port>-->
+		<!--<db.host>localhost</db.host>
+		<db.port>3306</db.port>
+		<db.name>qinheyuan</db.name>
+		<db.username>root</db.username>
+		<db.password>123456</db.password>-->
+		<db.host>mysql</db.host>
+		<db.port>3306</db.port>
+		<db.name>qinheyuan</db.name>
+		<db.username>dev</db.username>
+		<db.password>demo</db.password>
+		<!--<db.username>zt</db.username>
+		<db.password>zhongtie_demo</db.password>-->
+
+    	<app.fileserver.url.intranet.aliyun>http://192.168.1.101:8080/webdav/file</app.fileserver.url.intranet.aliyun>
+    	<app.fileserver.url.intranet.qingcloud>http://192.168.1.121:8080/webdav/file</app.fileserver.url.intranet.qingcloud>
+    	<app.fileserver.url.internet>http://117.121.26.96:51212/webdav/file</app.fileserver.url.internet>
+    	<app.fileserver.url>${app.fileserver.url.internet}/dev</app.fileserver.url>
+    	<app.fileserver.basedir>${project.artifactId}-${project.version}/${user.name}</app.fileserver.basedir>
+
+
+    	<wechat.server.qy.zs.url>http://117.121.26.62/wechat/api/wechat/message/qy/</wechat.server.qy.zs.url>
+    	<wechat.server.qy.test.url>http://dev.e-lingcloud.com/wx/api/wechat/message/qy/</wechat.server.qy.test.url>
+    	<!-- 微信企业号测试应用id -->
+    	<wechat.qy.agentid>6</wechat.qy.agentid>
+    	<wechat.qy.test.agentid>6</wechat.qy.test.agentid>
+    	<wechat.qy.xzs.agentid>0</wechat.qy.xzs.agentid>
+
+    	<wechat.qy.organization.code>e-ling</wechat.qy.organization.code>
+    	<wechat.qy.server.valid>YES</wechat.qy.server.valid>
+
+		<wechat.server.qy.url>http://dev.e-lingcloud.com/wx/api/wechat/message/qy/</wechat.server.qy.url>
+
+
+	</properties>
+	<dependencies>
+
+		<dependency>
+			<groupId>com.eling</groupId>
+			<artifactId>com.eling.elcms</artifactId>
+			<version>1.20.7.13</version>
+			<type>war</type>
+			<!-- <exclusions>
+				<exclusion>
+					<groupId>com.eling</groupId>
+					<artifactId>com.eling.elcms.system-web</artifactId>
+				</exclusion>
+			</exclusions>-->
+		</dependency>
+
+		<!--<dependency>
+			<groupId>com.eling</groupId>
+			<artifactId>com.eling.elcms.system-web</artifactId>
+			<version>1.9.9</version>
+			<type>war</type>
+			<scope>runtime</scope>
+		</dependency>-->
+		<dependency>
+			<groupId>com.eling</groupId>
+			<artifactId>com.eling.elcms</artifactId>
+			<version>1.20.7.13</version>
+			<type>jar</type>
+			<classifier>classes</classifier>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.eling</groupId>
+			<artifactId>
+				com.eling.elcms.integration.honeywell
+			</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.eling</groupId>
+			<artifactId>
+				com.eling.elcms.integration.superrfid
+			</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.eling</groupId>
+			<artifactId>com.eling.elcms.monitor</artifactId>
+			<version>1.0.2</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.eling</groupId>
+			<artifactId>com.eling.elcms.monitor</artifactId>
+			<version>1.0.2</version>
+			<type>jar</type>
+			<classifier>classes</classifier>
+		</dependency>
+
+		<dependency>
+			<groupId>com.eling</groupId>
+			<artifactId>com.eling.elcms.agent</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>properties-maven-plugin</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.4.1</version>
+		</dependency>
+
+		<!-- aliyun -->
+		<dependency>
+			<groupId>com.aliyun</groupId>
+			<artifactId>aliyun-java-sdk-sts</artifactId>
+			<version>2.1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.aliyun</groupId>
+			<artifactId>aliyun-java-sdk-core</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.aliyun.oss</groupId>
+			<artifactId>aliyun-sdk-oss</artifactId>
+			<version>2.8.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.4.1</version>
+		</dependency>
+	</dependencies>
+
+	<parent>
+		<groupId>com.eling</groupId>
+		<artifactId>elcms.pom</artifactId>
+		<version>1.6.0</version>
+	</parent>
+
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<url>http://maven.e-lingcloud.com/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+</project>

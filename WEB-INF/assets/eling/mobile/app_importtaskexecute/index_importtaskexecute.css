@@ -1,0 +1,45 @@
+body{
+	font-family: Microsoft YaHei;
+	font-size: 20px;
+}
+
+.content-block-title{
+	margin-top: 10px;
+}
+
+.content-block{
+	padding: 0 1px !important;
+	margin-bottom: 8px !important;
+}
+
+.toolbar-inner{
+	padding: 0 !important;
+}
+
+.center{
+	text-align: center;
+}
+
+.infinite-scroll-preloader {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.infinite-scroll-preloader .preloader {
+  width:34px;
+  height:34px;
+}   
+  
+.panel-cover{
+	background-color: white;
+}
+.item-title{
+ max-width: 90% !important;
+	white-space: inherit !important;
+	max-height : inherit !important;
+	word-break:break-all !important;
+}
+
+/*
+.hidden{
+	display: none;
+}*/

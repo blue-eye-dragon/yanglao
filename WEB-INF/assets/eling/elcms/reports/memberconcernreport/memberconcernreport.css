@@ -1,0 +1,21 @@
+.el-grid .name{
+		width: 8%;
+}
+.el-grid .number{
+		width: 8%;
+}
+.el-grid .date{
+		width: 10%;
+}
+.el-grid .user{
+		width: 12%;
+}
+.el-grid .value{
+		width: 10%;
+}
+.el-grid .cause{
+		width: 14%;
+}
+.el-grid .description{
+		width: 38%;
+}

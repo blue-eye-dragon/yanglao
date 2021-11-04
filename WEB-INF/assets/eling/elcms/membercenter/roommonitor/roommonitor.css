@@ -1,0 +1,137 @@
+@media (min-width:1367px){
+	.el-roommonitor-container .font_lg{
+		font-size: 50px;
+		text-align: center;
+		color: #2FABE9;
+	}
+}
+
+@media (max-width:1366px){
+	.el-roommonitor-container .font_lg{
+		font-size: 30px;
+		text-align: center;
+		color: #2FABE9;
+	}
+}
+
+
+.el-roommonitor-container .height_50{
+	height: 50px;
+}
+
+.el-roommonitor-container .font_lt{
+	font-size: 10px !important;
+	padding: 0;
+	color:#333333;
+}
+
+.el-roommonitor-container .nopadding{
+	padding: 0;
+}
+
+.el-roommonitor-container .otherinfo_title{
+	font-size: 10px !important;
+	color:#2FABE9;
+	padding-left: 20px;
+	margin-top: -5px;
+}
+
+.el-roommonitor-container .margin_top_10{
+	margin-top: 10px;
+}
+
+.el-roommonitor-container .otherinfo_icon{
+	font-weight: 200px;
+	font-size: 31px;
+	line-height: 50px;
+	padding-left: 20px;
+	color: #2FABE9;
+}
+.el-roommonitor-container .custHR{
+	position:relative;
+	top: 40px;
+	width: 99%;
+}
+
+.el-roommonitor-container .col-md-11.locationlog{
+	padding: 0;
+	margin-left: -10px;
+	width: 92%;
+}
+
+.el-roommonitor-container .locationlog-container{
+	height: 80px;
+}
+
+.el-roommonitor-container .locationlog-container:last{
+	height: 90px;
+}
+
+/*****各种分辨率下的高度*****/
+.el-roommonitor-container .sleepContainer{
+	height: 300px;
+}
+
+.el-roommonitor-container .gooutContainer{
+	height: 300px;
+}
+
+.el-roommonitor-container .otherContainer{
+	height: 350px;
+}
+
+.el-roommonitor-container .otheritemContainer{
+	height: 125px;
+}
+
+@media(max-height:1024px){
+	.el-roommonitor-container .sleepContainer{
+		height: 250px;
+	}
+	
+	.el-roommonitor-container .gooutContainer{
+		height: 250px;
+	}
+	
+	.el-roommonitor-container .otherContainer{
+		height: 300px;
+	}
+	
+	.el-roommonitor-container .otheritemContainer{
+		height: 100px;
+	}
+}
+
+@media(max-height:768px){
+	.el-roommonitor-container .sleepContainer{
+		height: 260px;
+	}
+	
+	.el-roommonitor-container .gooutContainer{
+		height: 260px;
+	}
+	
+	.el-roommonitor-container .otherContainer{
+		height: 260px;
+	}
+	
+	.el-roommonitor-container .otheritemContainer{
+		height: 130px;
+	}
+	
+	.el-roommonitor .J-subnav{
+		display: none;
+	}
+	
+	.el-roommonitor-container .box-header{
+		display: none;
+	}
+	
+	.el-roommonitor-container .locationlog-container{
+		height: 60px;
+	}
+
+	.el-roommonitor-container .locationlog-container:last{
+		height: 70px;
+	}
+}

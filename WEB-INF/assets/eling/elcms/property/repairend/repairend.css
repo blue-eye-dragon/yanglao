@@ -1,0 +1,30 @@
+.el-repairend .repairNo{
+	width: 11%;
+} 
+.el-repairend .place{
+	width: 8%;
+}
+.el-repairend .repairClassify{
+	width: 12%;
+}
+.el-repairend .content{
+	width: 18%;
+}
+.el-repairend .repairperson{
+	width: 11%;
+}
+.el-repairend .repairtime{
+	width: 10%;
+}
+.el-repairend .ifSignificant{
+	width: 6%;
+}
+.el-repairend .maintainer{
+	width: 8%;
+}
+.el-repairend .repairsource{
+	width: 9%;
+}
+.el-repairend .operate{
+	width: 7%;
+}

@@ -1,0 +1,123 @@
+body{
+}
+
+.el-environment{
+	font-family: Microsoft YaHei;
+}
+
+.el-environment .room-change{
+	margin-top: 20px;
+}
+
+.el-environment .room-change .btn-primary{
+	border: 0 none;
+	background:linear-gradient(to bottom, #49CDEC, #00acec);
+	font-size: 20px;
+}
+
+.el-environment .time{
+	margin-top: 10px;
+	color: rgb(152, 151, 151);
+}
+
+.el-environment .out{
+	position: relative;
+	height: 150px;
+}
+
+.el-environment .weather{
+	width:128px;
+	height:128px;
+	background-image: url("../../../mobile/resources/1_lg.png");
+	position: absolute;
+}
+.el-environment .out .detail,.el-environment .in .detail{
+	height:128px;
+	position: relative;
+	left: 130px;
+	width:200px;
+	margin-left:10px;
+  	color: #2FABE9;
+}
+
+.el-environment .level{
+	width: 128px;
+	height: 128px;
+	border-radius:64px;
+	position: absolute;
+	margin: 5px;
+}
+.el-environment hr{
+	margin: 10px 0;
+}
+.el-environment .co2{
+	border: 2px solid #49CDEC;
+	border-radius: 10px; 
+	color: rgb(152, 151, 151);
+	height: 60px;
+	width: 96%;
+	margin: 20px 2% 0 2%;
+}
+
+.el-environment .success-font{
+	color: #5AAD34 !important;
+}
+.el-environment .warning-font{
+	color: rgb(234,232,116) !important;
+}
+.el-environment .danger-font{
+	color:#FA5833 !important;
+}
+
+.el-environment .success_status{
+	background:-webkit-gradient(radial,50% 50%,0,50% 50%,100,from(green),to(white));
+}
+
+.el-environment .danger_status{
+	background:-webkit-gradient(radial,50% 50%,0,50% 50%,100,from(red),to(white));
+}
+
+.el-environment .warning_status{
+	background:-webkit-gradient(radial,50% 50%,0,50% 50%,100,from(yellow),to(white));
+}
+
+/*****兼容320px宽度的*****/
+@media(max-width:320px){
+	.el-environment .weather{
+		width:96px;
+		height:96px;
+		background-image: url("../../../mobile/resources/1_lt.png");
+		position: absolute;
+	}
+	.el-environment .level{
+		width: 96px;
+		height: 96px;
+		border-radius:48px;
+	}
+	.el-environment .out .detail,.el-environment .in .detail{
+		left: 90px;
+	}
+	.el-environment .out{
+		height: 120px;
+	}
+	.el-environment .co2{
+		margin: 5px 2% 0 2%;
+	}
+}
+/***loading框***/
+.masking{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: black;
+ 	top: 0;
+  	opacity: 0.1;
+  	z-index: 100;
+}
+.loading{
+	position: absolute;
+	top: 40%;
+	text-align: center;
+	width: 100%;
+	z-index: 1000;
+}

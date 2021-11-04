@@ -1,0 +1,30 @@
+.el-agentworkapplyconfirm .J-grid2 .el-grid{
+	padding-right: 0;
+	margin-left: -15px;
+    margin-right: -15px;
+}
+.el-agentworkapplyconfirm .J-grid3 .el-grid{
+	padding-left: 0;
+	margin-left: -15px;
+    margin-right: -15px;
+}
+.el-agentworkapplyconfirm .J-grid22 .el-grid{
+	padding-right: 0;
+	margin-left: -15px;
+    margin-right: -15px;
+}
+.el-agentworkapplyconfirm .J-grid33 .el-grid{
+	padding-left: 0;
+	margin-left: -15px;
+    margin-right: -15px;
+}
+.box .box-header {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 30px;
+    text-align: center;
+}
+.box .box-header .title {
+	float: none;
+    color: #3c3c3c;
+}

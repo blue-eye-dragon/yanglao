@@ -1,0 +1,60 @@
+.halfColumn{
+		width: 4%;
+}
+.oneColumn{
+		width: 8%;
+}
+.oneHalfColumn{
+		width: 12%;
+}
+.twoColumn{
+		width: 16%;
+}
+.twoHalfColumn{
+		width: 20%;
+}
+.threeColumn{
+		width: 24%;
+}
+.threeHalfColumn{
+		width: 28%;
+}
+.fourColumn{
+		width: 32%;
+}
+.fourHalfColumn{
+		width: 36%;
+}
+.fiveColumn{
+		width: 40%;
+}
+.fiveHalfColumn{
+		width: 44%;
+}
+.sixColumn{
+		width: 48%;
+}
+.sixHalfColumn{
+		width: 52%;
+}
+.sevenColumn{
+		width: 56%;
+}
+.sevenHalfColumn{
+		width: 60%;
+}
+.eightColumn{
+		width: 64%;
+}
+.eightHalfColumn{
+		width: 68%;
+}
+.nineColumn{
+		width: 72%;
+}
+.nineHalfColumn{
+		width: 76%;
+}
+.tenColumn{
+		width: 80%;
+}

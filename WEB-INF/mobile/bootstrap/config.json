@@ -1,0 +1,14 @@
+{
+  "vars": {},
+  "css": [
+    "type.less",
+    "grid.less",
+    "buttons.less",
+    "button-groups.less",
+    "media.less",
+    "list-group.less",
+    "panels.less"
+  ],
+  "js": [],
+  "customizerUrl": "http://v3.bootcss.com/customize/?id=91cd9f16fcf983a3752a"
+}

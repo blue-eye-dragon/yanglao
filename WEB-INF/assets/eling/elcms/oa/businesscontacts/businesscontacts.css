@@ -1,0 +1,24 @@
+.el-grid .name{
+		width: 8%;
+}
+.el-grid .title{
+		width: 14%;
+}
+.el-grid .company{
+		width: 14%;
+}
+.el-grid .telephone{
+		width: 14%;
+}
+.el-grid .electrograph{
+		width: 14%;
+}
+.el-grid .mobile{
+		width: 14%;
+}
+.el-grid .email{
+		width: 14%;
+}
+.el-grid .operate{
+		width: 8%;
+}

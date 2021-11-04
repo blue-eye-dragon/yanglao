@@ -1,0 +1,40 @@
+.el-visitedregistration .member{
+	width: 8%;
+}
+.el-visitedregistration .roomnumber{
+	width: 10%;
+}
+.el-visitedregistration .reason{
+	width: 18%;
+}
+.el-visitedregistration .checkInDate{
+	width: 11%;
+}
+.el-visitedregistration .checkOutDate{
+	width: 11%;
+}
+.el-visitedregistration .hospitalname{
+	width: 14%;
+}
+.el-visitedregistration .department{
+	width: 11%;
+}
+.el-visitedregistration .status{
+	width: 9%;
+}
+.el-visitedregistration .operate{
+	width: 8%;
+}
+
+.el-grid .oneColumn{
+	width: 8%;
+}
+.el-grid .oneHalfColumn{
+	width: 12%;
+}
+.el-grid .twoColumn{
+	width: 16%;
+}
+.el-grid .threeColumn{
+	width: 25%;
+}

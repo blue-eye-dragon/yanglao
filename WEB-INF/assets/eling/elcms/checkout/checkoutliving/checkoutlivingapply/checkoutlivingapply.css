@@ -1,0 +1,5 @@
+@media print {
+	.J-grid-footer{
+		display: none;
+	}
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>公寓报表</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+		<meta name="format-detection" content="telephone=no">
+		<link type="text/css" rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="../../../assets/fontawesome/font-awesome.min.css">
+		<link type="text/css" rel="stylesheet" href="../base1.css">
+		<style type="text/css">
+			/*****公寓入住*****/
+			.el-report-apartmentstatus canvas{
+				width: 280px;
+				height: 280px;
+			}
+			@media (max-height:480px){
+				.el-report-apartmentstatus canvas{
+					width: 180px;
+					height: 180px;
+				}
+			}
+			@media (max-height:568px) and (min-height:481px){
+				.el-report-apartmentstatus canvas{
+					width: 200px;
+					height: 200px;
+				}
+			}
+			
+			/*****会员统计*****/
+			@media (max-height:568px){
+				.el-mobile-report-memberstatistics .icon{
+					font-size: 25px;
+					color: white;
+				}
+			}
+			@media (max-height:480px){
+				.el-mobile-report-memberstatistics .header{
+					padding: 5px;
+				}
+			}
+			
+			/*****会员信息*****/
+			.el-mobile-report-member .male{
+				color : #00A2E8;
+			}
+			.el-mobile-report-member .female{
+				color : #FF538B;
+			}
+			.el-mobile-report-member .building{
+				color : #49bf67;
+			}
+			.el-mobile-report-member .member-info-item{
+				display: inline-block;
+				vertical-align: top;
+			}
+			/*****会员过世*****/
+			.el-mobile-report-died .male{
+				color : #00A2E8;
+			}
+			.el-mobile-report-died .female{
+				color : #FF538B;
+			}
+		</style>
+	</head>
+	<body data-module="reportlife"></body>
+	<script type="text/javascript" src="../../requirejs/require.js"></script>
+	<script type="text/javascript" src="../loader-1.0.0.js"></script>
+</html>
