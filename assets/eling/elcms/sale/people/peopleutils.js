@@ -137,7 +137,7 @@ define(function(require,exports,module){
 						name:"maritalStatus",
 						label:"婚姻状况",
 						type:"radiolist",
-						validate:["required"],
+						// validate:["required"],
 						list:BaseDoc.maritalStatus
 					},{
 						name:"weddingDate",
@@ -153,7 +153,7 @@ define(function(require,exports,module){
 					},{
 						name:"birthplace",
 						label:"出生地",
-						validate:["required"],
+						// validate:["required"],
 					},{
 						name:"otherParty",
 						label:"政治面貌",
@@ -182,11 +182,11 @@ define(function(require,exports,module){
 						name:"nativePlace",
 						label:"籍贯",
 						type:"place",
-						validate:["required"],
+						// validate:["required"],
 					},{
 						name:"residenceAddress",
 						label:"户籍地址",
-						validate:["required"],
+						// validate:["required"],
 					},{
 						name:"graduateSchool",
 						label:"毕业院校"
@@ -194,7 +194,7 @@ define(function(require,exports,module){
 						name:"qualifications",
 						label:"学历",
 						type:"radiolist",
-						validate:["required"],
+						// validate:["required"],
 						list:BaseDoc.qualifications
 					},{
 						name:"degree",

@@ -90,19 +90,21 @@
 }
 
 .room-container .room-item{
-    border: 1px solid #00B83F;
+    border: 2px solid;
     border-radius: 2px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-content: center;
-    min-width:120px;
+    min-width:155px;
     min-height: 80px;
+    margin: 10px;
 }
 
 .room-item .room{
-    border-bottom: 1px solid #DCDFE6;
-    text-align: center;
+  border-bottom: 2px solid #DCDFE6;
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 .room-item .bed-container {
@@ -114,30 +116,32 @@
 
 .bed-container .bed{
     margin-left: 4px;
+    margin-bottom: 5px;
     border: 1px solid #4679fc;
     padding:2px 8px;
     border-radius:2px;
     cursor: pointer;
-    color:#000000;
+    background: #4679fc;
+    color:#ffffff;
 }
 
 .bed-container .bed:hover{
-    background: #4679fc;
-    color:#ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .5), 0 0 6px rgba(0, 0, 0, .5)
 }
 
 .bed-container .bed-occupy:hover{
-    background: #4679fc;
-    color:#ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .5), 0 0 6px rgba(0, 0, 0, .5)
 }
 
 .bed-container  .bed-occupy {
-    border-radius: 50%;
     margin-left: 4px;
+    margin-bottom: 5px;
     border: 1px solid #ff8221;
     padding:2px 8px;
+    border-radius:2px;
     cursor: pointer;
-    color:#000000;
+    background: #ff8221;
+    color:#ffffff;
 }
 
 .J-salestatus-bindPeronToBed {

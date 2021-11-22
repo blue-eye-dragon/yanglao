@@ -2834,11 +2834,11 @@ header .navbar .dropdown-menu {
   }
 }
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .main-nav-closed #main-nav {
     width: 45px;
   }
-}
+} */
 
 @media (max-width: 767px) {
   .main-nav-closed #main-nav {
@@ -3240,9 +3240,9 @@ header .navbar .dropdown-menu {
   margin-left: 201px;
 }
 
-.main-nav-closed #content {
+/* .main-nav-closed #content {
   margin-left: 46px;
-}
+} */
 
 @media (max-width: 767px) {
   .main-nav-closed #content {

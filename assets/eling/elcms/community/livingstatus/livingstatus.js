@@ -17,7 +17,7 @@ define(function(require, exports, module) {
 	var LivingStatus=ELView.extend({
 		attrs:{
 			template:tpl,
-			isCloseNav : true
+			// isCloseNav : true
 		},
 		events:function(){
 			return  Click(this);
