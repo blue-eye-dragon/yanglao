@@ -149,7 +149,7 @@ define(function(require, exports, module) {
 					},{
 						name:"telnumber",
 						label:"房间电话",
-						validate:["required"]
+						// validate:["required"]
 					},{
 						name:"level",
 						label:"楼层",
